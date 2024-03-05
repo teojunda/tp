@@ -10,8 +10,8 @@
         "tejas-garrepally": "Tejas Garrepally",
         "gautham-kailash": "Gautham Kailash",
         "ivan-ang": "Ivan Ang",
-        "jean-doe": "Jean Doe",
-        "james-doe": "James Doe"
+        "axel-teo": "Axel Teo",
+        "ng-yu-soon": "Ng Yu Soon"
       },
       "headingKeywords": {}
     },
@@ -160,8 +160,24 @@
       "headingKeywords": {}
     },
     {
+      "src": "team/ngyusoon.md",
+      "title": "Yu Soon's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "team/tejasgarrepally.md",
       "title": "Tejas Garrepally's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/teojunda.md",
+      "title": "Axel's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
