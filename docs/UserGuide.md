@@ -52,15 +52,12 @@ TA Toolkit  is a **desktop app for managing students, optimized for use via a Li
   e.g. in `ac n/NAME`, `NAME` is a parameter which can be used as `ac n/John Doe`.
 
 * Items in square brackets are optional.<br>
-  e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
-
-* Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  e.g `n/NAME [t/TELEGRAM]` can be used as `n/John Doe t/@johndoe` or as `n/John Doe`.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (such as `help`, `ls`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
@@ -79,7 +76,7 @@ Format: `help`
 
 Adds a person to the TA Toolkit.
 
-Format: `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]`
+Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]`
 
 Examples:
 * `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub`
@@ -87,15 +84,22 @@ Examples:
 
 ### Listing all persons : `ls`
 
-Shows a list of all persons in the TA Toolkit.
+Shows a list of all persons in the TA Toolkit based on a certain CLASS_GROUP.
 
-Format: `ls`
+Format: `ls [CLASS_GROUP]`
+
+* If no parameter is provided, all persons are displayed.
+* If a parameter is provided, all persons with a CLASS_GROUP beginning with the parameter will be displayed.
+
+Examples:
+* `ls` Displays a list of all persons.
+* `ls F14` Displays a list of all persons with CLASS_GROUP beginning with F14, eg. F14, F14-3, etc.
 
 ### Updating a person : `uc`
 
 Updates an existing person in the TA Toolkit.
 
-Format: `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE] [t/TELEGRAM] [g/GITHUB]…​`
+Format: `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE] [t/TELEGRAM] [g/GITHUB]`
 
 * Updates the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
@@ -202,11 +206,11 @@ _Details coming soon ..._
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub`
+**Add**    | `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub`
 **Clear**  | `clear`
 **Delete** | `dc INDEX`<br> e.g., `dc 3`
 **Edit**   | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE] [t/TELEGRAM] [g/GITHUB]…​`<br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
-**List**   | `ls`
+**List**   | `ls [CLASS_GROUP]` <br> e.g., `ls F14`
 **Help**   | `help`
 **View**   | `view INDEX`
