@@ -21,12 +21,28 @@ public class Notes {
         this.notes = new ArrayList<>();
     }
 
-    public Notes(ArrayList<Note> notes) {
+    /**
+     * Constructs a list of {@code Notes}.
+     */
+    public Notes(ArrayList<String> stringNotes) {
+        ArrayList<Note> notes = new ArrayList<>();
+        for (String stringNote: stringNotes) {
+            Note note = new Note(stringNote);
+            notes.add(note);
+        }
         this.notes = notes;
     }
 
     public int getSize() {
         return notes.size();
+    }
+
+    public ArrayList<String> getAsStrings() {
+        ArrayList<String> notesAsStrings = new ArrayList<>();
+        for (Note note: notes) {
+            notesAsStrings.add(note.toString());
+        }
+        return notesAsStrings;
     }
 
     /**

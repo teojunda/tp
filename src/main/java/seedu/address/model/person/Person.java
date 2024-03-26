@@ -3,6 +3,7 @@ package seedu.address.model.person;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -37,6 +38,22 @@ public class Person {
         this.telegram = telegram;
         this.github = github;
         this.notes = new Notes();
+    }
+
+
+    /**
+     * Every field must be present and not null.
+     */
+    public Person(Name name, ClassGroup classGroup, Email email, Optional<Phone> phone,
+                  Optional<Telegram> telegram, Optional<Github> github, Notes notes) {
+        requireAllNonNull(name, classGroup, email, phone);
+        this.name = name;
+        this.classGroup = classGroup;
+        this.email = email;
+        this.phone = phone;
+        this.telegram = telegram;
+        this.github = github;
+        this.notes = notes;
     }
 
     public Name getName() {

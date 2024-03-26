@@ -6,6 +6,7 @@ import seedu.address.model.person.ClassGroup;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Github;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Notes;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.Telegram;
@@ -28,6 +29,7 @@ public class PersonBuilder {
     private ClassGroup classGroup;
     private Optional<Telegram> telegram;
     private Optional<Github> github;
+    private Notes notes;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -39,6 +41,7 @@ public class PersonBuilder {
         github = Optional.of(new Github(DEFAULT_GITHUB));
         telegram = Optional.of(new Telegram(DEFAULT_TELEGRAM));
         classGroup = new ClassGroup(DEFAULT_CLASS_GROUP);
+        notes = new Notes();
     }
 
     /**
@@ -51,6 +54,7 @@ public class PersonBuilder {
         github = personToCopy.getGithub();
         telegram = personToCopy.getTelegram();
         classGroup = personToCopy.getClassGroup();
+        notes = personToCopy.getNotes();
     }
 
     /**
