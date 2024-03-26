@@ -1,5 +1,6 @@
 package seedu.address.model.person;
 
+import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Objects;
@@ -21,6 +22,7 @@ public class Person {
     private final Optional<Phone> phone;
     private final Optional<Telegram> telegram;
     private final Optional<Github> github;
+    private final Notes notes;
 
     /**
      * Every field must be present and not null.
@@ -34,6 +36,7 @@ public class Person {
         this.phone = phone;
         this.telegram = telegram;
         this.github = github;
+        this.notes = new Notes();
     }
 
     public Name getName() {
@@ -58,6 +61,20 @@ public class Person {
 
     public Optional<Github> getGithub() {
         return github;
+    }
+
+    public Notes getNotes() {
+        return notes;
+    }
+
+    /**
+     * Adds a note to a person's notes
+     *
+     * @param note The note to be added.
+     */
+    public void addNote(Note note) {
+        requireNonNull(note);
+        notes.addNote(note);
     }
 
     /**
