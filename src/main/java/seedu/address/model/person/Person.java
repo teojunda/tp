@@ -3,11 +3,12 @@ package seedu.address.model.person;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Optional;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.attendance.Attendance;
+import seedu.address.model.attendance.Week;
 
 
 /**
@@ -24,6 +25,8 @@ public class Person {
     private final Optional<Telegram> telegram;
     private final Optional<Github> github;
     private final Notes notes;
+    private final Attendance attendance;
+
 
     /**
      * Every field must be present and not null.
@@ -37,6 +40,7 @@ public class Person {
         this.phone = phone;
         this.telegram = telegram;
         this.github = github;
+        this.attendance = new Attendance();
         this.notes = new Notes();
     }
 
@@ -54,6 +58,7 @@ public class Person {
         this.telegram = telegram;
         this.github = github;
         this.notes = notes;
+        this.attendance = new Attendance();
     }
 
     public Name getName() {
@@ -92,6 +97,26 @@ public class Person {
     public void addNote(Note note) {
         requireNonNull(note);
         notes.addNote(note);
+    }
+
+    public Attendance getAttendance() {
+        return attendance;
+    }
+
+    public boolean isAbsent(Week week) {
+        return attendance.isAbsent(week);
+    }
+
+    public void markPresent(Week week) {
+        attendance.changeAttendanceStatus(week, Attendance.Status.PRESENT);
+    }
+
+    public void markAbsent(Week week) {
+        attendance.changeAttendanceStatus(week, Attendance.Status.ABSENT);
+    }
+
+    public void resetAttendance() {
+        attendance.resetAttendance();
     }
 
     /**
@@ -146,6 +171,7 @@ public class Person {
     public int compareName(Person other) {
         return name.compare(other.getName());
     }
+
     /**
      * Returns true if both persons have the same identity and data fields.
      * This defines a stronger notion of equality between two persons.
@@ -167,13 +193,14 @@ public class Person {
                 && email.equals(otherPerson.email)
                 && phone.equals(otherPerson.phone)
                 && telegram.equals(otherPerson.telegram)
-                && github.equals(otherPerson.github);
+                && github.equals(otherPerson.github)
+                && attendance.equals(otherPerson.attendance);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, classGroup, email, phone, telegram, github);
+        return Objects.hash(name, classGroup, email, phone, telegram, github, attendance, notes);
     }
 
     @Override
@@ -185,6 +212,7 @@ public class Person {
                 .add("phone", phone.isPresent() ? phone.get() : "")
                 .add("telegram", telegram.isPresent() ? telegram.get() : "")
                 .add("github", github.isPresent() ? github.get() : "")
+                .add("attendance", attendance)
                 .toString();
     }
 }

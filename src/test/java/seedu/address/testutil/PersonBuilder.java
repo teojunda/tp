@@ -2,6 +2,7 @@ package seedu.address.testutil;
 
 import java.util.Optional;
 
+import seedu.address.model.attendance.Attendance;
 import seedu.address.model.person.ClassGroup;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Github;
@@ -29,7 +30,11 @@ public class PersonBuilder {
     private ClassGroup classGroup;
     private Optional<Telegram> telegram;
     private Optional<Github> github;
+<<<<<<< HEAD
     private Notes notes;
+=======
+    private Attendance attendance;
+>>>>>>> master
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -41,7 +46,11 @@ public class PersonBuilder {
         github = Optional.of(new Github(DEFAULT_GITHUB));
         telegram = Optional.of(new Telegram(DEFAULT_TELEGRAM));
         classGroup = new ClassGroup(DEFAULT_CLASS_GROUP);
+<<<<<<< HEAD
         notes = new Notes();
+=======
+        attendance = new Attendance();
+>>>>>>> master
     }
 
     /**
@@ -54,7 +63,11 @@ public class PersonBuilder {
         github = personToCopy.getGithub();
         telegram = personToCopy.getTelegram();
         classGroup = personToCopy.getClassGroup();
+<<<<<<< HEAD
         notes = personToCopy.getNotes();
+=======
+        attendance = personToCopy.getAttendance();
+>>>>>>> master
     }
 
     /**

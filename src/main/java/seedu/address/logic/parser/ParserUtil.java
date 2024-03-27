@@ -2,11 +2,15 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.attendance.Week;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.ClassGroup;
 import seedu.address.model.person.Email;
@@ -161,5 +165,41 @@ public class ParserUtil {
             throw new ParseException(Note.MESSAGE_CONSTRAINTS);
         }
         return new Note(note);
+    }
+
+    /**
+     * Parses a {@code String week} into an {@code Week}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code week} is invalid.
+     */
+    public static Week parseWeek(String week) throws ParseException {
+        requireNonNull(week);
+        String trimmedWeek = week.trim();
+        Index weekIndex = parseIndex(trimmedWeek);
+        if (!Week.isValidWeek(weekIndex)) {
+            throw new ParseException(Week.MESSAGE_CONSTRAINTS);
+        }
+        return new Week(weekIndex);
+    }
+
+    /**
+     * Parses a {@code String indices} into a {@code List<Index>}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code indices} is invalid.
+     */
+    public static List<Index> parseIndices(String indices) throws ParseException {
+        requireNonNull(indices);
+        String[] trimmedIndices = Arrays.stream(indices.trim().split(","))
+                .map(String::trim)
+                .filter(str -> !str.isEmpty())
+                .toArray(String[]::new);
+
+        List<Index> indexList = new ArrayList<>();
+        for (String index : trimmedIndices) {
+            indexList.add(parseIndex(index));
+        }
+        return indexList;
     }
 }
