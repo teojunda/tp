@@ -126,6 +126,8 @@ class JsonAdaptedPerson {
         }
         for (String note: notes) {
             if (!Note.isValidNote(note)) {
+                throw new IllegalValueException(Note.MESSAGE_CONSTRAINTS);
+            } else {
                 Note modelNote = new Note(note);
                 modelNotes.addNote(modelNote);
             }
