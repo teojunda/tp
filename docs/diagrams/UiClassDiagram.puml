@@ -15,7 +15,7 @@ Class PersonListPanel
 Class PersonCard
 Class StatusBarFooter
 Class CommandBox
-Class SidePanel  ' Add SidePanel here
+Class SidePanel
 }
 
 package Model <<Rectangle>> {
