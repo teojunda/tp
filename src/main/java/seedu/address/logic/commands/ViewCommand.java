@@ -51,11 +51,13 @@ public class ViewCommand extends Command {
         public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         List<Person> lastShownList = model.getFilteredPersonList();
+        assert lastShownList != null : "Expected non-null list of persons";
         if (targetIndex.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
 
         Person personToView = lastShownList.get(targetIndex.getZeroBased());
+        assert personToView != null : "Viewed person should not be null";
         logger.log(Level.INFO, "View command created with index: " + targetIndex);
         model.updateLastViewedPerson(personToView);
         return new CommandResult(String.format(MESSAGE_VIEW_PERSON_SUCCESS, Messages.format(personToView)));
