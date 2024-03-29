@@ -6,7 +6,10 @@ import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.model.attendance.Attendance;
+import seedu.address.model.attendance.Week;
 import seedu.address.model.person.ClassGroup;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Github;
@@ -31,6 +34,7 @@ class JsonAdaptedPerson {
     private final String telegram;
     private final String github;
     private final ArrayList<String> notes;
+    private final Attendance.Status[] attendance;
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -39,7 +43,8 @@ class JsonAdaptedPerson {
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
                              @JsonProperty("email") String email, @JsonProperty("classGroup") String classGroup,
                              @JsonProperty("telegram") String telegram, @JsonProperty("github") String github,
-                             @JsonProperty("notes") ArrayList<String> notes) {
+                             @JsonProperty("notes") ArrayList<String> notes,
+                             @JsonProperty("attendance") Attendance.Status[] attendance) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -47,6 +52,7 @@ class JsonAdaptedPerson {
         this.telegram = telegram;
         this.github = github;
         this.notes = notes;
+        this.attendance = attendance;
     }
 
     /**
@@ -60,6 +66,7 @@ class JsonAdaptedPerson {
         telegram = source.getTelegram().orElse(Telegram.EMPTY).telegramId;
         github = source.getGithub().orElse(Github.EMPTY).githubId;
         notes = source.getNotes().getAsStrings();
+        attendance = source.getAttendance().getStatusAsArray();
     }
 
     /**
@@ -133,6 +140,14 @@ class JsonAdaptedPerson {
             }
         }
 
-        return new Person(modelName, modelClassGroup, modelEmail, modelPhone, modelTelegram, modelGithub, modelNotes);
+        final Attendance modelAttendance = new Attendance();
+        if (attendance != null) {
+            for (int i = 0; i < attendance.length; i++) {
+                modelAttendance.changeAttendanceStatus(new Week(Index.fromZeroBased(i)), attendance[i]);
+            }
+        }
+
+        return new Person(modelName, modelClassGroup, modelEmail, modelPhone,
+                modelTelegram, modelGithub, modelAttendance, modelNotes);
     }
 }
