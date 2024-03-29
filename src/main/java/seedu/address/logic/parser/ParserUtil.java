@@ -196,7 +196,9 @@ public class ParserUtil {
      * @throws ParseException if the given {@code indices} is invalid.
      */
     public static List<Index> parseIndices(String indices) throws ParseException {
-        requireNonNull(indices);
+        if (indices.isEmpty()) {
+            return new ArrayList<>();
+        }
         String[] trimmedIndices = Arrays.stream(indices.trim().split(","))
                 .map(String::trim)
                 .filter(str -> !str.isEmpty())
