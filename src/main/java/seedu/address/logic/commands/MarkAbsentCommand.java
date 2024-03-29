@@ -20,11 +20,11 @@ import seedu.address.model.person.Person;
 /**
  * Adds a person to the address book.
  */
-public class MarkCommand extends Command {
+public class MarkAbsentCommand extends Command {
 
-    public static final String COMMAND_WORD = "mark";
+    public static final String COMMAND_WORD = "ma";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks the attendance of students in the TA Toolkit "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks students' attendance as absent in the TA Toolkit "
             + "by their index in the displayed list for the specified week. Only absentees need to be specified, "
             + "the rest are assumed to be present.\n"
             + "Parameters: "
@@ -34,19 +34,19 @@ public class MarkCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "Marked the following students as absent for %1$s: %2$s";
 
-    private static final Logger logger = LogsCenter.getLogger(MarkCommand.class);
+    private static final Logger logger = LogsCenter.getLogger(MarkAbsentCommand.class);
     private final Week week;
     private final List<Index> absentees;
 
     /**
      * Creates an MarkCommand to add the specified {@code Person}
      */
-    public MarkCommand(Week week, List<Index> absentees) {
+    public MarkAbsentCommand(Week week, List<Index> absentees) {
         requireNonNull(week);
         requireNonNull(absentees);
         this.week = week;
         this.absentees = absentees;
-        logger.info("MarkCommand created for " + week + " with absentees: " + absentees);
+        logger.info("MarkAbsentCommand created for " + week + " with absentees: " + absentees);
     }
 
     @Override
@@ -85,12 +85,12 @@ public class MarkCommand extends Command {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof MarkCommand)) {
+        if (!(other instanceof MarkAbsentCommand)) {
             return false;
         }
 
-        MarkCommand otherMarkCommand = (MarkCommand) other;
-        return week.equals(otherMarkCommand.week) && absentees.equals(otherMarkCommand.absentees);
+        MarkAbsentCommand otherMarkAbsentCommand = (MarkAbsentCommand) other;
+        return week.equals(otherMarkAbsentCommand.week) && absentees.equals(otherMarkAbsentCommand.absentees);
     }
 
     @Override
