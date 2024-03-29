@@ -30,7 +30,11 @@ public class Notes {
         this.notes = notes;
     }
 
-    public int getSize() {
+    public Note get(int index) {
+        return notes.get(index);
+    }
+
+    public int size() {
         return notes.size();
     }
 

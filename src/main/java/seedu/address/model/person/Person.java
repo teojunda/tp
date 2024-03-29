@@ -6,6 +6,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import java.util.Objects;
 import java.util.Optional;
 
+import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.attendance.Attendance;
 import seedu.address.model.attendance.Week;
@@ -105,6 +106,10 @@ public class Person {
         return notes;
     }
 
+    public int getNoteSize() {
+        return notes.size();
+    }
+
     /**
      * Adds a note to a person's notes
      *
@@ -113,6 +118,15 @@ public class Person {
     public void addNote(Note note) {
         requireNonNull(note);
         notes.addNote(note);
+    }
+
+    /**
+     * Deletes a note to a person's notes
+     *
+     * @param index The index of the note to be deleted.
+     */
+    public void deleteNote(int index) {
+        notes.deleteNote(index);
     }
 
     public Attendance getAttendance() {

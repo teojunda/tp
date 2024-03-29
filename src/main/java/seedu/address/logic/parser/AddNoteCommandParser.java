@@ -34,7 +34,7 @@ public class AddNoteCommandParser implements Parser<AddNoteCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddNoteCommand.MESSAGE_USAGE), pe);
         }
 
-        if (!arePrefixesPresent(argMultimap, PREFIX_NOTE)) {
+        if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_NOTE)) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddNoteCommand.MESSAGE_USAGE));
         }
 
@@ -42,13 +42,5 @@ public class AddNoteCommandParser implements Parser<AddNoteCommand> {
         Note note = ParserUtil.parseNote(argMultimap.getValue(PREFIX_NOTE).get());
 
         return new AddNoteCommand(index, note);
-    }
-
-    /**
-     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
-     * {@code ArgumentMultimap}.
-     */
-    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
-        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
     }
 }
