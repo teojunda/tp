@@ -30,7 +30,8 @@ public class DeleteNoteCommandParser implements Parser<DeleteNoteCommand> {
         try {
             personIndex = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteNoteCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                    DeleteNoteCommand.MESSAGE_USAGE), pe);
         }
 
         if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_INDICES)) {

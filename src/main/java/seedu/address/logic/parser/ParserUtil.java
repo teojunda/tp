@@ -28,6 +28,7 @@ public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
     public static final String MESSAGE_NO_VALID_INDICES = "No valid indices were provided.";
+    public static final String MESSAGE_DUPLICATE_INDICES = "Duplicate indices were provided.";
 
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be
@@ -205,7 +206,12 @@ public class ParserUtil {
 
         List<Index> indexList = new ArrayList<>();
         for (String index : trimmedIndices) {
-            indexList.add(parseIndex(index));
+            Index parsedIndex = parseIndex(index);
+            if (!indexList.contains(parsedIndex)) {
+                indexList.add(parsedIndex);
+            } else {
+                throw new ParseException(MESSAGE_DUPLICATE_INDICES);
+            }
         }
 
         if (indexList.isEmpty()) {
