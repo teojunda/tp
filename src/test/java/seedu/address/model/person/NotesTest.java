@@ -61,7 +61,7 @@ public class NotesTest {
     public void toString_validNotes_correctStringRepresentation() {
         ArrayList<String> stringNotes = new ArrayList<>(Arrays.asList("Note 1", "Note 2", "Note 3"));
         Notes notes = new Notes(stringNotes);
-        assertEquals("Note 1\nNote 2\nNote 3\n", notes.toString());
+        assertEquals('\n' + "1: Note 1\n2: Note 2\n3: Note 3", notes.toString());
     }
 
     @Test
