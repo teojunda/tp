@@ -64,6 +64,13 @@ public class Attendance {
         return sb.toString();
     }
 
+    /**
+     * Returns the attendance status of the student as an array.
+     */
+    public Status[] getStatusAsArray() {
+        return attendanceList;
+    }
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -81,5 +88,10 @@ public class Attendance {
             }
         }
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return attendanceList.hashCode();
     }
 }
