@@ -223,7 +223,8 @@ public class Person {
                 && phone.equals(otherPerson.phone)
                 && telegram.equals(otherPerson.telegram)
                 && github.equals(otherPerson.github)
-                && attendance.equals(otherPerson.attendance);
+                && attendance.equals(otherPerson.attendance)
+                && notes.equals(otherPerson.notes);
     }
 
     @Override
@@ -242,6 +243,7 @@ public class Person {
                 .add("telegram", telegram.isPresent() ? telegram.get() : "")
                 .add("github", github.isPresent() ? github.get() : "")
                 .add("attendance", attendance)
+                .add("notes", notes)
                 .toString();
     }
 }

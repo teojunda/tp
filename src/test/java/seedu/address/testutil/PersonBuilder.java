@@ -1,5 +1,7 @@
 package seedu.address.testutil;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import seedu.address.model.attendance.Attendance;
@@ -86,7 +88,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, classGroup, email, phone, telegram, github);
+        return new Person(name, classGroup, email, phone, telegram, github, notes);
     }
 
     /**
@@ -110,6 +112,15 @@ public class PersonBuilder {
      */
     public PersonBuilder withGithub(String github) {
         this.github = Optional.of(new Github(github));
+        return this;
+    }
+
+    /**
+     * Sets the {@code Github} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withDefaultNotes() {
+        this.notes = new Notes(new ArrayList<>(
+                List.of("Asked a good question about general relativity", "Excited to learn Java")));
         return this;
     }
 }

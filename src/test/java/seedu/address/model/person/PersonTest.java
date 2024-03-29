@@ -86,7 +86,8 @@ public class PersonTest {
                 + (ALICE.getPhone().isPresent() ? ALICE.getPhone().get().value : "") + ", telegram="
                 + (ALICE.getTelegram().isPresent() ? ALICE.getTelegram().get().telegramId : "") + ", github="
                 + (ALICE.getGithub().isPresent() ? ALICE.getGithub().get().githubId : "") + ", attendance="
-                + (ALICE.getAttendance().toString()) + "}";
+                + (ALICE.getAttendance().toString()) + ", notes="
+                + (ALICE.getNotes().toString()) + "}";
         assertEquals(expected, ALICE.toString());
     }
 }
