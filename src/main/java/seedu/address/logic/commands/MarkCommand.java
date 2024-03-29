@@ -26,7 +26,8 @@ public class MarkCommand extends Command {
     public static final String COMMAND_WORD = "ma";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks students' attendance in the TA Toolkit "
-            + "by their index in the displayed list for the specified week. Only absentees / attendees need to be specified, "
+            + "by their index in the displayed list for the specified week. "
+            + "Only absentees / attendees need to be specified, "
             + "the rest are assumed to be present.\n"
             + "Parameters: "
             + PREFIX_WEEK + "WEEK "
@@ -34,7 +35,8 @@ public class MarkCommand extends Command {
             + PREFIX_ABSENT + "ABSENT_INDEX [MORE_INDICES]...\n"
             + "Example: " + COMMAND_WORD + " w/1 p/1, 2, 3 a/4, 5";
 
-    public static final String MESSAGE_SUCCESS = "Marked the following students as present for %1$s: %2$s\nMarked the following students as absent for %3$s: %4$s";
+    public static final String MESSAGE_SUCCESS = "Marked the following students as present for %1$s: %2$s"
+        + "\nMarked the following students as absent for %3$s: %4$s";
 
     private static final Logger logger = LogsCenter.getLogger(MarkCommand.class);
     private final Week week;
@@ -51,7 +53,8 @@ public class MarkCommand extends Command {
         this.week = week;
         this.attendees = attendees;
         this.absentees = absentees;
-        logger.info("MarkCommand created for " + week + " with attendees: " + attendees + " and absentees: " + absentees);
+        logger.info("MarkCommand created for " + week
+                + " with attendees: " + attendees + " and absentees: " + absentees);
     }
 
     @Override
