@@ -65,7 +65,7 @@ TA Toolkit  is a **desktop app for managing students, optimized for use via a Li
 
 ### Viewing help : `help`
 
-Shows a message explaning how to access the help page.
+Shows a message explaining how to access the help page.
 
 ![help message](images/helpMessage.png)
 
@@ -136,6 +136,7 @@ View the specified person from the TA Toolkit.
 Format: `view INDEX`
 
 * View the person at the specified `INDEX`.
+* Person's details will be displayed on right side panel.
 * The index refers to the index number shown in the displayed person list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
@@ -161,6 +162,9 @@ Examples:
 Clears all entries from the TA Toolkit.
 
 Format: `clear`
+
+Examples:
+* 'clear' removes all entries from TA Toolkit, so the main display panel should be blank.
 
 ### Exiting the program : `exit`
 

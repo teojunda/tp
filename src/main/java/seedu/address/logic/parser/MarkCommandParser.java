@@ -1,11 +1,14 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_INDICES;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ABSENT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PRESENT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_WEEK;
 
 import java.util.List;
+import java.util.logging.Logger;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.MarkCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -16,6 +19,8 @@ import seedu.address.model.attendance.Week;
  */
 public class MarkCommandParser implements Parser<MarkCommand> {
 
+    private static final Logger logger = LogsCenter.getLogger(MarkCommandParser.class);
+
     /**
      * Parses the given {@code String} of arguments in the context of the MarkCommand
      * and returns an MarkCommand object for execution.
@@ -24,16 +29,24 @@ public class MarkCommandParser implements Parser<MarkCommand> {
     @Override
     public MarkCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_WEEK, PREFIX_INDICES);
-        if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_WEEK, PREFIX_INDICES)
-                || !argMultimap.getPreamble().isEmpty()) {
+                ArgumentTokenizer.tokenize(args, PREFIX_WEEK, PREFIX_PRESENT, PREFIX_ABSENT);
+
+        if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_WEEK)
+            || (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_PRESENT)
+                && !ParserUtil.arePrefixesPresent(argMultimap, PREFIX_ABSENT))
+            || (ParserUtil.arePrefixesPresent(argMultimap, PREFIX_PRESENT)
+                && argMultimap.getValue(PREFIX_PRESENT).get().isEmpty())
+            || (ParserUtil.arePrefixesPresent(argMultimap, PREFIX_ABSENT)
+                && argMultimap.getValue(PREFIX_ABSENT).get().isEmpty()) || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MarkCommand.MESSAGE_USAGE));
         }
-
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_WEEK, PREFIX_INDICES);
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_WEEK, PREFIX_PRESENT, PREFIX_ABSENT);
         Week week = ParserUtil.parseWeek(argMultimap.getValue(PREFIX_WEEK).get());
-        List<Index> indices = ParserUtil.parseIndices(argMultimap.getValue(PREFIX_INDICES).get());
-
-        return new MarkCommand(week, indices);
+        List<Index> presentIndices = ParserUtil.parseIndices(argMultimap.getValue(PREFIX_PRESENT).orElse(""));
+        List<Index> absentIndices = ParserUtil.parseIndices(argMultimap.getValue(PREFIX_ABSENT).orElse(""));
+        if (presentIndices.isEmpty() && absentIndices.isEmpty()) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MarkCommand.MESSAGE_USAGE));
+        }
+        return new MarkCommand(week, presentIndices, absentIndices);
     }
 }

@@ -56,6 +56,7 @@ public class ViewCommand extends Command {
         }
 
         Person personToView = lastShownList.get(targetIndex.getZeroBased());
+        assert personToView != null : "Viewed person should not be null";
         logger.log(Level.INFO, "View command created with index: " + targetIndex);
         model.updateLastViewedPerson(personToView);
         return new CommandResult(String.format(MESSAGE_VIEW_PERSON_SUCCESS, Messages.format(personToView)));

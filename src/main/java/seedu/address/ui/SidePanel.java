@@ -34,6 +34,8 @@ public class SidePanel extends UiPart<Region> {
     private Label githubLabel;
     @FXML
     private Label attendanceLabel;
+    @FXML
+    private Label noteLabel;
 
     /**
      * Creates a {@code SidePanel}.
@@ -55,6 +57,7 @@ public class SidePanel extends UiPart<Region> {
         telegramLabel.setVisible(false);
         githubLabel.setVisible(false);
         attendanceLabel.setVisible(false);
+        noteLabel.setVisible(false);
     }
 
     /**
@@ -75,12 +78,14 @@ public class SidePanel extends UiPart<Region> {
                     + person.getPhone().map(Phone::toString).orElse("N/A"));
             telegramLabel.setVisible(true);
             telegramLabel.setText("Telegram: "
-                + person.getTelegram().map(Telegram::toString).orElse("N/A"));
+                    + person.getTelegram().map(Telegram::toString).orElse("N/A"));
             githubLabel.setVisible(true);
             githubLabel.setText("GitHub: "
-                + person.getGithub().map(Github::toString).orElse("N/A"));
+                    + person.getGithub().map(Github::toString).orElse("N/A"));
             attendanceLabel.setVisible(true);
             attendanceLabel.setText(person.getAttendance().toString());
+            noteLabel.setVisible(true);
+            noteLabel.setText("Notes: " + person.getNotes().toString());
 
             defaultMessageLabel.setVisible(false);
         } else {
@@ -99,6 +104,7 @@ public class SidePanel extends UiPart<Region> {
         telegramLabel.setText("");
         githubLabel.setText("");
         attendanceLabel.setText("");
+        noteLabel.setText("");
 
         nameLabel.setVisible(false);
         classGroupLabel.setVisible(false);
@@ -106,6 +112,7 @@ public class SidePanel extends UiPart<Region> {
         phoneLabel.setVisible(false);
         telegramLabel.setVisible(false);
         githubLabel.setVisible(false);
+        noteLabel.setVisible(false);
 
         showDefaultMessage();
     }

@@ -65,8 +65,11 @@ public class Notes {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
+        int counter = 1;
         for (Note note: notes) {
-            result.append(note.toString() + '\n');
+            result.append('\n');
+            result.append(counter + ": " + note.toString());
+            counter++;
         }
         return result.toString();
     }

@@ -1,7 +1,8 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_INDICES;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ABSENT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PRESENT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_WEEK;
 
 import java.util.List;
@@ -22,31 +23,38 @@ import seedu.address.model.person.Person;
  */
 public class MarkCommand extends Command {
 
-    public static final String COMMAND_WORD = "mark";
+    public static final String COMMAND_WORD = "ma";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks the attendance of students in the TA Toolkit "
-            + "by their index in the displayed list for the specified week. Only absentees need to be specified, "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks students' attendance in the TA Toolkit "
+            + "by their index in the displayed list for the specified week. "
+            + "Only absentees / attendees need to be specified, "
             + "the rest are assumed to be present.\n"
             + "Parameters: "
             + PREFIX_WEEK + "WEEK "
-            + PREFIX_INDICES + "INDEX [MORE_INDICES]...\n"
-            + "Example: " + COMMAND_WORD + " w/1 i/1, 2, 3";
+            + PREFIX_PRESENT + "PRESENT_INDEX [MORE_INDICES]...\n"
+            + PREFIX_ABSENT + "ABSENT_INDEX [MORE_INDICES]...\n"
+            + "Example: " + COMMAND_WORD + " w/1 p/1, 2, 3 a/4, 5";
 
-    public static final String MESSAGE_SUCCESS = "Marked the following students as absent for %1$s: %2$s";
+    public static final String MESSAGE_SUCCESS = "Marked the following students as present for %1$s: %2$s"
+        + "\nMarked the following students as absent for %3$s: %4$s";
 
     private static final Logger logger = LogsCenter.getLogger(MarkCommand.class);
     private final Week week;
     private final List<Index> absentees;
+    private final List<Index> attendees;
 
     /**
      * Creates an MarkCommand to add the specified {@code Person}
      */
-    public MarkCommand(Week week, List<Index> absentees) {
+    public MarkCommand(Week week, List<Index> attendees, List<Index> absentees) {
         requireNonNull(week);
+        requireNonNull(attendees);
         requireNonNull(absentees);
         this.week = week;
+        this.attendees = attendees;
         this.absentees = absentees;
-        logger.info("MarkCommand created for " + week + " with absentees: " + absentees);
+        logger.info("MarkCommand created for " + week
+                + " with attendees: " + attendees + " and absentees: " + absentees);
     }
 
     @Override
@@ -62,7 +70,19 @@ public class MarkCommand extends Command {
             }
         }
 
+        // We don't proceed even if the other indices are valid since it's likely that the user
+        // has made a mistake in the other inputs as well.
+        for (Index index : attendees) {
+            if (index.getZeroBased() >= lastShownList.size()) {
+                throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            }
+        }
+
         List<Person> absentStudents = this.absentees.stream()
+                .map(index -> lastShownList.get(index.getZeroBased()))
+                .collect(Collectors.toList());
+
+        List<Person> presentStudents = this.attendees.stream()
                 .map(index -> lastShownList.get(index.getZeroBased()))
                 .collect(Collectors.toList());
 
@@ -70,12 +90,21 @@ public class MarkCommand extends Command {
             student.markAbsent(week);
         }
 
+        for (Person student : presentStudents) {
+            student.markPresent(week);
+        }
+
         String absenteeNames = absentStudents.stream()
                 .map(Person::getName)
                 .map(Object::toString)
                 .collect(Collectors.joining(", "));
 
-        return new CommandResult(String.format(MESSAGE_SUCCESS, week, absenteeNames));
+        String attendeeNames = presentStudents.stream()
+                .map(Person::getName)
+                .map(Object::toString)
+                .collect(Collectors.joining(", "));
+
+        return new CommandResult(String.format(MESSAGE_SUCCESS, week, attendeeNames, week, absenteeNames));
     }
 
     @Override
@@ -90,13 +119,15 @@ public class MarkCommand extends Command {
         }
 
         MarkCommand otherMarkCommand = (MarkCommand) other;
-        return week.equals(otherMarkCommand.week) && absentees.equals(otherMarkCommand.absentees);
+        return week.equals(otherMarkCommand.week) && absentees.equals(otherMarkCommand.absentees)
+                && attendees.equals(otherMarkCommand.attendees);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
                 .add("week", week)
+                .add("attendees", attendees)
                 .add("absentees", absentees)
                 .toString();
     }
