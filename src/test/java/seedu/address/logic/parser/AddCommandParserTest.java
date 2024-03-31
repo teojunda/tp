@@ -57,19 +57,10 @@ public class AddCommandParserTest {
         assertParseSuccess(parser, PREAMBLE_WHITESPACE + NAME_DESC_BOB + CLASS_GROUP_DESC_BOB
                 + EMAIL_DESC_BOB + PHONE_DESC_BOB + TELEGRAM_DESC_BOB + GITHUB_DESC_BOB,
                 new AddCommand(expectedPerson));
-
-
-        // multiple tags - all accepted
-        Person expectedPersonMultipleTags = new PersonBuilder(BOB)
-                .build();
-        assertParseSuccess(parser,
-                NAME_DESC_BOB + CLASS_GROUP_DESC_BOB + EMAIL_DESC_BOB + PHONE_DESC_BOB
-                        + TELEGRAM_DESC_BOB + GITHUB_DESC_BOB,
-                new AddCommand(expectedPersonMultipleTags));
     }
 
     @Test
-    public void parse_repeatedNonTagValue_failure() {
+    public void parse_repeatedValue_failure() {
         String validExpectedPersonString = NAME_DESC_BOB + CLASS_GROUP_DESC_BOB + EMAIL_DESC_BOB
                 + PHONE_DESC_BOB + TELEGRAM_DESC_BOB + GITHUB_DESC_BOB;
 
@@ -123,7 +114,6 @@ public class AddCommandParserTest {
 
     @Test
     public void parse_optionalFieldsMissing_success() {
-        // zero tags
         Person expectedPerson = new PersonBuilder(AMY).build();
         assertParseSuccess(parser, NAME_DESC_AMY + CLASS_GROUP_DESC_AMY + EMAIL_DESC_AMY + PHONE_DESC_AMY
                 + TELEGRAM_DESC_AMY + GITHUB_DESC_AMY, new AddCommand(expectedPerson));

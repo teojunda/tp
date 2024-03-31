@@ -60,7 +60,7 @@ public class Attendance {
                 .map(i -> i + 1)
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining(", "));
-        sb.append(absentWeeks.isEmpty() ? "0" : absentWeeks);
+        sb.append(absentWeeks.isEmpty() ? "None" : absentWeeks);
         return sb.toString();
     }
 

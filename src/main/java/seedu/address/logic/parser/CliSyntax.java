@@ -15,5 +15,7 @@ public class CliSyntax {
     public static final Prefix PREFIX_GITHUB = new Prefix("g/");
     public static final Prefix PREFIX_WEEK = new Prefix("w/");
     public static final Prefix PREFIX_INDICES = new Prefix("i/");
+    public static final Prefix PREFIX_PRESENT = new Prefix("pre/");
+    public static final Prefix PREFIX_ABSENT = new Prefix("abs/");
 
 }
