@@ -77,6 +77,9 @@ public class MarkCommand extends Command {
             if (index.getZeroBased() >= lastShownList.size()) {
                 throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
             }
+            if (absentees.contains(index)) {
+                throw new CommandException(Messages.MESSAGE_DUPLICATES_IN_ABSENTEES_AND_ATTENDEES);
+            }
         }
 
         List<Person> absentStudents = this.absentees.stream()
