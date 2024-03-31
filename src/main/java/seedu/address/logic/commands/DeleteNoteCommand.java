@@ -34,7 +34,7 @@ public class DeleteNoteCommand extends Command {
             + "1 "
             + PREFIX_INDICES + "1, 2";
 
-    public static final String MESSAGE_SUCCESS = "Note(s) deleted from %1$s:%2$s";
+    public static final String MESSAGE_SUCCESS = "Note(s) deleted from %1$s: %2$s";
     private static final Logger logger = Logger.getLogger(DeleteNoteCommand.class.getName());
     private final Index personIndex;
     private final List<Index> notes;
