@@ -18,6 +18,9 @@ public class Messages {
     public static final String MESSAGE_PERSONS_LISTED_OVERVIEW = "%1$d persons listed!";
     public static final String MESSAGE_DUPLICATE_FIELDS =
                 "Multiple values specified for the following single-valued field(s): ";
+    public static final String MESSAGE_INVALID_NOTE_DISPLAYED_INDEX = "The note index provided is invalid";
+    public static final String MESSAGE_DUPLICATES_IN_ABSENTEES_AND_ATTENDEES =
+            "There are duplicate values for absentees and attendees";
 
     /**
      * Returns an error message indicating the duplicate prefixes.

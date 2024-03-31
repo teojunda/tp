@@ -105,6 +105,10 @@ public class Person {
         return notes;
     }
 
+    public int getNoteSize() {
+        return notes.size();
+    }
+
     /**
      * Adds a note to a person's notes
      *
@@ -113,6 +117,15 @@ public class Person {
     public void addNote(Note note) {
         requireNonNull(note);
         notes.addNote(note);
+    }
+
+    /**
+     * Deletes a note to a person's notes
+     *
+     * @param index The index of the note to be deleted.
+     */
+    public void deleteNote(int index) {
+        notes.deleteNote(index);
     }
 
     public Attendance getAttendance() {
@@ -210,7 +223,8 @@ public class Person {
                 && phone.equals(otherPerson.phone)
                 && telegram.equals(otherPerson.telegram)
                 && github.equals(otherPerson.github)
-                && attendance.equals(otherPerson.attendance);
+                && attendance.equals(otherPerson.attendance)
+                && notes.equals(otherPerson.notes);
     }
 
     @Override
@@ -229,6 +243,7 @@ public class Person {
                 .add("telegram", telegram.isPresent() ? telegram.get() : "")
                 .add("github", github.isPresent() ? github.get() : "")
                 .add("attendance", attendance)
+                .add("notes", notes)
                 .toString();
     }
 }

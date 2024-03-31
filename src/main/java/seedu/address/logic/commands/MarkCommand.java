@@ -27,13 +27,14 @@ public class MarkCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks students' attendance in the TA Toolkit "
             + "by their index in the displayed list for the specified week. "
-            + "Only absentees / attendees need to be specified, "
-            + "the rest are assumed to be present.\n"
+            + "At least one of (" + PREFIX_PRESENT + "/" + PREFIX_ABSENT + ") need to be specified, "
+            + "All students are assumed to be present initially.\n"
             + "Parameters: "
             + PREFIX_WEEK + "WEEK "
             + PREFIX_PRESENT + "PRESENT_INDEX [MORE_INDICES]...\n"
             + PREFIX_ABSENT + "ABSENT_INDEX [MORE_INDICES]...\n"
-            + "Example: " + COMMAND_WORD + " w/1 p/1, 2, 3 a/4, 5";
+            + "Example: " + COMMAND_WORD + " w/1 " + PREFIX_PRESENT + "1, 2, 3 " + PREFIX_ABSENT + "4, 5"
+            + "Example: " + COMMAND_WORD + " w/1 " + PREFIX_ABSENT + "1, 4";
 
     public static final String MESSAGE_SUCCESS = "Marked the following students as present for %1$s: %2$s"
         + "\nMarked the following students as absent for %3$s: %4$s";
@@ -75,6 +76,9 @@ public class MarkCommand extends Command {
         for (Index index : attendees) {
             if (index.getZeroBased() >= lastShownList.size()) {
                 throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            }
+            if (absentees.contains(index)) {
+                throw new CommandException(Messages.MESSAGE_DUPLICATES_IN_ABSENTEES_AND_ATTENDEES);
             }
         }
 

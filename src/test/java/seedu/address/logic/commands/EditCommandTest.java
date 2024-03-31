@@ -23,6 +23,7 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
+import seedu.address.model.person.Note;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
 import seedu.address.testutil.PersonBuilder;
@@ -43,7 +44,10 @@ public class EditCommandTest {
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson));
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
-        expectedModel.deletePerson(model.getFilteredPersonList().get(0));
+        Person personToEdit = model.getFilteredPersonList().get(0);
+        expectedModel.deletePerson(personToEdit);
+        editedPerson.addNote(new Note("Asked a good question about general relativity"));
+        editedPerson.addNote(new Note("Excited to learn Java"));
         expectedModel.addPerson(editedPerson);
 
         assertCommandSuccess(editCommand, model, expectedMessage, expectedModel);

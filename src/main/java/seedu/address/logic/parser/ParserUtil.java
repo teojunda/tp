@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
@@ -27,6 +28,7 @@ public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
     public static final String MESSAGE_NO_VALID_INDICES = "No valid indices were provided.";
+    public static final String MESSAGE_DUPLICATE_INDICES = "Duplicate indices were provided.";
 
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be
@@ -206,7 +208,12 @@ public class ParserUtil {
 
         List<Index> indexList = new ArrayList<>();
         for (String index : trimmedIndices) {
-            indexList.add(parseIndex(index));
+            Index parsedIndex = parseIndex(index);
+            if (!indexList.contains(parsedIndex)) {
+                indexList.add(parsedIndex);
+            } else {
+                throw new ParseException(MESSAGE_DUPLICATE_INDICES);
+            }
         }
 
         if (indexList.isEmpty()) {
@@ -214,5 +221,13 @@ public class ParserUtil {
         }
 
         return indexList;
+    }
+
+    /**
+     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
+     * {@code ArgumentMultimap}.
+     */
+    public static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
+        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
     }
 }

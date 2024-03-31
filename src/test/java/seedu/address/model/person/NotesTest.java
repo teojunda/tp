@@ -13,7 +13,7 @@ public class NotesTest {
     @Test
     public void constructor_emptyNotes_correctSizeAndEmpty() {
         Notes notes = new Notes();
-        assertEquals(0, notes.getSize());
+        assertEquals(0, notes.size());
         assertTrue(notes.isEmpty());
     }
 
@@ -21,7 +21,7 @@ public class NotesTest {
     public void constructor_notesList_correctSizeAndContent() {
         ArrayList<String> stringNotes = new ArrayList<>(Arrays.asList("Note 1", "Note 2", "Note 3"));
         Notes notes = new Notes(stringNotes);
-        assertEquals(3, notes.getSize());
+        assertEquals(3, notes.size());
         assertEquals(stringNotes, notes.getAsStrings());
     }
 
@@ -30,7 +30,7 @@ public class NotesTest {
         Notes notes = new Notes();
         Note note = new Note("Test Note");
         notes.addNote(note);
-        assertEquals(1, notes.getSize());
+        assertEquals(1, notes.size());
         assertEquals("Test Note", notes.getAsStrings().get(0));
     }
 
@@ -39,7 +39,7 @@ public class NotesTest {
         ArrayList<String> stringNotes = new ArrayList<>(Arrays.asList("Note 1", "Note 2", "Note 3"));
         Notes notes = new Notes(stringNotes);
         notes.deleteNote(1);
-        assertEquals(2, notes.getSize());
+        assertEquals(2, notes.size());
         assertEquals("Note 1", notes.getAsStrings().get(0));
         assertEquals("Note 3", notes.getAsStrings().get(1));
     }
