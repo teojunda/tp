@@ -15,7 +15,7 @@ public class Github {
     public static final Github EMPTY = new Github("", true);
 
     /*
-     * The first character of the tatoolkit must not be a whitespace,
+     * The first character of the GitHub ID must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
     public static final String VALIDATION_REGEX = "^[a-zA-Z0-9_.-]+$";

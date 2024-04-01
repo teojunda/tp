@@ -14,7 +14,7 @@ public class ClassGroup {
                     + "It cannot contain symbols, whitespaces and it should not be blank";
 
     /*
-     * The first character of the tatoolkit must not be a whitespace,
+     * The first character of the class/group must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
     public static final String VALIDATION_REGEX = "^(?:[\\p{Alnum}]+-?)*[\\p{Alnum}]+$";

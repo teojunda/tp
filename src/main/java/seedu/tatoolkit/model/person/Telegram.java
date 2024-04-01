@@ -16,7 +16,7 @@ public class Telegram {
     public static final Telegram EMPTY = new Telegram("", true);
 
     /*
-     * The first character of the tatoolkit must not be a whitespace,
+     * The first character of the telegram ID must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
     public static final String VALIDATION_REGEX = "^[@][a-zA-Z0-9_.-]+$";
