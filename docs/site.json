@@ -1,7 +1,7 @@
 {
   "baseUrl": "",
   "titlePrefix": "TA Toolkit",
-  "titleSuffix": "AddressBook Level-3",
+  "titleSuffix": "TA Toolkit",
   "faviconPath": "images/SeEduLogo.png",
   "style": {
     "codeTheme": "light"

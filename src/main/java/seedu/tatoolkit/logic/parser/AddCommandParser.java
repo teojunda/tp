@@ -1,0 +1,65 @@
+package seedu.tatoolkit.logic.parser;
+
+import static seedu.tatoolkit.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.tatoolkit.logic.parser.CliSyntax.PREFIX_CLASS_GROUP;
+import static seedu.tatoolkit.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.tatoolkit.logic.parser.CliSyntax.PREFIX_GITHUB;
+import static seedu.tatoolkit.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.tatoolkit.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.tatoolkit.logic.parser.CliSyntax.PREFIX_TELEGRAM;
+
+import java.util.Optional;
+import java.util.stream.Stream;
+
+import seedu.tatoolkit.logic.commands.AddCommand;
+import seedu.tatoolkit.logic.parser.exceptions.ParseException;
+import seedu.tatoolkit.model.person.ClassGroup;
+import seedu.tatoolkit.model.person.Email;
+import seedu.tatoolkit.model.person.Github;
+import seedu.tatoolkit.model.person.Name;
+import seedu.tatoolkit.model.person.Person;
+import seedu.tatoolkit.model.person.Phone;
+import seedu.tatoolkit.model.person.Telegram;
+
+/**
+ * Parses input arguments and creates a new AddCommand object
+ */
+public class AddCommandParser implements Parser<AddCommand> {
+
+    /**
+     * Parses the given {@code String} of arguments in the context of the AddCommand
+     * and returns an AddCommand object for execution.
+     * @throws ParseException if the user input does not conform the expected format
+     */
+    public AddCommand parse(String args) throws ParseException {
+        ArgumentMultimap argMultimap =
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_CLASS_GROUP, PREFIX_EMAIL,
+                        PREFIX_PHONE, PREFIX_TELEGRAM, PREFIX_GITHUB);
+        if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_CLASS_GROUP, PREFIX_EMAIL)
+                || !argMultimap.getPreamble().isEmpty()) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
+        }
+
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_CLASS_GROUP,
+                PREFIX_EMAIL, PREFIX_PHONE, PREFIX_TELEGRAM, PREFIX_GITHUB);
+        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
+        ClassGroup classGroup = ParserUtil.parseClassGroup(argMultimap.getValue(PREFIX_CLASS_GROUP).get());
+        Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
+        Optional<Phone> phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).orElse(""));
+        Optional<Telegram> telegram = ParserUtil.parseTelegram(argMultimap.getValue(PREFIX_TELEGRAM).orElse(""));
+        Optional<Github> github = ParserUtil.parseGithub(argMultimap.getValue(PREFIX_GITHUB).orElse(""));
+
+        Person person = new Person(name, classGroup, email, phone, telegram, github);
+
+        return new AddCommand(person);
+    }
+
+    /**
+     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
+     * {@code ArgumentMultimap}.
+     */
+    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
+        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
+    }
+
+}
