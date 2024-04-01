@@ -15,7 +15,7 @@ import seedu.tatoolkit.model.Model;
 import seedu.tatoolkit.model.person.Person;
 
 /**
- * Views details of a person in the tatoolkit book identified using its displayed index from the tatoolkit book.
+ * Views details of a person in the TA Toolkit identified using its displayed index from the TA Toolkit.
  */
 public class ViewCommand extends Command {
     public static final String COMMAND_WORD = "view";

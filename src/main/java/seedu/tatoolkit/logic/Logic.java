@@ -47,7 +47,7 @@ public interface Logic {
     Optional<Person> getLastViewedPerson();
 
     /**
-     * Returns the user prefs' tatoolkit book file path.
+     * Returns the user prefs' TA Toolkit file path.
      */
     Path getTaToolkitFilePath();
 

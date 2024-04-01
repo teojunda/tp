@@ -8,7 +8,7 @@ import seedu.tatoolkit.model.Model;
 import seedu.tatoolkit.model.person.NameContainsKeywordsPredicate;
 
 /**
- * Finds and lists all persons in tatoolkit book whose name contains any of the argument keywords.
+ * Finds and lists all persons in TA Toolkit whose name contains any of the argument keywords.
  * Keyword matching is case insensitive.
  */
 public class FindCommand extends Command {

@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.tatoolkit.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Person's email in the tatoolkit book.
+ * Represents a Person's email in the TA Toolkit.
  * Guarantees: immutable; is valid as declared in {@link #isValidEmail(String)}
  */
 public class Email {

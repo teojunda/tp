@@ -19,7 +19,7 @@ import seedu.tatoolkit.model.attendance.Week;
 import seedu.tatoolkit.model.person.Person;
 
 /**
- * Adds a person to the tatoolkit book.
+ * Adds a person to the TA Toolkit.
  */
 public class MarkCommand extends Command {
 

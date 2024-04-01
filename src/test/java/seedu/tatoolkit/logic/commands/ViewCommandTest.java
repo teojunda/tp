@@ -61,7 +61,7 @@ public class ViewCommandTest {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
         Index outOfBoundIndex = INDEX_SECOND_PERSON;
-        // ensures that outOfBoundIndex is still in bounds of tatoolkit book list
+        // ensures that outOfBoundIndex is still in bounds of TA Toolkit list
         assertTrue(outOfBoundIndex.getZeroBased() < model.getTaToolkit().getPersonList().size());
 
         ViewCommand viewCommand = new ViewCommand(outOfBoundIndex);
@@ -93,7 +93,7 @@ public class ViewCommandTest {
 
     @Test
     public void execute_emptyTaToolkit_throwsCommandException() {
-        // Empty the tatoolkit book
+        // Empty the TA Toolkit
         model = new ModelManager();
         ViewCommand viewCommand = new ViewCommand(Index.fromOneBased(1));
 

@@ -12,7 +12,7 @@ import seedu.tatoolkit.model.Model;
 import seedu.tatoolkit.model.person.Person;
 
 /**
- * Deletes a person identified using it's displayed index from the tatoolkit book.
+ * Deletes a person identified using it's displayed index from the TA Toolkit.
  */
 public class DeleteCommand extends Command {
 

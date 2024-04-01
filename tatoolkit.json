@@ -1,0 +1,66 @@
+{
+  "persons" : [ {
+    "name" : "Alex Yeoh",
+    "phone" : "87438807",
+    "email" : "alexyeoh@example.com",
+    "classGroup" : "T10-2",
+    "telegram" : "@alex123",
+    "github" : "alexyeoh",
+    "notes" : [ ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
+  }, {
+    "name" : "Bernice Yu",
+    "phone" : "99272758",
+    "email" : "berniceyu@example.com",
+    "classGroup" : "T11-2",
+    "telegram" : "@bernice123",
+    "github" : "berniceyu123",
+    "notes" : [ ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
+  }, {
+    "name" : "Charlotte Oliveiro",
+    "phone" : "93210283",
+    "email" : "charlotte@example.com",
+    "classGroup" : "T11-2",
+    "telegram" : "@charlotte123",
+    "github" : "charlotte123",
+    "notes" : [ ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
+  }, {
+    "name" : "David Li",
+    "phone" : "91031282",
+    "email" : "lidavid@example.com",
+    "classGroup" : "F14-3",
+    "telegram" : "@david123",
+    "github" : "david123",
+    "notes" : [ ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
+  }, {
+    "name" : "Irfan Ibrahim",
+    "phone" : "92492021",
+    "email" : "irfan@example.com",
+    "classGroup" : "A12-3",
+    "telegram" : "@irfan123",
+    "github" : "irfan123",
+    "notes" : [ ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
+  }, {
+    "name" : "Joe Mama",
+    "phone" : "",
+    "email" : "kailash@kailash.kailash",
+    "classGroup" : "F14-3",
+    "telegram" : "",
+    "github" : "",
+    "notes" : [ ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
+  }, {
+    "name" : "Roy Balakrishnan",
+    "phone" : "92624417",
+    "email" : "royb@example.com",
+    "classGroup" : "A05-4",
+    "telegram" : "@roy123",
+    "github" : "roy123",
+    "notes" : [ ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
+  } ]
+}

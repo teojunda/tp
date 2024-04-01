@@ -68,9 +68,9 @@ public class MainApp extends Application {
     }
 
     /**
-     * Returns a {@code ModelManager} with the data from {@code storage}'s tatoolkit book and {@code userPrefs}. <br>
-     * The data from the sample tatoolkit book will be used instead if {@code storage}'s tatoolkit book is not found,
-     * or an empty tatoolkit book will be used instead if errors occur when reading {@code storage}'s tatoolkit book.
+     * Returns a {@code ModelManager} with the data from {@code storage}'s TA Toolkit and {@code userPrefs}. <br>
+     * The data from the sample TA Toolkit will be used instead if {@code storage}'s TA Toolkit is not found,
+     * or an empty TA Toolkit will be used instead if errors occur when reading {@code storage}'s TA Toolkit.
      */
     private Model initModelManager(Storage storage, ReadOnlyUserPrefs userPrefs) {
         logger.info("Using data file : " + storage.getTaToolkitFilePath());

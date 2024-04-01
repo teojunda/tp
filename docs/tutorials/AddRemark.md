@@ -31,7 +31,7 @@ package seedu.tatoolkit.logic.commands;
 import seedu.tatoolkit.model.Model;
 
 /**
- * Changes the remark of an existing person in the tatoolkit book.
+ * Changes the remark of an existing person in the TA Toolkit.
  */
 public class RemarkCommand extends Command {
 

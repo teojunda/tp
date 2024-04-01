@@ -4,7 +4,7 @@ import javafx.collections.ObservableList;
 import seedu.tatoolkit.model.person.Person;
 
 /**
- * Unmodifiable view of an tatoolkit book
+ * Unmodifiable view of a TA Toolkit
  */
 public interface ReadOnlyTaToolkit {
 

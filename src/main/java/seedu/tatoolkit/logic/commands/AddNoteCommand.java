@@ -16,7 +16,7 @@ import seedu.tatoolkit.model.person.Note;
 import seedu.tatoolkit.model.person.Person;
 
 /**
- * Adds a note to a person identified using it's displayed index from the tatoolkit book.
+ * Adds a note to a person identified using it's displayed index from the TA Toolkit.
  */
 public class AddNoteCommand extends Command {
 

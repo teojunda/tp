@@ -36,17 +36,17 @@ public interface Model {
     void setGuiSettings(GuiSettings guiSettings);
 
     /**
-     * Returns the user prefs' tatoolkit book file path.
+     * Returns the user prefs' TA Toolkit file path.
      */
     Path getTaToolkitFilePath();
 
     /**
-     * Sets the user prefs' tatoolkit book file path.
+     * Sets the user prefs' TA Toolkit file path.
      */
     void setTaToolkitFilePath(Path taToolkitFilePath);
 
     /**
-     * Replaces TaToolkit book data with the data in {@code taToolkit}.
+     * Replaces TaToolkit data with the data in {@code taToolkit}.
      */
     void setTaToolkit(ReadOnlyTaToolkit taToolkit);
 
@@ -54,25 +54,25 @@ public interface Model {
     ReadOnlyTaToolkit getTaToolkit();
 
     /**
-     * Returns true if a person with the same identity as {@code person} exists in the tatoolkit book.
+     * Returns true if a person with the same identity as {@code person} exists in the TA Toolkit.
      */
     boolean hasPerson(Person person);
 
     /**
      * Deletes the given person.
-     * The person must exist in the tatoolkit book.
+     * The person must exist in the TA Toolkit.
      */
     void deletePerson(Person target);
 
     /**
      * Adds the given person and updates the filteredList to show all.
-     * {@code person} must not already exist in the tatoolkit book.
+     * {@code person} must not already exist in the TA Toolkit.
      */
     void addPerson(Person person);
 
     /**
      * Adds the given person without updating the filteredList.
-     * {@code person} must not already exist in the tatoolkit book.
+     * {@code person} must not already exist in the TA Toolkit.
      */
     void addPersonKeepFilter(Person person);
 

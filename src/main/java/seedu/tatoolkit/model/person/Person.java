@@ -12,7 +12,7 @@ import seedu.tatoolkit.model.attendance.Week;
 
 
 /**
- * Represents a Person in the tatoolkit book.
+ * Represents a Person in the TA Toolkit.
  * Guarantees: details are present and not null, field values are validated, immutable.
  */
 public class Person {

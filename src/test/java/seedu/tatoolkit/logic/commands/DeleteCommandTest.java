@@ -87,7 +87,7 @@ public class DeleteCommandTest {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
         Index outOfBoundIndex = INDEX_SECOND_PERSON;
-        // ensures that outOfBoundIndex is still in bounds of tatoolkit book list
+        // ensures that outOfBoundIndex is still in bounds of TA Toolkit list
         assertTrue(outOfBoundIndex.getZeroBased() < model.getTaToolkit().getPersonList().size());
 
         DeleteCommand deleteCommand = new DeleteCommand(outOfBoundIndex);

@@ -41,7 +41,7 @@ class JsonSerializableTaToolkit {
     }
 
     /**
-     * Converts this tatoolkit book into the model's {@code TaToolkit} object.
+     * Converts this TA Toolkit into the model's {@code TaToolkit} object.
      *
      * @throws IllegalValueException if there were any data constraints violated.
      */

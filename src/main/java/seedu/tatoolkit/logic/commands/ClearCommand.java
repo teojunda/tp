@@ -6,7 +6,7 @@ import seedu.tatoolkit.model.Model;
 import seedu.tatoolkit.model.TaToolkit;
 
 /**
- * Clears the tatoolkit book.
+ * Clears the TA Toolkit.
  */
 public class ClearCommand extends Command {
 

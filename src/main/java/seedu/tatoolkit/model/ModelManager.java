@@ -15,7 +15,7 @@ import seedu.tatoolkit.commons.core.LogsCenter;
 import seedu.tatoolkit.model.person.Person;
 
 /**
- * Represents the in-memory model of the tatoolkit book data.
+ * Represents the in-memory model of the TA Toolkit data.
  */
 public class ModelManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
@@ -31,7 +31,7 @@ public class ModelManager implements Model {
     public ModelManager(ReadOnlyTaToolkit taToolkit, ReadOnlyUserPrefs userPrefs) {
         requireAllNonNull(taToolkit, userPrefs);
 
-        logger.fine("Initializing with taToolkit book: " + taToolkit + " and user prefs " + userPrefs);
+        logger.fine("Initializing with TA Toolkit: " + taToolkit + " and user prefs " + userPrefs);
 
         this.taToolkit = new TaToolkit(taToolkit);
         this.userPrefs = new UserPrefs(userPrefs);

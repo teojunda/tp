@@ -10,7 +10,7 @@ import seedu.tatoolkit.model.person.Person;
 import seedu.tatoolkit.model.person.UniquePersonList;
 
 /**
- * Wraps all data at the tatoolkit-book level
+ * Wraps all data at the tatoolkit level
  * Duplicates are not allowed (by .isSamePerson comparison)
  */
 public class TaToolkit implements ReadOnlyTaToolkit {
@@ -60,7 +60,7 @@ public class TaToolkit implements ReadOnlyTaToolkit {
     //// person-level operations
 
     /**
-     * Returns true if a person with the same identity as {@code person} exists in the tatoolkit book.
+     * Returns true if a person with the same identity as {@code person} exists in the TA Toolkit.
      */
     public boolean hasPerson(Person person) {
         requireNonNull(person);
@@ -68,8 +68,8 @@ public class TaToolkit implements ReadOnlyTaToolkit {
     }
 
     /**
-     * Adds a person to the tatoolkit book.
-     * The person must not already exist in the tatoolkit book.
+     * Adds a person to the TA Toolkit.
+     * The person must not already exist in the TA Toolkit.
      */
     public void addPerson(Person p) {
         persons.add(p);
@@ -77,7 +77,7 @@ public class TaToolkit implements ReadOnlyTaToolkit {
 
     /**
      * Removes {@code key} from this {@code TaToolkit}.
-     * {@code key} must exist in the tatoolkit book.
+     * {@code key} must exist in the TA Toolkit.
      */
     public void removePerson(Person key) {
         persons.remove(key);

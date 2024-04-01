@@ -5,7 +5,7 @@ import static java.util.Objects.requireNonNull;
 import java.util.ArrayList;
 
 /**
- * Represents a Person's notes in the tatoolkit book.
+ * Represents a Person's notes in the TA Toolkit.
  */
 public class Notes {
 

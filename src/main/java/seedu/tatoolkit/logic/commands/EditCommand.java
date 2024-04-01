@@ -32,7 +32,7 @@ import seedu.tatoolkit.model.person.Phone;
 import seedu.tatoolkit.model.person.Telegram;
 
 /**
- * Edits the details of an existing person in the tatoolkit book.
+ * Edits the details of an existing person in the TA Toolkit.
  */
 public class EditCommand extends Command {
 

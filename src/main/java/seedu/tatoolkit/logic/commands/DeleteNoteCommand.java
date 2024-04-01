@@ -17,7 +17,7 @@ import seedu.tatoolkit.model.person.Note;
 import seedu.tatoolkit.model.person.Person;
 
 /**
- * Deletes notes for a person identified using the person's displayed index from the tatoolkit book.
+ * Deletes notes for a person identified using the person's displayed index from the TA Toolkit.
  * The note to delete is identified by its index number in the side panel.
  */
 public class DeleteNoteCommand extends Command {
