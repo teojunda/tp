@@ -13,8 +13,8 @@
 
     <!-- Default message label -->
     <Label fx:id="defaultMessageLabel"
-           text="Use the view or list command to display more information on person details or attendance respectively"
-           wrapText="true" visible="true" styleClass="cell_big_label"/>
+           text="Use the view or list command to display more information"
+           wrapText="true" visible="true" styleClass="cell_small_label"/>
 
     <!-- Attendance ListView for displaying attendance list -->
     <Label fx:id="attendanceHeader" text="Attendance" styleClass="cell_big_label" visible="false"/>
