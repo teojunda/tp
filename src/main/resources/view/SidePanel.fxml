@@ -2,6 +2,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 <?import java.net.URL?>
+<?import javafx.scene.control.ListView?>
 
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       styleClass="side-panel" alignment="TOP_LEFT" spacing="10">
@@ -11,7 +12,13 @@
     </stylesheets>
 
     <!-- Default message label -->
-    <Label fx:id="defaultMessageLabel" text="Select a person to view details" wrapText="true" visible="true" styleClass="cell_big_label"/>
+    <Label fx:id="defaultMessageLabel"
+           text="Use the view or list command to display more information on person details or attendance respectively"
+           wrapText="true" visible="true" styleClass="cell_big_label"/>
+
+    <!-- Attendance ListView for displaying attendance list -->
+    <Label fx:id="attendanceHeader" text="Attendance" styleClass="cell_big_label" visible="false"/>
+    <ListView fx:id="attendanceListView" VBox.vgrow="ALWAYS" visible="false" styleClass="custom-list-view" minHeight="400"/>
 
     <!-- Detail labels -->
     <Label fx:id="nameLabel" visible="false" styleClass="cell_big_label"/>

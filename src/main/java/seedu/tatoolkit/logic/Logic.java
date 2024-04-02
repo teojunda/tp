@@ -5,9 +5,11 @@ import java.util.Optional;
 
 import javafx.collections.ObservableList;
 import seedu.tatoolkit.commons.core.GuiSettings;
+import seedu.tatoolkit.logic.commands.Command;
 import seedu.tatoolkit.logic.commands.CommandResult;
 import seedu.tatoolkit.logic.commands.exceptions.CommandException;
 import seedu.tatoolkit.logic.parser.exceptions.ParseException;
+import seedu.tatoolkit.model.Model;
 import seedu.tatoolkit.model.ReadOnlyTaToolkit;
 import seedu.tatoolkit.model.person.Person;
 
@@ -45,6 +47,33 @@ public interface Logic {
      *     a person exists, or an empty {@link Optional} if no person has been viewed last.
      */
     Optional<Person> getLastViewedPerson();
+
+    /**
+     * Retrieves the last executed command.
+     * <p>
+     * This method returns an {@link Optional} which will be empty if no command has
+     * been executed, or will contain a reference to the {@link Command} object
+     * that was last executed.
+     *
+     * @return an {@link Optional} containing the last executed {@link Command} if such
+     * a command exists, or an empty {@link Optional} if no command has been executed.
+     */
+    Optional<Command> getLastExecutedCommand();
+
+    /**
+     * Returns an ObservableList of attendance strings for each person in the filtered person list.
+     * Each string represents the attendance of one person.
+     *
+     * @return ObservableList<String> of attendance details.
+     */
+    ObservableList<String> getFilteredPersonAttendanceList();
+
+    /**
+     * Returns the Model component of the application.
+     * This can be used by UI components to directly interact with application data.
+     * @return the current model of the application.
+     */
+    Model getModel();
 
     /**
      * Returns the user prefs' TA Toolkit file path.

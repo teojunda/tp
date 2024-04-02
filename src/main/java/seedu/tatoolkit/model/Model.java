@@ -86,6 +86,27 @@ public interface Model {
     void updateFilteredPersonList(Predicate<Person> predicate);
 
     /**
+     * Returns an ObservableList of attendance strings for each person in the filtered person list.
+     * Each string represents the attendance of one person.
+     *
+     * @return ObservableList<String> of attendance details.
+     */
+    ObservableList<String> getFilteredPersonAttendanceList();
+
+    /**
+     * Returns an observable list of attendance information strings.
+     * This list is dynamically updated when attendance marks change.
+     * @return An observable list of attendance info strings.
+     */
+    ObservableList<String> getObservableAttendanceList();
+
+    /**
+     * Updates the observable list of attendance information.
+     * This should be called after any operation that changes attendance data.
+     */
+    void updateObservableAttendanceList();
+
+    /**
      * Retrieves the last viewed {@link Person} instance.
      * <p>
      * This method returns an {@link Optional} which will be empty if no person has

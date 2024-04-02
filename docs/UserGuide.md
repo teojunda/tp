@@ -79,7 +79,7 @@ Adds a person to the TA Toolkit.
 Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]`
 
 Examples:
-* `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub`
+* `ac n/John Doe c/F14-3 e/johnd@example.com p/98765432 t/@johndoe g/johnDoeGithub`
 * `ac n/Betsy Crowe c/T10-2 e/betsycrowe@example.com p/1234567 g/betsycodes`
 
 ### Listing all persons : `ls`

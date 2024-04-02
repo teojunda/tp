@@ -1,6 +1,5 @@
 package seedu.tatoolkit.ui;
 
-import java.util.Optional;
 import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
@@ -15,9 +14,10 @@ import seedu.tatoolkit.commons.core.GuiSettings;
 import seedu.tatoolkit.commons.core.LogsCenter;
 import seedu.tatoolkit.logic.Logic;
 import seedu.tatoolkit.logic.commands.CommandResult;
+import seedu.tatoolkit.logic.commands.ListCommand;
+import seedu.tatoolkit.logic.commands.ViewCommand;
 import seedu.tatoolkit.logic.commands.exceptions.CommandException;
 import seedu.tatoolkit.logic.parser.exceptions.ParseException;
-import seedu.tatoolkit.model.person.Person;
 
 /**
  * The Main Window. Provides the basic application layout containing
@@ -128,7 +128,7 @@ public class MainWindow extends UiPart<Stage> {
         CommandBox commandBox = new CommandBox(this::executeCommand);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
 
-        sidePanel = new SidePanel();
+        sidePanel = new SidePanel(logic.getModel());
         sidePanelPlaceholder.getChildren().add(sidePanel.getRoot());
     }
 
@@ -187,8 +187,13 @@ public class MainWindow extends UiPart<Stage> {
             logger.info("Result: " + commandResult.getFeedbackToUser());
             resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
 
-            Optional<Person> lastViewedPerson = logic.getLastViewedPerson();
-            lastViewedPerson.ifPresentOrElse(sidePanel::displayPerson, sidePanel::resetDetails);
+            logic.getLastExecutedCommand().ifPresent(command -> {
+                if (command instanceof ViewCommand) {
+                    logic.getLastViewedPerson().ifPresentOrElse(sidePanel::displayPerson, sidePanel::resetDetails);
+                } else if (command instanceof ListCommand) {
+                    sidePanel.displayAttendanceList(logic.getFilteredPersonAttendanceList());
+                }
+            });
 
             if (commandResult.isShowHelp()) {
                 handleHelp();
