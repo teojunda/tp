@@ -56,7 +56,7 @@ public interface Logic {
      * that was last executed.
      *
      * @return an {@link Optional} containing the last executed {@link Command} if such
-     * a command exists, or an empty {@link Optional} if no command has been executed.
+     *         a command exists, or an empty {@link Optional} if no command has been executed.
      */
     Optional<Command> getLastExecutedCommand();
 
@@ -64,7 +64,7 @@ public interface Logic {
      * Returns an ObservableList of attendance strings for each person in the filtered person list.
      * Each string represents the attendance of one person.
      *
-     * @return ObservableList<String> of attendance details.
+     * @return ObservableList of attendance details as {@code String} objects.
      */
     ObservableList<String> getFilteredPersonAttendanceList();
 

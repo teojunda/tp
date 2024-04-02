@@ -89,7 +89,7 @@ public interface Model {
      * Returns an ObservableList of attendance strings for each person in the filtered person list.
      * Each string represents the attendance of one person.
      *
-     * @return ObservableList<String> of attendance details.
+     * @return ObservableList&lt;String&gt; of attendance details.
      */
     ObservableList<String> getFilteredPersonAttendanceList();
 
