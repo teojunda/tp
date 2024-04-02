@@ -160,6 +160,21 @@ public class AddCommandTest {
         }
 
         @Override
+        public ObservableList<String> getFilteredPersonAttendanceList() {
+            return null;
+        }
+
+        @Override
+        public ObservableList<String> getObservableAttendanceList() {
+            return null;
+        }
+
+        @Override
+        public void updateObservableAttendanceList() {
+
+        }
+
+        @Override
         public Optional<Person> getLastViewedPerson() {
             throw new AssertionError("This method should not be called.");
         }
