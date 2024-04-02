@@ -143,6 +143,35 @@ Format: `view INDEX`
 Examples:
 * `ls` followed by `view 2` views the 2nd person in the TA Toolkit.
 
+### Adding note to a person : `an`
+
+Add note to the specified person from the TA Toolkit.
+
+Format: `an INDEX note/NOTE`
+
+* Adds a note, `NOTE` to a person at the specified `INDEX` of the displayed person list.
+* `NOTE` refers to a string of characters that one wish to add for a person within the person list.
+* `INDEX` refers to the index number shown in the displayed person list.
+* `NOTE` **must contain only alphanumeric characters and punctuation** hardworking, sleepy, …​
+* `INDEX` **must be a positive integer** 1, 2, 3, …​
+
+Examples:
+* `ls` followed by `an 1 note/hardworking` adds a note of `hardworking` to the 1st person in the TA Toolkit.
+
+### Deleting note from a person : `dn`
+
+Delete a note from a specified index of a specified person from the TA Toolkit.
+
+Format: `dn INDEX i/NOTEINDEX`
+
+* Deletes a note with the index `NOTEINDEX` from a person with index, `INDEX`, of the specified position in the displayed person list.
+* `NOTEINDEX` refers to the index of the note within a person in the displayed person list.
+* `INDEX` refers to the index number shown in the displayed person list.
+* `INDEX` and `NOTEINDEX` **must be a positive integer** 1, 2, 3, …​
+
+Examples:
+* `ls` followed by `dn 1 i/1` deletes the first note from the 1st person in the TA Toolkit.
+
 ### Deleting a person : `dc`
 
 Deletes the specified person from the TA Toolkit.
@@ -208,13 +237,15 @@ _Details coming soon ..._
 
 ## Command summary
 
-Action     | Format, Examples
------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub`
-**Clear**  | `clear`
-**Delete** | `dc INDEX`<br> e.g., `dc 3`
-**Edit**   | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]…​`<br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`
-**Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
-**List**   | `ls [CLASS_GROUP]` <br> e.g., `ls F14`
-**Help**   | `help`
-**View**   | `view INDEX`
+| Action          | Format, Examples                                                                                                                                                        |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**         | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub` |
+| **Clear**       | `clear`                                                                                                                                                                 |
+| **Delete**      | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                             |
+| **Edit**        | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]…​`<br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                             |
+| **Find**        | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                              |
+| **List**        | `ls [CLASS_GROUP]` <br> e.g., `ls F14`                                                                                                                                  |
+| **Help**        | `help`                                                                                                                                                                  |
+| **View**        | `view INDEX`                                                                                                                                                            |
+| **Add Note**    | `an INDEX note/NOTE`                                                                                                                                                    |
+| **Delete Note** | `dn INDEX i/NOTEINDEX`                                                                                                                                                  |
