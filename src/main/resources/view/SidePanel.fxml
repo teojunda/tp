@@ -6,7 +6,7 @@
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       styleClass="side-panel" alignment="TOP_LEFT" spacing="10">
     <stylesheets>
-        <URL value="@DarkTheme.css" />
+        <URL value="@NordTheme.css" />
         <URL value="@Extensions.css" />
     </stylesheets>
 
@@ -21,4 +21,5 @@
     <Label fx:id="telegramLabel" visible="false" styleClass="cell_small_label"/>
     <Label fx:id="githubLabel" visible="false" styleClass="cell_small_label"/>
     <Label fx:id="attendanceLabel" visible="false" styleClass="cell_small_label"/>
+    <Label fx:id="noteLabel" visible="false" styleClass="cell_small_label"/>
 </VBox>

@@ -35,7 +35,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/AY2324S2-CS2103T-F14-3/tp/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2324S2-CS2103T-F14-3/tp/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/AY2324S2-CS2103T-F14-3/tp/tree/master/src/main/java/seedu/tatoolkit/Main.java) and [`MainApp`](https://github.com/AY2324S2-CS2103T-F14-3/tp/tree/master/src/main/java/seedu/tatoolkit/MainApp.java)) is in charge of the app launch and shut down.
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
@@ -67,13 +67,13 @@ The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/java/seedu/tatoolkit/ui/Ui.java)
 
 <puml src="diagrams/UiClassDiagram.puml" alt="Structure of the UI Component"/>
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter`, 'SidePanel' etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/java/seedu/tatoolkit/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -84,7 +84,7 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/java/seedu/tatoolkit/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -101,7 +101,7 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
+1. When `Logic` is called upon to execute a command, it is passed to an `TaToolkitParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
 1. The command can communicate with the `Model` when it is executed (e.g. to delete a person).<br>
    Note that although this is shown as a single step in the diagram above (for simplicity), in the code it can take several interactions (between the command object and the `Model`) to achieve.
@@ -112,45 +112,37 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <puml src="diagrams/ParserClasses.puml" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* When called upon to parse a user command, the `TaToolkitParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `TaToolkitParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2324S2-CS2103T-F14-3/tp/tree/master/src/main/java/seedu/tatoolkit/model/Model.java)
 
 <puml src="diagrams/ModelClassDiagram.puml" width="450" />
 
 
 The `Model` component,
 
-* stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
+* stores the TA Toolkit data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
 * stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<box type="info" seamless>
-
-**Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
-
-<puml src="diagrams/BetterModelClassDiagram.puml" width="450" />
-
-</box>
-
 
 ### Storage component
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+**API** : [`Storage.java`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/java/seedu/tatoolkit/storage/Storage.java)
 
 <puml src="diagrams/StorageClassDiagram.puml" width="550" />
 
 The `Storage` component,
-* can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
-* inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
+* can save both TA Toolkit data and user preference data in JSON format, and read them back into corresponding objects.
+* inherits from both `TaToolkitStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
 ### Common classes
 
-Classes used by multiple components are in the `seedu.addressbook.commons` package.
+Classes used by multiple components are in the `seedu.tatoolkit.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -165,14 +157,14 @@ The commands are implemented in the `EditCommand` class which extend the `Comman
 
 * Step 1. The `EditCommand` object's `execute()` method is called.
 * Step 2. The `INDEX` is checked to be within the valid range of the displayed person list. If the `INDEX` given is invalid (i.e., out of range), a `CommandException` is thrown.
-* Step 3. The `Person` at the given `INDEX` is referenced and removed from person list.
+* Step 3. The `Person` at the given `INDEX` is referenced and `deletePerson()` is called to remove `originalPerson` from person list.
 * Step 4. The field(s) to be edited are checked.
   * If there are no fields to be edited, a `CommandException` is thrown.
   * If any of the edited fields are invalid, a `CommandException` is thrown.
   * If the edited person is the same as the original person, a `CommandException` is thrown`.
   * If any of `Email`, `Phone`, `Telegram`, `Github` fields are duplicates with any existing person in person list, a `CommandException` is thrown.
 * Step 5. The model object's `addPerson()` method is called. The input parameter is the `editedPerson` with the edited details.
-* Step 5. The `Person` field(s) are edited.
+* Step 6. The `Person` field(s) are edited.
 
 The diagram below describes this behaviour concisely. It shows how a user’s command is processed and what message is ultimately shown if they decide to edit a person.
 
@@ -182,6 +174,18 @@ The sequence diagram below also shows the interaction between the various compon
 
 <puml src="diagrams/EditCommandSequenceDiagram.puml" />
 
+#### Design considerations:
+
+**Aspect: How editing a Person works:**
+
+* **Alternative 1 (current choice):** Removes the `originalPerson` and adds the `editedPerson`.
+    * Pros: Retains the sorted order of Persons by `Name` in the person list.
+    * Cons: May have performance issues in terms of time complexity since it requires 2 operations (`deletePerson()` and `addPerson`).
+
+* **Alternative 2:** Directly update the fields in the `originalPerson`
+    * Pros: Better performance, since this only requires searching through the person list once.
+    * Cons: The order of person list will be lost, since `Name` of a `Person` may be edited.
+
 ### View a `Person`
 
 Views the details of an existing `Person` identified by their `INDEX`in the displayed person list.
@@ -189,7 +193,7 @@ The commands are implemented in the `ViewCommand` class which extend the `Comman
 
 * Step 1. The `ViewCommand` object's `execute()` method is called.
 * Step 2. The `INDEX` is checked to be within the valid range of the displayed person list. If the `INDEX` given is invalid (i.e., out of range), a `CommandException` is thrown.
-* Step 3. The `Person` at the given `INDEX` is referenced and then displayed to the user.
+* Step 3. The `Person` at the given `INDEX` is referenced and then displayed to the user on the right side panel.
 
 The diagram below describes this behaviour concisely. It shows how a user’s command is processed and what message is ultimately shown if they decide to view a person.
 
@@ -205,42 +209,42 @@ The sequence diagram below also shows the interaction between the various compon
 
 #### Proposed Implementation
 
-The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`. Additionally, it implements the following operations:
+The proposed undo/redo mechanism is facilitated by `VersionedTaToolkit`. It extends `TaToolkit` with an undo/redo history, stored internally as an `taToolkitStateList` and `currentStatePointer`. Additionally, it implements the following operations:
 
-* `VersionedAddressBook#commit()` — Saves the current address book state in its history.
-* `VersionedAddressBook#undo()` — Restores the previous address book state from its history.
-* `VersionedAddressBook#redo()` — Restores a previously undone address book state from its history.
+* `VersionedTaToolkit#commit()` — Saves the current TA Toolkit state in its history.
+* `VersionedTaToolkit#undo()` — Restores the previous TA Toolkit state from its history.
+* `VersionedTaToolkit#redo()` — Restores a previously undone TA Toolkit state from its history.
 
-These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively.
+These operations are exposed in the `Model` interface as `Model#commitTaToolkit()`, `Model#undoTaToolkit()` and `Model#redoTaToolkit()` respectively.
 
 Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
 
-Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
+Step 1. The user launches the application for the first time. The `VersionedTaToolkit` will be initialized with the initial TA Toolkit state, and the `currentStatePointer` pointing to that single TA Toolkit state.
 
 <puml src="diagrams/UndoRedoState0.puml" alt="UndoRedoState0" />
 
-Step 2. The user executes `dc 5` command to delete the 5th person in the address book. The `dc` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `dc 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
+Step 2. The user executes `dc 5` command to delete the 5th person in the TA Toolkit. The `dc` command calls `Model#commitTaToolkit()`, causing the modified state of the TA Toolkit after the `dc 5` command executes to be saved in the `taToolkitStateList`, and the `currentStatePointer` is shifted to the newly inserted TA Toolkit state.
 
 <puml src="diagrams/UndoRedoState1.puml" alt="UndoRedoState1" />
 
-Step 3. The user executes `ac n/David …​` to add a new person. The `ac` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
+Step 3. The user executes `ac n/David …​` to add a new person. The `ac` command also calls `Model#commitTaToolkit()`, causing another modified TA Toolkit state to be saved into the `taToolkitStateList`.
 
 <puml src="diagrams/UndoRedoState2.puml" alt="UndoRedoState2" />
 
 <box type="info" seamless>
 
-**Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`.
+**Note:** If a command fails its execution, it will not call `Model#commitTaToolkit()`, so the TA Toolkit state will not be saved into the `taToolkitStateList`.
 
 </box>
 
-Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
+Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoTaToolkit()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous TA Toolkit state, and restores the TA Toolkit to that state.
 
 <puml src="diagrams/UndoRedoState3.puml" alt="UndoRedoState3" />
 
 
 <box type="info" seamless>
 
-**Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
+**Note:** If the `currentStatePointer` is at index 0, pointing to the initial TaToolkit state, then there are no previous TaToolkit states to restore. The `undo` command uses `Model#canUndoTaToolkit()` to check if this is the case. If so, it will return an error to the user rather
 than attempting to perform the undo.
 
 </box>
@@ -259,19 +263,19 @@ Similarly, how an undo operation goes through the `Model` component is shown bel
 
 <puml src="diagrams/UndoSequenceDiagram-Model.puml" alt="UndoSequenceDiagram-Model" />
 
-The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
+The `redo` command does the opposite — it calls `Model#redoTaToolkit()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the TA Toolkit to that state.
 
 <box type="info" seamless>
 
-**Note:** If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+**Note:** If the `currentStatePointer` is at index `taToolkitStateList.size() - 1`, pointing to the latest TA Toolkit state, then there are no undone TaToolkit states to restore. The `redo` command uses `Model#canRedoTaToolkit()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 
 </box>
 
-Step 5. The user then decides to execute the command `ls`. Commands that do not modify the address book, such as `ls`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
+Step 5. The user then decides to execute the command `ls`. Commands that do not modify the TA Toolkit, such as `ls`, will usually not call `Model#commitTaToolkit()`, `Model#undoTaToolkit()` or `Model#redoTaToolkit()`. Thus, the `taToolkitStateList` remains unchanged.
 
 <puml src="diagrams/UndoRedoState4.puml" alt="UndoRedoState4" />
 
-Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
+Step 6. The user executes `clear`, which calls `Model#commitTaToolkit()`. Since the `currentStatePointer` is not pointing at the end of the `taToolkitStateList`, all TA Toolkit states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
 
 <puml src="diagrams/UndoRedoState5.puml" alt="UndoRedoState5" />
 
@@ -283,7 +287,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 **Aspect: How undo & redo executes:**
 
-* **Alternative 1 (current choice):** Saves the entire address book.
+* **Alternative 1 (current choice):** Saves the entire TA Toolkit.
   * Pros: Easy to implement.
   * Cons: May have performance issues in terms of memory usage.
 
