@@ -672,6 +672,10 @@ be able to accomplish most of the tasks faster using commands than using the mou
 program in the form of successive lines of text (command lines). It emphasises text-based user interaction over graphical user interfaces.
 * **TA**: Teaching Assistant
 * **OOP**: Object-Oriented Programming
+* **API**: Application Programming Interface
+* **GUI**: Graphical User Interface
+* **MSS**: Main Success Scenario: The main flow of events in a use case.
+* **TA**: Teaching Assistant
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Appendix: Instructions for manual testing**
