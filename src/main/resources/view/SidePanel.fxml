@@ -6,7 +6,7 @@
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       styleClass="side-panel" alignment="TOP_LEFT" spacing="10">
     <stylesheets>
-        <URL value="@DarkTheme.css" />
+        <URL value="@NordTheme.css" />
         <URL value="@Extensions.css" />
     </stylesheets>
 
