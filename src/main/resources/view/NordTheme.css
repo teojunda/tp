@@ -128,7 +128,7 @@
 
 .cell_small_label {
     -fx-font-family: "System";
-    -fx-font-size: 13px;
+    -fx-font-size: 15px;
     -fx-text-fill: #2E3440;
 }
 
@@ -353,4 +353,23 @@
 
 .side-panel .label {
     -fx-text-fill: black;
+}
+
+.header-label {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-underline: true;
+}
+
+.custom-list-view {
+    -fx-background-color: #1d1d1d;
+    -fx-border-color: #383838;
+    -fx-border-insets: 0;
+    -fx-border-width: 1;
+    -fx-cell-size: 24px;
+}
+
+.custom-list-view .list-cell {
+    -fx-font-size: 15px;
 }
