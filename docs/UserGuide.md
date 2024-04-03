@@ -364,7 +364,6 @@ Examples:
 * `ma w/1 abs/1,2` marks the 1st and 2nd persons in the displayed persons list as absent.
   ![result for 'ma w/1 abs/1,2'](images/ma_example.png)
 
-
 <box type="info" seamless>
 
 **Tip:** To quickly mark attendance of the class for the week, use [ls](#listing-persons-ls) command to list all students in the class.
@@ -488,6 +487,7 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
 | [**Find**](#locating-persons-by-name-find)         | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                           |
 | [**Help**](#viewing-help-help`)                    | `help`                                                                                                                                                                  |
 | [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                               |
+| [**Mark Attendance**](#marking-attendance-ma)      | `ma w/WEEK [pre/PRESENT_INDEX] [abs/ABSENT_INDEX]` <br> e.g.,`ma w/1 pre/1,2 abs/3`                                                                                     |
 | [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                              |
 | [**View**](#viewing-a-person-view)                 | `view INDEX`                                                                                                                                                            |
 
