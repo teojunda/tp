@@ -6,10 +6,9 @@
 
 # TA Toolkit User Guide
 
-TA Toolkit  is a **desktop app for managing students, optimized for use via a Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, TA Toolkit can get your student management tasks done faster than traditional GUI apps.
-
 TA Toolkit is a desktop application designed to help CS2100 Teaching Assistants (TAs) from the School of Computing in
-efficiently manage the contacts of their students.
+efficiently manage the contacts of their students. This User Guide assumes that you have are familiar with Command Line Interface (CLI)
+applications and is a fast typist, allowing you to get your student management tasks done faster than traditional Graphical User Interface (GUI) apps.
 
 Juggling teaching and administrative tasks, time is a precious resource for CS2100 TAs and effective contact management is crucial.
 TA Toolkit is meticulously designed to cater to your administrative requirements, guaranteeing seamless handling of
@@ -46,12 +45,12 @@ Please proceed to [Quick Start](#quick-start) for instructions on installing the
 If you would like to have a brief introduction of the application's interface,
 head over to our [Interface Walkthrough](#interface-walkthrough) to better learn about TA Toolkit.
 
-If you are familiar with TA Toolkit, you can refer to [Command Summary](#command-summary) for a
+If you are already familiar with TA Toolkit, you can refer to [Command Summary](#command-summary) for a
 summary of all the commands in TA Toolkit.
 
-
 If you encounter any issues with the commands or find yourself uncertain about anything,
-feel free to consult the [FAQ](#faq) for answers to common questions,
+feel free to explore the [Glossary](#Glossary) for explanations on technical terms,
+consult the [FAQ](#faq) for answers to common questions,
 or explore [Common Mistakes](#common-mistakes) for typical errors that users may encounter while utilizing the application.
 
 --------------------------------------------------------------------------------------------------------------------
@@ -95,8 +94,8 @@ The key windows are labeled as follows:
 2. Help button: Opens a menu with a link to the User Guide.
 3. Command Box: Enter your command here.
 4. Result Display: Displays the result of your command.
-5. Contact List Display: Displays a list of all student contacts and their contact information.
-6. Side Panel Display: Displays detailed information on a specific student or the attendance overview.
+5. Displayed Person List: Displays a list of persons' contacts and their contact information.
+6. Side Panel Display: Displays detailed information on a specific person or the attendance overview.
 
 ![Interface](images/InterfaceWalkthrough.png)
 
@@ -111,74 +110,74 @@ The "Help" window will look like as follows:
 
 **Notes about the command format:**<br>
 
+* Commands are case-sensitive.
+
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `ac n/NAME`, `NAME` is a parameter which can be used as `ac n/John Doe`.
 
 * Items in square brackets are optional.<br>
-  e.g `n/NAME [t/TELEGRAM]` can be used as `n/John Doe t/@johndoe` or as `n/John Doe`.
+  e.g. `n/NAME [t/TELEGRAM]` can be used as `n/John Doe t/@johndoe` or as `n/John Doe`.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
+* Items with … after them can be used multiple times (1 or more).  
+  For example, the `ls CLASS_GROUP` command can be used to search 1 `CLASS_GROUP` like `ls T10`, or 2 `CLASS_GROUP`s like `ls T10 T20`.
+
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
+
+* For any command that fails to executed, refer to the Result Display, which will provide a helpful explanation to help you correct your command.
+  ![Result_Display](images/ErrorMessage_example.png)
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
 
 ### Viewing help : `help`
 
-Shows a message explaining how to access the help page.
+This opens a window containg a link to the User Guide.
 
 ![help message](images/helpMessage.png)
 
 Format: `help`
 
-
 ### Adding a person: `ac`
 
-Helps you add a person to TA Toolkit.
+This helps you to add a person to TA Toolkit.
 
 Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]`
 
-Examples:
-* `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub`
-* `ac n/Betsy Crowe c/T10-2 e/betsycrowe@example.com p/1234567 g/betsycodes`
-
-### Listing all persons : `ls`
-
-Shows a list of all persons in the TA Toolkit based for a CLASS_GROUP.
-
-Format: `ls [CLASS_GROUP]`
-
-* If no parameters are provided, all persons in the TA Toolkit will be displayed.
-* For a given parameter, all persons with a CLASS_GROUP beginning with the parameter will be displayed.
+* When adding a contact, the contact's EMAIL, PHONE_NUMBER, TELEGRAM, GITHUB must be unique compared to every other person in TA Toolkit.
 
 Examples:
-* `ls` Displays all persons in the TA Toolkit.
-* `ls F14` Displays all person with a CLASS_GROUP beginning with F14, e.g. F14, F14-3, etc.
+* `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `F14-3`, phone number `98765432`, email `johnd@example.com`, telegram
+handle `@johndoe` and github `johnDoeGithub` to the list of contacts.
+
+![Add_Contact](images/ac_example.png)
 
 ### Updating a person : `uc`
 
-Updates an existing person in the TA Toolkit.
+This helps you to update the contact details of an existing person in TA Toolkit.
 
-Format: `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]…​`
+Format: `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]`
 
 * Updates the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * The updated person must have a different field compared to the original person.
-* When editing any field, EMAIL, PHONE_NUMBER, TELEGRAM, GITHUB must be unique compared to every other person.
+* When updating any field, `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, `GITHUB` must be unique compared to every other person.
 
 Examples:
-*  `uc 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `uc 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears the Telegram field.
+*  `uc 6 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 6th person to be `91234567` and `johndoe@example.com` respectively.
+
+![Update_Contact](images/uc_example.png)
 
 ### Locating persons by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+This helps you to find specific persons by their names.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+Format: `find KEYWORD...`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
@@ -188,56 +187,77 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `find alex john` returns `Alex Yeoh`, `John Doe`<br>
+  ![result for 'find alex john'](images/find_example.png)
+
+### Listing persons : `ls`
+
+This shows you a list of all persons in TA Toolkit based for a CLASS_GROUP in the Contact List Display.
+
+Format: `ls [CLASS_GROUP...]`
+
+* If no parameters are provided, all persons in the TA Toolkit will be displayed.
+* For a given parameter, all persons with a CLASS_GROUP beginning with the parameter will be displayed.
+* The CLASS_GROUP parameter is case-sensitive.
+
+Examples:
+* `ls` Displays all persons in the TA Toolkit.
+* `ls F14` Displays all person with a CLASS_GROUP beginning with F14, e.g. F14, F14-3, etc.
+
+<box type="info" seamless>
+
+**Tip:** If you try to list the students for a specific class does, but nothing is displayed, check that the CLASS_GROUP
+parameter has the correct letter casing.
+
+</box>
 
 ### Viewing a person : `view`
 
-View the specified person from the TA Toolkit.
+This helps you to view the detailed information of specified person on the side panel display.
 
 Format: `view INDEX`
 
 * View the person at the specified `INDEX`.
-* Person's details will be displayed on right side panel.
-* The index refers to the index number shown in the displayed person list.
-* The index **must be a positive integer** 1, 2, 3, …​
-
-Examples:
-* `ls` followed by `view 2` views the 2nd person in the TA Toolkit.
-
-### Adding note to a person : `an`
-
-Add note to the specified person from the TA Toolkit.
-
-Format: `an INDEX note/NOTE`
-
-* Adds a note, `NOTE` to a person at the specified `INDEX` of the displayed person list.
-* `NOTE` refers to a string of characters that one wish to add for a person within the person list.
+* Person's details will be displayed on side panel display.
 * `INDEX` refers to the index number shown in the displayed person list.
-* `NOTE` **must contain only alphanumeric characters and punctuation** hardworking, sleepy, …​
 * `INDEX` **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `ls` followed by `an 1 note/hardworking` adds a note of `hardworking` to the 1st person in the TA Toolkit.
+* `view 1` views the 2nd person of the displayed person list on the side panel display.
+
+  ![result for 'view 2'](images/view_example.png)
+
+### Adding note to a person : `an`
+
+This helps you to add note to a specified person in TA Toolkit.
+
+Format: `an INDEX note/NOTE`
+
+* `INDEX` refers to the index number shown in the displayed person list.
+* `INDEX` **must be a positive integer** 1, 2, 3, …​
+* `NOTE` **must contain only alphanumeric characters and punctuation** hardworking, sleepy, …​
+
+Examples:
+* `an 1 note/very hardworking student!` adds a note of `very hardworking student!` to the 1st person in the TA Toolkit.
+
+  ![result for 'an 1 note/very hardworking student!'](images/an_example.png)
 
 ### Deleting note from a person : `dn`
 
 Delete a note from a specified index of a specified person from the TA Toolkit.
 
-Format: `dn INDEX i/NOTEINDEX`
+Format: `dn INDEX i/NOTEINDEX...`
 
-* Deletes a note with the index `NOTEINDEX` from a person with index, `INDEX`, of the specified position in the displayed person list.
-* `NOTEINDEX` refers to the index of the note within a person in the displayed person list.
 * `INDEX` refers to the index number shown in the displayed person list.
+* `NOTEINDEX` refers to the index of the note within a person.
 * `INDEX` and `NOTEINDEX` **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `ls` followed by `dn 1 i/1` deletes the first note from the 1st person in the TA Toolkit.
+* `dn 1 i/1` deletes the first note from the 1st person in the TA Toolkit.
 
 ### Deleting a person : `dc`
 
-Deletes the specified person from the TA Toolkit.
+Deletes a specified person from the TA Toolkit.
 
 Format: `dc INDEX`
 
@@ -246,8 +266,14 @@ Format: `dc INDEX`
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `ls` followed by `dc 2` deletes the 2nd person in the TA Toolkit.
-* `find Betsy` followed by `dc 1` deletes the 1st person in the results of the `find` command.
+* `dc 2` deletes the 2nd person in the displayed person list.
+
+<box type="warning" seamless>
+
+**Caution:** There is no prompt to confirm this action. This command is not reversible. Deleted contacts will have to be
+re-added into the list of applicants via the [`ac`](#adding-a-person--ac) command.
+
+</box>
 
 ### Clearing all entries : `clear`
 
@@ -255,8 +281,12 @@ Clears all entries from the TA Toolkit.
 
 Format: `clear`
 
-Examples:
-* 'clear' removes all entries from TA Toolkit, so the main display panel should be blank.
+<box type="warning" seamless>
+
+**Caution:** There is no prompt to confirm this action. You are advised to save a backup of the data as this
+action will **not be reversible**.
+
+</box>
 
 ### Exiting the program : `exit`
 
@@ -287,14 +317,44 @@ _Details coming soon ..._
 
 ## FAQ
 
+**Q**: How do I see the attendance or notes of a specific student?<br>
+**A**: You have to use the [`view`](#viewing-a-person--view) command to view the detailed information containing the notes and attendance of person.  
+For example, if you want to view the attendance of the 1st person in the displayed person list, use the `view 1` command to view his/her detailed information.
+
+**Q**: How do I see the overall attendance for a specific class?<br>
+**A**: You have to use the [`ls`](#listing-persons--ls) command to list all the persons for a specific class.
+The overall attendance of the class will be displayed in the side panel display.
+
+**Q**: Why can't I see the application even though it is open?<br>
+**A**: **When using multiple screens**, if you move the application to a secondary screen,
+and later switch to using only the primary screen, the GUI will open off-screen.
+The remedy is to delete the `preferences.json` file created by the application before running the application again.
+
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous TAToolkit home folder.
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
+the data of your previous TAToolkit home folder.
+
+<box type="info" seamless>
+
+If the tatoolkit.json file is invalid or has any formatting errors, the program might not start up. Please make sure
+that the tatoolkit.json file used is **correct and accurate.**
+
+</box>
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Common mistakes
 
-1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+1. **When [adding contacts](#adding-a-person--ac) or [updating contacts](#updating-a-person--uc)**,
+if the command causes 2 persons in the TA Toolkit to have the same `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, or `GITHUB`,
+the command will fail. This is because every contact should have unique `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, and `GITHUB`.
+
+2. **When [updating contacts](#updating-a-person--uc), [deleting contacts](#deleting-a-person--dc)**,
+i.e. any commands that utilises the `INDEX` parameter, the command is interacting with the wrong contact.
+The `INDEX` must match the current index of the person on the displayed person list. Should you find yourself updating/ deleting the wrong person,
+ensure you adhere to the index presently shown, rather than an index from a past view.
+
+To reset the displayed person list, you can refer to the [`ls`](#listing-persons--ls) command.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -303,12 +363,12 @@ _Details coming soon ..._
 | Action          | Format, Examples                                                                                                                                                        |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**         | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub` |
+| **Add Note**    | `an INDEX note/NOTE` <br> e.g., `an 1 note/Very interested in Assembly`                                                                                                 |
 | **Clear**       | `clear`                                                                                                                                                                 |
 | **Delete**      | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                             |
-| **Edit**        | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]…​`<br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                             |
-| **Find**        | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                              |
-| **List**        | `ls [CLASS_GROUP]` <br> e.g., `ls F14`                                                                                                                                  |
+| **Delete Note** | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                        |
+| **Find**        | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                           |
 | **Help**        | `help`                                                                                                                                                                  |
+| **List**        | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                               |
+| **Update**      | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                              |
 | **View**        | `view INDEX`                                                                                                                                                            |
-| **Add Note**    | `an INDEX note/NOTE`                                                                                                                                                    |
-| **Delete Note** | `dn INDEX i/NOTEINDEX`                                                                                                                                                  |
