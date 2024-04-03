@@ -4,14 +4,20 @@ import static java.util.Objects.requireNonNull;
 import static seedu.tatoolkit.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.nio.file.Path;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.tatoolkit.commons.core.GuiSettings;
 import seedu.tatoolkit.commons.core.LogsCenter;
+import seedu.tatoolkit.commons.core.index.Index;
+import seedu.tatoolkit.model.attendance.Week;
 import seedu.tatoolkit.model.person.Person;
 
 /**
@@ -24,6 +30,7 @@ public class ModelManager implements Model {
     private final UserPrefs userPrefs;
     private final FilteredList<Person> filteredPersons;
     private Optional<Person> lastViewedPerson;
+    private ObservableList<String> observableAttendanceList = FXCollections.observableArrayList();
 
     /**
      * Initializes a ModelManager with the given taToolkit and userPrefs.
@@ -124,6 +131,23 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public ObservableList<String> getFilteredPersonAttendanceList() {
+        return IntStream.rangeClosed(1, 13)
+                .mapToObj(weekNumber -> {
+                    Week week = new Week(Index.fromOneBased(weekNumber));
+                    List<String> absentPersons = filteredPersons.stream()
+                            .filter(person -> person.isAbsent(week))
+                            .map(person -> person.getName().fullName)
+                            .collect(Collectors.toList());
+                    long presentCount = filteredPersons.size() - absentPersons.size();
+                    String absenteesFormatted = absentPersons.isEmpty() ? "None" : String.join(", ", absentPersons);
+                    return String.format("Week %d\nAttendance: %d/%d\nAbsentees: %s",
+                            weekNumber, presentCount, filteredPersons.size(), absenteesFormatted);
+                })
+                .collect(Collectors.toCollection(FXCollections::observableArrayList));
+    }
+
+    @Override
     public void updateFilteredPersonList(Predicate<Person> predicate) {
         requireNonNull(predicate);
         filteredPersons.setPredicate(predicate);
@@ -162,5 +186,16 @@ public class ModelManager implements Model {
         return taToolkit.equals(otherModelManager.taToolkit)
                 && userPrefs.equals(otherModelManager.userPrefs)
                 && filteredPersons.equals(otherModelManager.filteredPersons);
+    }
+
+    //=========== Attendance List Accessors =============================================================
+    @Override
+    public ObservableList<String> getObservableAttendanceList() {
+        return observableAttendanceList;
+    }
+
+    @Override
+    public void updateObservableAttendanceList() {
+        observableAttendanceList.setAll(getFilteredPersonAttendanceList());
     }
 }

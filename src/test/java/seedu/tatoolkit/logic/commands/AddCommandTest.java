@@ -160,6 +160,21 @@ public class AddCommandTest {
         }
 
         @Override
+        public ObservableList<String> getFilteredPersonAttendanceList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public ObservableList<String> getObservableAttendanceList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void updateObservableAttendanceList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public Optional<Person> getLastViewedPerson() {
             throw new AssertionError("This method should not be called.");
         }

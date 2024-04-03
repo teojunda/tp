@@ -18,7 +18,7 @@ public class Attendance {
 
     /**
      * Creates an Attendance object with all weeks unmarked.
-     * By default, all weeks are marked as present since attendance is marked negatively.
+     * By default, all 13 weeks are marked as present since attendance is marked negatively.
      */
     public Attendance() {
         attendanceList = new Status[13];

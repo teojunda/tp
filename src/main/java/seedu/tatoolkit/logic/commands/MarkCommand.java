@@ -33,7 +33,7 @@ public class MarkCommand extends Command {
             + PREFIX_WEEK + "WEEK "
             + PREFIX_PRESENT + "PRESENT_INDEX [MORE_INDICES]...\n"
             + PREFIX_ABSENT + "ABSENT_INDEX [MORE_INDICES]...\n"
-            + "Example: " + COMMAND_WORD + " w/1 " + PREFIX_PRESENT + "1, 2, 3 " + PREFIX_ABSENT + "4, 5"
+            + "Example: " + COMMAND_WORD + " w/1 " + PREFIX_PRESENT + "1, 2, 3 " + PREFIX_ABSENT + "4, 5\n"
             + "Example: " + COMMAND_WORD + " w/1 " + PREFIX_ABSENT + "1, 4";
 
     public static final String MESSAGE_SUCCESS = "Marked the following students as present for %1$s: %2$s"
@@ -63,16 +63,12 @@ public class MarkCommand extends Command {
         requireNonNull(model);
         List<Person> lastShownList = model.getFilteredPersonList();
 
-        // We don't proceed even if the other indices are valid since it's likely that the user
-        // has made a mistake in the other inputs as well.
         for (Index index : absentees) {
             if (index.getZeroBased() >= lastShownList.size()) {
                 throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
             }
         }
 
-        // We don't proceed even if the other indices are valid since it's likely that the user
-        // has made a mistake in the other inputs as well.
         for (Index index : attendees) {
             if (index.getZeroBased() >= lastShownList.size()) {
                 throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
@@ -108,6 +104,7 @@ public class MarkCommand extends Command {
                 .map(Object::toString)
                 .collect(Collectors.joining(", "));
 
+        model.updateObservableAttendanceList();
         return new CommandResult(String.format(MESSAGE_SUCCESS, week, attendeeNames, week, absenteeNames));
     }
 
