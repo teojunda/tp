@@ -39,7 +39,7 @@ to start keeping track of all your students' contacts!
 Welcome to TA Toolkit. We are confident that TA Toolkit will become your reliable ally throughout your journey as a CS2100 TA.
 This user guide offers you detailed documentation of TA Toolkit's capabilities.
 
-If this is your first encounter with CMC, ensure that the application has been downloaded.
+If this is your first encounter with TA Toolkit, ensure that the application has been downloaded.
 Please proceed to [Quick Start](#quick-start) for instructions on installing the application.
 
 If you would like to have a brief introduction of the application's interface,
@@ -121,7 +121,7 @@ The "Help" window will look like as follows:
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Items with … after them can be used multiple times (1 or more).  
+* Items with … after them can be used multiple times (1 or more).<br>
   For example, the `ls CLASS_GROUP` command can be used to search 1 `CLASS_GROUP` like `ls T10`, or 2 `CLASS_GROUP`s like `ls T10 T20`.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
@@ -372,3 +372,15 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
 | **List**        | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                               |
 | **Update**      | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                              |
 | **View**        | `view INDEX`                                                                                                                                                            |
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Glossary
+
+* **CLI**: Command Line Interface: A way of interacting with a computer program where the user issues commands to the
+  program in the form of successive lines of text (command lines). It emphasises text-based user interaction over graphical user interfaces.
+* * **GUI**: Graphical User Interface: A mode of interacting with a computer program that relies on visual elements such as windows, icons, buttons, and menus.
+* **TA**: Teaching Assistant
+* **Command terminal**: A command terminal is a text-based interface through which users can interact with a computer program by typing commands.
+* **Hard disk**: A component of a computer system responsible for long-term storage of data.
+* **JSON file**: A JSON (JavaScript Object Notation) file is a structured data file format used for storing and transmitting data between the hard disk and TA Toolkit.
