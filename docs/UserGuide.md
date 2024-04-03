@@ -276,7 +276,7 @@ Examples:
 
 <box type="info" seamless>
 
-**Tip:** To quickly mark attendance of the class for the week, use [ls](#listing-persons--ls) command to list all students in the class.
+**Tip:** To quickly mark attendance of the class for the week, use [ls](#listing-persons-ls) command to list all students in the class.
 Then, mark the absentees for the week as absent. Since all students are initially assumed to be present, only the absentees will be marked as absent.
 
 </box>
@@ -297,7 +297,7 @@ Examples:
 <box type="warning" seamless>
 
 **Caution:** There is no prompt to confirm this action. This command is not reversible. Deleted contacts will have to be
-re-added into the list of applicants via the [`ac`](#adding-a-person--ac) command.
+re-added into the list of applicants via the [`ac`](#adding-a-person-ac) command.
 
 </box>
 
@@ -344,11 +344,11 @@ _Details coming soon ..._
 ## FAQ
 
 **Q**: How do I see the attendance or notes of a specific student?<br>
-**A**: You have to use the [`view`](#viewing-a-person--view) command to view the detailed information containing the notes and attendance of person.
+**A**: You have to use the [`view`](#viewing-a-person-view) command to view the detailed information containing the notes and attendance of person.
 For example, if you want to view the attendance of the 1st person in the displayed person list, use the `view 1` command to view his/her detailed information.
 
 **Q**: How do I see the overall attendance for a specific class?<br>
-**A**: You have to use the [`ls`](#listing-persons--ls) command to list all the persons for a specific class.
+**A**: You have to use the [`ls`](#listing-persons-ls) command to list all the persons for a specific class.
 The overall attendance of the class will be displayed in the side panel display.
 
 **Q**: Why can't I see the application even though it is open?<br>
@@ -380,7 +380,7 @@ i.e. any commands that utilises the `INDEX` parameter, the command is interactin
 The `INDEX` must match the current index of the person on the displayed person list. Should you find yourself updating/ deleting the wrong person,
 ensure you adhere to the index presently shown, rather than an index from a past view.
 
-To reset the displayed person list, you can refer to the [`ls`](#listing-persons--ls) command.
+To reset the displayed person list, you can refer to the [`ls`](#listing-persons-ls) command.
 
 --------------------------------------------------------------------------------------------------------------------
 
