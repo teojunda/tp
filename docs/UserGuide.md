@@ -8,8 +8,51 @@
 
 TA Toolkit  is a **desktop app for managing students, optimized for use via a Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, TA Toolkit can get your student management tasks done faster than traditional GUI apps.
 
+TA Toolkit is a desktop application designed to help CS2100 Teaching Assistants (TAs) from the School of Computing in
+efficiently manage the contacts of their students.
+
+Juggling teaching and administrative tasks, time is a precious resource for CS2100 TAs and effective contact management is crucial.
+TA Toolkit is meticulously designed to cater to your administrative requirements, guaranteeing seamless handling of
+your contact-related duties. It offers a rapid and user-friendly solution via a Command Line Interface (CLI), specifically
+tailored to enhance the efficiency and effectiveness of your contact management endeavors.
+
+Below are some ways to integrate TA Toolkit into your workflow:
+
+- You can categorise student contacts into the different class groups that you teach.
+- You can filter student contacts easily based on their name or class group.
+- You can track the attendance of your students easily.
+- You can take notes on individual students to personalise your teaching.
+
+<box type="info" seamless>
+
+**Tip:** If this is your first time using TA Toolkit, head over to [How to use TA Toolkit's User Guide](#how-to-use-ta-toolkits-user-guide)
+to start keeping track of all your students' contacts!
+
+</box>
+
 <!-- * Table of Contents -->
 <page-nav-print />
+
+--------------------------------------------------------------------------------------------------------------------
+
+## How to Use TA Toolkit's User Guide
+
+Welcome to TA Toolkit. We are confident that TA Toolkit will become your reliable ally throughout your journey as a CS2100 TA.
+This user guide offers you detailed documentation of TA Toolkit's capabilities.
+
+If this is your first encounter with CMC, ensure that the application has been downloaded.
+Please proceed to [Quick Start](#quick-start) for instructions on installing the application.
+
+If you would like to have a brief introduction of the application's interface,
+head over to our [Interface Walkthrough](#interface-walkthrough) to better learn about TA Toolkit.
+
+If you are familiar with TA Toolkit, you can refer to [Command Summary](#command-summary) for a
+summary of all the commands in TA Toolkit.
+
+
+If you encounter any issues with the commands or find yourself uncertain about anything,
+feel free to consult the [FAQ](#faq) for answers to common questions,
+or explore [Common Mistakes](#common-mistakes) for typical errors that users may encounter while utilizing the application.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -23,7 +66,7 @@ TA Toolkit  is a **desktop app for managing students, optimized for use via a Li
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TAToolkit.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![Ui](images/ActualUi.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -39,6 +82,10 @@ TA Toolkit  is a **desktop app for managing students, optimized for use via a Li
    * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Interface walkthrough
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -229,7 +276,7 @@ _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## Common mistakes
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
