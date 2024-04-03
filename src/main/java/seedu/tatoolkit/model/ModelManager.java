@@ -139,10 +139,9 @@ public class ModelManager implements Model {
                             .filter(person -> person.isAbsent(week))
                             .map(person -> person.getName().fullName)
                             .collect(Collectors.toList());
-                    long presentCount = filteredPersons.size() - absentPersons.size();
                     String absenteesFormatted = absentPersons.isEmpty() ? "None" : String.join(", ", absentPersons);
-                    return String.format("Week %d\nAttendance: %d/%d\nAbsentees: %s",
-                            weekNumber, presentCount, filteredPersons.size(), absenteesFormatted);
+                    return String.format("Week %d\nAbsentees: %s",
+                            weekNumber, absenteesFormatted);
                 })
                 .collect(Collectors.toCollection(FXCollections::observableArrayList));
     }
