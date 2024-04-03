@@ -94,7 +94,8 @@ public class MarkCommandTest {
 
         List<Index> differentPresentIndices = Arrays.asList(INDEX_THIRD_PERSON);
         List<Index> differentAbsentIndices = Arrays.asList(INDEX_FIRST_PERSON);
-        MarkCommand markSecondCommand = new MarkCommand(new Week(weekIndex), differentPresentIndices, differentAbsentIndices);
+        MarkCommand markSecondCommand = new MarkCommand(new Week(weekIndex),
+                differentPresentIndices, differentAbsentIndices);
         assertNotEquals(markFirstCommand, markSecondCommand);
     }
 }
