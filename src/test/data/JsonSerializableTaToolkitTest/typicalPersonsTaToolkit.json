@@ -7,7 +7,8 @@
     "classGroup" : "A-1",
     "telegram": "@alicepauline",
     "github": "alicep",
-    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ]
+    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
   }, {
     "name" : "Benson Meier",
     "phone" : "98765432",
@@ -15,7 +16,8 @@
     "classGroup" : "A-1",
     "telegram": "@bensonmeier",
     "github": "meierbenson",
-    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ]
+    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
   }, {
     "name" : "Carl Kurz",
     "phone" : "95352563",
@@ -23,7 +25,8 @@
     "classGroup" : "A-2",
     "telegram": "@carlkurz",
     "github": "kurzcarl",
-    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ]
+    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
   }, {
     "name" : "Daniel Meier",
     "phone" : "87652533",
@@ -31,7 +34,8 @@
     "classGroup" : "A-2",
     "telegram": "@danielmeier",
     "github": "meierdaniel",
-    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ]
+    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
   }, {
     "name" : "Elle Meyer",
     "phone" : "9482224",
@@ -39,7 +43,8 @@
     "classGroup" : "B-1",
     "telegram": "@ellemeyer",
     "github": "meyerelle",
-    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ]
+    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
   }, {
     "name" : "Fiona Kunz",
     "phone" : "9482427",
@@ -47,7 +52,8 @@
     "classGroup" : "B-1",
     "telegram": "@fionakunz",
     "github": "kunzfiona",
-    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ]
+    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
   }, {
     "name" : "George Best",
     "phone" : "9482442",
@@ -55,6 +61,7 @@
     "classGroup" : "B-2",
     "telegram": "@georgebest",
     "github": "bestgeorge",
-    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ]
+    "notes" : [ "Asked a good question about general relativity", "Excited to learn Java" ],
+    "attendance" : [ "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT", "PRESENT" ]
   } ]
 }

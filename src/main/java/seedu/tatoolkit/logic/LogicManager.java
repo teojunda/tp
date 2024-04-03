@@ -11,7 +11,9 @@ import seedu.tatoolkit.commons.core.GuiSettings;
 import seedu.tatoolkit.commons.core.LogsCenter;
 import seedu.tatoolkit.logic.commands.Command;
 import seedu.tatoolkit.logic.commands.CommandResult;
+import seedu.tatoolkit.logic.commands.ListCommand;
 import seedu.tatoolkit.logic.commands.MarkCommand;
+import seedu.tatoolkit.logic.commands.ViewCommand;
 import seedu.tatoolkit.logic.commands.exceptions.CommandException;
 import seedu.tatoolkit.logic.parser.TaToolkitParser;
 import seedu.tatoolkit.logic.parser.exceptions.ParseException;
@@ -61,7 +63,10 @@ public class LogicManager implements Logic {
             throw new CommandException(String.format(FILE_OPS_ERROR_FORMAT, ioe.getMessage()), ioe);
         }
 
-        lastExecutedCommand = Optional.of(command);
+        if (command instanceof ViewCommand || command instanceof ListCommand) {
+            lastExecutedCommand = Optional.of(command);
+        }
+
         if (command instanceof MarkCommand) {
             model.updateObservableAttendanceList();
         }
