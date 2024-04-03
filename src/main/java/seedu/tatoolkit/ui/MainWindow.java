@@ -187,7 +187,7 @@ public class MainWindow extends UiPart<Stage> {
             logger.info("Result: " + commandResult.getFeedbackToUser());
             resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
 
-            logic.getLastExecutedCommand().ifPresent(command -> {
+            logic.getlastSidePanelCommand().ifPresent(command -> {
                 if (command instanceof ViewCommand) {
                     logic.getLastViewedPerson().ifPresentOrElse(sidePanel::displayPerson, sidePanel::resetDetails);
                 } else if (command instanceof ListCommand) {

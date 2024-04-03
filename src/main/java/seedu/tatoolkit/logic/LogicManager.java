@@ -36,7 +36,7 @@ public class LogicManager implements Logic {
     private final Model model;
     private final Storage storage;
     private final TaToolkitParser taToolkitParser;
-    private Optional<Command> lastExecutedCommand = Optional.empty();
+    private Optional<Command> lastSidePanelCommand = Optional.empty();
 
     /**
      * Constructs a {@code LogicManager} with the given {@code Model} and {@code Storage}.
@@ -64,7 +64,7 @@ public class LogicManager implements Logic {
         }
 
         if (command instanceof ViewCommand || command instanceof ListCommand) {
-            lastExecutedCommand = Optional.of(command);
+            lastSidePanelCommand = Optional.of(command);
         }
 
         if (command instanceof MarkCommand) {
@@ -88,8 +88,8 @@ public class LogicManager implements Logic {
         return model.getLastViewedPerson();
     }
 
-    public Optional<Command> getLastExecutedCommand() {
-        return lastExecutedCommand;
+    public Optional<Command> getlastSidePanelCommand() {
+        return lastSidePanelCommand;
     }
     @Override
     public ObservableList<String> getFilteredPersonAttendanceList() {

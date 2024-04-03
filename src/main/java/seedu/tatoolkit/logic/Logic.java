@@ -58,7 +58,7 @@ public interface Logic {
      * @return an {@link Optional} containing the last executed {@link Command} if such
      *         a command exists, or an empty {@link Optional} if no command has been executed.
      */
-    Optional<Command> getLastExecutedCommand();
+    Optional<Command> getlastSidePanelCommand();
 
     /**
      * Returns an ObservableList of attendance strings for each person in the filtered person list.
