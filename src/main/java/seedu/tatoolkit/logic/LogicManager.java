@@ -36,7 +36,7 @@ public class LogicManager implements Logic {
     private final Model model;
     private final Storage storage;
     private final TaToolkitParser taToolkitParser;
-    private Optional<Command> lastSidePanelCommand = Optional.empty();
+    private Optional<Command> lastSidePanelCommand;
 
     /**
      * Constructs a {@code LogicManager} with the given {@code Model} and {@code Storage}.
@@ -45,6 +45,7 @@ public class LogicManager implements Logic {
         this.model = model;
         this.storage = storage;
         taToolkitParser = new TaToolkitParser();
+        lastSidePanelCommand = Optional.empty();
     }
 
     @Override
