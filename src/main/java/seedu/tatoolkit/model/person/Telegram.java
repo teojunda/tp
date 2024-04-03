@@ -77,7 +77,7 @@ public class Telegram {
         }
 
         Telegram otherTelegram = (Telegram) other;
-        return telegramId.equals(otherTelegram.telegramId);
+        return telegramId.equalsIgnoreCase(otherTelegram.telegramId);
     }
 
     @Override
