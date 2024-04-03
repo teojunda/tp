@@ -193,7 +193,7 @@ Examples:
 ### Listing persons : `ls`
 
 This shows you a list of all persons in TA Toolkit based for a CLASS_GROUP in the Contact List Display.
-Also, the attendance overview of all persons in the displayed person list will be displayed in the side display panel.
+Also, the attendance overview of all persons in the displayed person list will be displayed in the side panel display.
 
 Format: `ls [CLASS_GROUP...]`
 
