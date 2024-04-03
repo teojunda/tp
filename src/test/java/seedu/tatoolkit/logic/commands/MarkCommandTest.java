@@ -83,20 +83,15 @@ public class MarkCommandTest {
         List<Index> absentIndices = Arrays.asList(INDEX_SECOND_PERSON);
         MarkCommand markFirstCommand = new MarkCommand(new Week(weekIndex), presentIndices, absentIndices);
 
-        // same object -> returns true
         assertEquals(markFirstCommand, markFirstCommand);
 
-        // same values -> returns true
         MarkCommand markFirstCommandCopy = new MarkCommand(new Week(weekIndex), presentIndices, absentIndices);
         assertEquals(markFirstCommand, markFirstCommandCopy);
 
-        // different types -> returns false
         assertNotEquals(markFirstCommand, new Object());
 
-        // null -> returns false
         assertNotEquals(null, markFirstCommand);
 
-        // different indices -> returns false
         List<Index> differentPresentIndices = Arrays.asList(INDEX_THIRD_PERSON);
         List<Index> differentAbsentIndices = Arrays.asList(INDEX_FIRST_PERSON);
         MarkCommand markSecondCommand = new MarkCommand(new Week(weekIndex), differentPresentIndices, differentAbsentIndices);
