@@ -24,7 +24,7 @@ Below are some ways to integrate TA Toolkit into your workflow:
 
 <box type="info" seamless>
 
-**Tip:** If this is your first time using TA Toolkit, head over to [How to use TA Toolkit's User Guide](#how-to-use-ta-toolkits-user-guide)
+**Tip:** If this is your first time using TA Toolkit, head over to [How to use TA Toolkit's User Guide](#how-to-use)
 to start keeping track of all your students' contacts!
 
 </box>
@@ -34,7 +34,7 @@ to start keeping track of all your students' contacts!
 
 --------------------------------------------------------------------------------------------------------------------
 
-## How to Use TA Toolkit's User Guide
+## How to Use
 
 Welcome to TA Toolkit. We are confident that TA Toolkit will become your reliable ally throughout your journey as a CS2100 TA.
 This user guide offers you detailed documentation of TA Toolkit's capabilities.
@@ -345,11 +345,11 @@ that the tatoolkit.json file used is **correct and accurate.**
 
 ## Common mistakes
 
-1. **When [adding contacts](#adding-a-person--ac) or [updating contacts](#updating-a-person--uc)**,
+1. **When [adding contacts](#adding-a-person-ac) or [updating contacts](#updating-a-person-uc)**,
 if the command causes 2 persons in the TA Toolkit to have the same `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, or `GITHUB`,
 the command will fail. This is because every contact should have unique `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, and `GITHUB`.
 
-2. **When [updating contacts](#updating-a-person--uc), [deleting contacts](#deleting-a-person--dc)**,
+2. **When [updating contacts](#updating-a-person-uc), [deleting contacts](#deleting-a-person-dc)**,
 i.e. any commands that utilises the `INDEX` parameter, the command is interacting with the wrong contact.
 The `INDEX` must match the current index of the person on the displayed person list. Should you find yourself updating/ deleting the wrong person,
 ensure you adhere to the index presently shown, rather than an index from a past view.
