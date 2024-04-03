@@ -87,6 +87,22 @@ or explore [Common Mistakes](#common-mistakes) for typical errors that users may
 
 ## Interface walkthrough
 
+This is the expected interface of the GUI when you launch TA Toolkit. Please note that this application has been populated with sample data.
+
+The key windows are labeled as follows:
+
+1. File button: Opens an option to exit the application.
+2. Help button: Opens a menu with a link to the User Guide.
+3. Command Box: Enter your command here.
+4. Result Display: Displays the result of your command.
+5. Contact List Display: Displays a list of all student contacts and their contact information.
+6. Side Panel Display: Displays detailed information on a specific student or the attendance overview.
+
+![Interface](images/InterfaceWalkthrough.png)
+
+The "Help" window will look like as follows:
+
+![Help_Window](images/helpMessage.png)
 --------------------------------------------------------------------------------------------------------------------
 
 ## Features
@@ -121,7 +137,7 @@ Format: `help`
 
 ### Adding a person: `ac`
 
-Adds a person to the TA Toolkit.
+Helps you add a person to TA Toolkit.
 
 Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]`
 
