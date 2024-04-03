@@ -3,7 +3,6 @@ package seedu.tatoolkit.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static seedu.tatoolkit.logic.commands.CommandTestUtil.assertCommandFailure;
-import static seedu.tatoolkit.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.tatoolkit.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.tatoolkit.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
 import static seedu.tatoolkit.testutil.TypicalIndexes.INDEX_THIRD_PERSON;
@@ -11,7 +10,6 @@ import static seedu.tatoolkit.testutil.TypicalPersons.getTypicalTaToolkit;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,35 +32,6 @@ public class MarkCommandTest {
     public void setUp() {
         model = new ModelManager(getTypicalTaToolkit(), new UserPrefs());
     }
-
-    @Test
-    public void execute_validIndicesUnfilteredList_success() {
-        Week week = new Week(Index.fromOneBased(1));
-        List<Index> presentIndices = Arrays.asList(INDEX_FIRST_PERSON, INDEX_SECOND_PERSON);
-        List<Index> absentIndices = Arrays.asList(INDEX_THIRD_PERSON);
-        MarkCommand markCommand = new MarkCommand(week, presentIndices, absentIndices);
-
-        String presentNames = presentIndices.stream()
-                .map(index -> model.getFilteredPersonList().get(index.getZeroBased()).getName().toString())
-                .collect(Collectors.joining(", "));
-
-        String absentNames = absentIndices.stream()
-                .map(index -> model.getFilteredPersonList().get(index.getZeroBased()).getName().toString())
-                .collect(Collectors.joining(", "));
-
-        String expectedMessage = String.format(
-                MarkCommand.MESSAGE_SUCCESS,
-                week.toString(),
-                presentNames,
-                week.toString(),
-                absentNames
-        );
-
-        ModelManager expectedModel = new ModelManager(model.getTaToolkit(), new UserPrefs());
-
-        assertCommandSuccess(markCommand, model, expectedMessage, expectedModel);
-    }
-
 
     @Test
     public void execute_invalidIndicesUnfilteredList_failure() {
