@@ -134,7 +134,7 @@ public class ParserUtil {
         }
         String trimmedGithub = github.trim();
         if (!Github.isValidGithub(trimmedGithub)) {
-            throw new ParseException(ClassGroup.MESSAGE_CONSTRAINTS);
+            throw new ParseException(Github.MESSAGE_CONSTRAINTS);
         }
         return Optional.of(new Github(trimmedGithub));
     }

@@ -76,7 +76,7 @@ public class Github {
         }
 
         Github otherGithub = (Github) other;
-        return githubId.equals(otherGithub.githubId);
+        return githubId.equalsIgnoreCase(otherGithub.githubId);
     }
 
     @Override
