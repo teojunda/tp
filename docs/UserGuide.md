@@ -193,6 +193,7 @@ Examples:
 ### Listing persons : `ls`
 
 This shows you a list of all persons in TA Toolkit based for a CLASS_GROUP in the Contact List Display.
+Also, the attendance overview of all persons in the displayed person list will be displayed in the side panel display.
 
 Format: `ls [CLASS_GROUP...]`
 
@@ -255,6 +256,31 @@ Format: `dn INDEX i/NOTEINDEX...`
 Examples:
 * `dn 1 i/1` deletes the first note from the 1st person in the TA Toolkit.
 
+### Marking attendance : `ma`
+
+Marks the attendance of a student as absent or present.
+
+Format: `ma w/WEEK [pre/PRESENT_INDEX...] [abs/ABSENT_INDEX...]`
+
+* Person indices under `pre/` will be marked as present. Person indices under `abs/` will be marked as absent.
+* When a person contact is created, he will be assumed to be present for all weeks.
+* This command will overwrite the existing attendance for the students.
+* No duplicate indices are allowed in `PRESENT_INDEX` and `ABSENT_INDEX`.
+* If multiple indices are provided, they should be comma-separated.
+* At least one optional parameter must be present in the command.
+
+Examples:
+* `ma w/1 abs/1,2` marks the 1st and 2nd persons in the displayed persons list as absent.
+  ![result for 'ma w/1 abs/1,2'](images/ma_example.png)
+
+
+<box type="info" seamless>
+
+**Tip:** To quickly mark attendance of the class for the week, use [ls](#listing-persons-ls) command to list all students in the class.
+Then, mark the absentees for the week as absent. Since all students are initially assumed to be present, only the absentees will be marked as absent.
+
+</box>
+
 ### Deleting a person : `dc`
 
 Deletes a specified person from the TA Toolkit.
@@ -271,7 +297,7 @@ Examples:
 <box type="warning" seamless>
 
 **Caution:** There is no prompt to confirm this action. This command is not reversible. Deleted contacts will have to be
-re-added into the list of applicants via the [`ac`](#adding-a-person--ac) command.
+re-added into the list of applicants via the [`ac`](#adding-a-person-ac) command.
 
 </box>
 
@@ -318,11 +344,11 @@ _Details coming soon ..._
 ## FAQ
 
 **Q**: How do I see the attendance or notes of a specific student?<br>
-**A**: You have to use the [`view`](#viewing-a-person--view) command to view the detailed information containing the notes and attendance of person.
+**A**: You have to use the [`view`](#viewing-a-person-view) command to view the detailed information containing the notes and attendance of person.
 For example, if you want to view the attendance of the 1st person in the displayed person list, use the `view 1` command to view his/her detailed information.
 
 **Q**: How do I see the overall attendance for a specific class?<br>
-**A**: You have to use the [`ls`](#listing-persons--ls) command to list all the persons for a specific class.
+**A**: You have to use the [`ls`](#listing-persons-ls) command to list all the persons for a specific class.
 The overall attendance of the class will be displayed in the side panel display.
 
 **Q**: Why can't I see the application even though it is open?<br>
@@ -354,7 +380,7 @@ i.e. any commands that utilises the `INDEX` parameter, the command is interactin
 The `INDEX` must match the current index of the person on the displayed person list. Should you find yourself updating/ deleting the wrong person,
 ensure you adhere to the index presently shown, rather than an index from a past view.
 
-To reset the displayed person list, you can refer to the [`ls`](#listing-persons--ls) command.
+To reset the displayed person list, you can refer to the [`ls`](#listing-persons-ls) command.
 
 --------------------------------------------------------------------------------------------------------------------
 
