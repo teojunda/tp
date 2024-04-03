@@ -318,7 +318,7 @@ _Details coming soon ..._
 ## FAQ
 
 **Q**: How do I see the attendance or notes of a specific student?<br>
-**A**: You have to use the [`view`](#viewing-a-person--view) command to view the detailed information containing the notes and attendance of person.  
+**A**: You have to use the [`view`](#viewing-a-person--view) command to view the detailed information containing the notes and attendance of person.
 For example, if you want to view the attendance of the 1st person in the displayed person list, use the `view 1` command to view his/her detailed information.
 
 **Q**: How do I see the overall attendance for a specific class?<br>
