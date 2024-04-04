@@ -486,10 +486,10 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
 | [**Delete**](#deleting-a-person-dc)                | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                             |
 | [**Delete Note**](#deleting-note-from-a-person-dn) | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                        |
 | [**Find**](#locating-persons-by-name-find)         | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                           |
-| [**Help**](#viewing-help-help)                    | `help`                                                                                                                                                                  |
+| [**Help**](#viewing-help-help)                     | `help`                                                                                                                                                                  |
 | [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                               |
 | [**Mark Attendance**](#marking-attendance-ma)      | `ma w/WEEK [pre/PRESENT_INDEX] [abs/ABSENT_INDEX]` <br> e.g.,`ma w/1 pre/1,2 abs/3`                                                                                     |
-| [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                              |
+| [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                          |
 | [**View**](#viewing-a-person-view)                 | `view INDEX`                                                                                                                                                            |
 
 --------------------------------------------------------------------------------------------------------------------
