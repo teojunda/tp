@@ -29,6 +29,8 @@ to start keeping track of all your students' contacts!
 
 </box>
 
+--------------------------------------------------------------------------------------------------------------------
+
 <!-- * Table of Contents -->
 <page-nav-print />
 
@@ -55,9 +57,74 @@ or explore [Common Mistakes](#common-mistakes) for typical errors that users may
 
 --------------------------------------------------------------------------------------------------------------------
 
+## Labels
+
+In our user guide, you may find coloured labels that contain text nuggets.
+
+<box type="info" seamless>
+
+Blue labels represent helpful tips to enhance your experience.
+
+</box>
+
+<box type="caution" seamless>
+
+Yellow labels represent warnings that you should be cautious about.
+
+</box>
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Key Terms
+
+TA Toolkit stores students' contact details and allows the user to take notes on students and track their attendance.
+As such, it is important that you familiarise yourself with the structure of each person as well as their key attributes (notes, attendance).
+
+### Person
+
+A person represents your student. At the start of the teaching semester, you should add your students' basic contact details (NAME, CLASS_GROUP, EMAIL).
+
+A person has the following attributes:
+- Name (Compulsory)
+- Class_Group (Compulsory)
+- Email address (Compulsory)
+- Phone number (Optional)
+- Telegram handle (Optional)
+- Github ID (Optional)
+- Attendance (Tracked by the application)
+- Notes (Tracked by the application)
+
+In TA Toolkit, duplicating entries with identical email addresses, phone numbers, Telegram handles, or GitHub IDs is not supported. The comparison of these fields for equality is case-insensitive. Therefore, you cannot add multiple individuals sharing the same email, phone number, Telegram handle, or GitHub ID.
+
+<box type="info" seamless>
+
+**Tip:**
+After adding a student's contact, update their phone number, telegram handle, github ID after finding those out from your students.
+
+</box>
+
+### Attendance
+
+Each student has an attendance for each week tied to him. Since NUS semesters contain 13 weeks, TA Toolkit only supports taking attendance for 13 weeks.
+When a student contact is added to TA Toolkit, he is assumed to be present for all 13 weeks.
+You can use the [`ma`](#marking-attendance-ma) command to mark a student as present or absent for a specific week.
+
+<box type="info" seamless>
+
+**Tip:**
+Use negative marking to quickly take attendance for a class. Since all students are initially assumed to be present,
+you can quickly the attendace of an entire class by only marking the absentees as absent.
+
+</box>
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer.
+
+To check the version of Java installed on your computer, click [here](https://www.java.com/en/download/help/version_manual.html) if you are using a Windows or Mac computer, and click [here](https://phoenixnap.com/kb/check-java-version-linux)
+if your computer is running Linux.
 
 1. Download the latest `TAToolkit.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-3/tp/releases).
 
@@ -102,6 +169,30 @@ The key windows are labeled as follows:
 The "Help" window will look like as follows:
 
 ![Help_Window](images/helpMessage.png)
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Parameters
+
+Some of TA Toolkit's commands require parameters, which have specific formats. Before heading to the [Features](#features) section, we recommend taking a look at the type of parameters and their constraints.
+
+The following parameters are used for commands:
+
+| Parameter        | Prefix | Format                                                                                                           | Example                                         |
+|------------------|--------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| INDEX            | -      | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
+| KEYWORD          | -      | Alphanumeric only                                                                                                | `Alex`, `Bernice`                               |
+| NAME             | n/     | Alphanumeric, can contain multiple words                                                                         | `Alex Yeoh`, `Bernice Yu`                       |
+| PHONE_NUMBER     | p/     | Numeric, minimum length of 3 digits                                                                              | `99999999`, `88888888`                          |
+| TELEGRAM         | t/     | Starts with @, followed by alphanumeric characters or underscores                                                | `@nus_cs2103` , `@johnDoe`                      |
+| EMAIL            | e/     | Valid email format only                                                                                          | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
+| GITHUB           | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens                                           | `johnDoe`, `alice-yu`                           |
+| CLASS_GROUP      | c/     | Consists of alphanumeric characters, separated by hyphens                                                        | `CS2100-T10`, `F14-3-2`                         |
+| NOTE             | note/  | Consists of a alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks) | `Proficient in Java!`, `Beginner to Python.`    |
+| NOTE_INDEX       | i/     | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
+| PRESENT_INDEX    | pre/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
+| ABSENT_INDEX     | abs/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Features
@@ -177,7 +268,7 @@ Examples:
 
 This helps you to find specific persons by their names.
 
-Format: `find KEYWORD...`
+Format: `find KEYWORD [KEYWORD...]`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
@@ -247,7 +338,7 @@ Examples:
 
 Delete a note from a specified index of a specified person from the TA Toolkit.
 
-Format: `dn INDEX i/NOTEINDEX...`
+Format: `dn INDEX i/NOTE_INDEX...`
 
 * `INDEX` refers to the index number shown in the displayed person list.
 * `NOTEINDEX` refers to the index of the note within a person.
@@ -272,7 +363,6 @@ Format: `ma w/WEEK [pre/PRESENT_INDEX...] [abs/ABSENT_INDEX...]`
 Examples:
 * `ma w/1 abs/1,2` marks the 1st and 2nd persons in the displayed persons list as absent.
   ![result for 'ma w/1 abs/1,2'](images/ma_example.png)
-
 
 <box type="info" seamless>
 
@@ -352,7 +442,7 @@ For example, if you want to view the attendance of the 1st person in the display
 The overall attendance of the class will be displayed in the side panel display.
 
 **Q**: Why can't I see the application even though it is open?<br>
-**A**: **When using multiple screens**, if you move the application to a secondary screen,
+**A**: When using multiple screens, if you move the application to a secondary screen,
 and later switch to using only the primary screen, the GUI will open off-screen.
 The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
@@ -362,6 +452,7 @@ the data of your previous TAToolkit home folder.
 
 <box type="info" seamless>
 
+**Caution:**
 If the tatoolkit.json file is invalid or has any formatting errors, the program might not start up. Please make sure
 that the tatoolkit.json file used is **correct and accurate.**
 
@@ -386,27 +477,38 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
 
 ## Command summary
 
-| Action          | Format, Examples                                                                                                                                                        |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**         | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub` |
-| **Add Note**    | `an INDEX note/NOTE` <br> e.g., `an 1 note/Very interested in Assembly`                                                                                                 |
-| **Clear**       | `clear`                                                                                                                                                                 |
-| **Delete**      | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                             |
-| **Delete Note** | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                        |
-| **Find**        | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                           |
-| **Help**        | `help`                                                                                                                                                                  |
-| **List**        | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                               |
-| **Update**      | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                              |
-| **View**        | `view INDEX`                                                                                                                                                            |
+| Action                                             | Format, Examples                                                                                                                                                        |
+|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Add**](#adding-a-person-ac)                     | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub` |
+| [**Add Note**](#adding-note-to-a-person-an)        | `an INDEX note/NOTE` <br> e.g., `an 1 note/Very interested in Assembly`                                                                                                 |
+| [**Clear**](#clearing-all-entries-clear)           | `clear`                                                                                                                                                                 |
+| [**Delete**](#deleting-a-person-dc)                | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                             |
+| [**Delete Note**](#deleting-note-from-a-person-dn) | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                        |
+| [**Find**](#locating-persons-by-name-find)         | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                           |
+| [**Help**](#viewing-help-help`)                    | `help`                                                                                                                                                                  |
+| [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                               |
+| [**Mark Attendance**](#marking-attendance-ma)      | `ma w/WEEK [pre/PRESENT_INDEX] [abs/ABSENT_INDEX]` <br> e.g.,`ma w/1 pre/1,2 abs/3`                                                                                     |
+| [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                              |
+| [**View**](#viewing-a-person-view)                 | `view INDEX`                                                                                                                                                            |
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Glossary
 
+* **Absent**: A attendance status to indicate that a student did not attend a class.
+* **Alphanumeric**: A String consisting of only letters (a-z, A-Z) or numbers or both.
+* **Command**: Commands are necessary to use TA Toolkit. A command has to be typed into the Command Box and entered to be executed.
+* **Command terminal**: A command terminal is a text-based interface through which users can interact with a computer program by typing commands.
 * **CLI**: Command Line Interface: A way of interacting with a computer program where the user issues commands to the
   program in the form of successive lines of text (command lines). It emphasises text-based user interaction over graphical user interfaces.
-* * **GUI**: Graphical User Interface: A mode of interacting with a computer program that relies on visual elements such as windows, icons, buttons, and menus.
-* **TA**: Teaching Assistant
-* **Command terminal**: A command terminal is a text-based interface through which users can interact with a computer program by typing commands.
+* **Email**: A unique identifier for an email account.
+* **Index**: A number representing the position of an item in a list.
+* **Github ID**: A unique identifier for a Github account. E.g. johnDoe
+* **GUI**: Graphical User Interface: A mode of interacting with a computer program that relies on visual elements such as windows, icons, buttons, and menus.
 * **Hard disk**: A component of a computer system responsible for long-term storage of data.
 * **JSON file**: A JSON (JavaScript Object Notation) file is a structured data file format used for storing and transmitting data between the hard disk and TA Toolkit.
+* **Note**: A String that can be associated to a person to provide additional details about them.
+* **Phone number**: A sequence of digits that is dialled on a telephone to contact a person.
+* **Present**: A attendance status to indicate that a student attended a class.
+* **TA**: Teaching Assistant
+* **Telegram handle**: A unique identifier for a Telegram account. E.g. @johnDoe
