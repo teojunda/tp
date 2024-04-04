@@ -190,7 +190,7 @@ The following parameters are used for commands:
 | CLASS_GROUP   | c/     | Consists of alphanumeric characters, separated by hyphens                                                        | `CS2100-T10`, `F14-3-2`                         |
 | NOTE          | note/  | Consists of a alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks) | `Proficient in Java!`, `Beginner to Python.`    |
 | NOTE_INDEX    | i/     | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| WEEK          | w/     | Positive integers from 1 - 13                                                                                    | `1`, `2`, `3`                                   |
+| WEEK          | w/     | Positive integers from 1 - 13 only                                                                               | `1`, `2`, `3`                                   |
 | PRESENT_INDEX | pre/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
 | ABSENT_INDEX  | abs/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
 
