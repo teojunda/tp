@@ -59,7 +59,7 @@ or explore [Common Mistakes](#common-mistakes) for typical errors that users may
 
 ## Labels
 
-In our user guide, you may find coloured labels that contain text nuggest.
+In our user guide, you may find coloured labels that contain text nuggets.
 
 <box type="info" seamless>
 
