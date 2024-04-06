@@ -183,7 +183,7 @@ The following parameters are used for commands:
 | INDEX         | -      | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
 | KEYWORD       | -      | Alphanumeric only                                                                                                | `Alex`, `Bernice`                               |
 | NAME          | n/     | Alphanumeric, can contain multiple words                                                                         | `Alex Yeoh`, `Bernice Yu`                       |
-| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits                                                                              | `99999999`, `88888888`                          |
+| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits and maximum of 15 digits                                                     | `99999999`, `88888888`                          |
 | TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores                                                | `@nus_cs2103` , `@johnDoe`                      |
 | EMAIL         | e/     | Valid email format only                                                                                          | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
 | GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens                                           | `johnDoe`, `alice-yu`                           |
