@@ -123,18 +123,24 @@ you can quickly the attendace of an entire class by only marking the absentees a
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
+To install Java on a Windows computer, click [here](https://www.java.com/en/download/help/windows_manual_download.html).
+
+To install Java that is compatible with our application on a Mac computer, download and install the Azul build of OpenJDK 11 version found [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx) (scroll to the bottom of the page) -- it supports fat JAR files compiled by all other systems that we have tested. Remember to choose the JDK FXversion (not any other versions).
+
+To install Java on a Linux computer, click [here](https://www.java.com/en/download/help/linux_x64_install.html).
+
 To check the version of Java installed on your computer, click [here](https://www.java.com/en/download/help/version_manual.html) if you are using a Windows or Mac computer, and click [here](https://phoenixnap.com/kb/check-java-version-linux)
 if your computer is running Linux.
 
-1. Download the latest `TAToolkit.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-3/tp/releases).
+2. Download the latest `TAToolkit.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-3/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your TA Toolkit.
+3. Copy the file to the folder you want to use as the _home folder_ for your TA Toolkit.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TAToolkit.jar` command to run the application.<br>
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TAToolkit.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/ActualUi.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `ls` : Lists all contacts.
@@ -147,7 +153,7 @@ if your computer is running Linux.
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -178,21 +184,21 @@ Some of TA Toolkit's commands require parameters, which have specific formats. B
 
 The following parameters are used for commands:
 
-| Parameter     | Prefix | Format                                                                                                           | Example                                         |
-|---------------|--------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| INDEX         | -      | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| KEYWORD       | -      | Alphanumeric only                                                                                                | `Alex`, `Bernice`                               |
-| NAME          | n/     | Alphanumeric, can contain multiple words                                                                         | `Alex Yeoh`, `Bernice Yu`                       |
-| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits                                                                              | `99999999`, `88888888`                          |
-| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores                                                | `@nus_cs2103` , `@johnDoe`                      |
-| EMAIL         | e/     | Valid email format only                                                                                          | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
-| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens                                           | `johnDoe`, `alice-yu`                           |
-| CLASS_GROUP   | c/     | Consists of alphanumeric characters, separated by hyphens                                                        | `CS2100-T10`, `F14-3-2`                         |
-| NOTE          | note/  | Consists of a alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks) | `Proficient in Java!`, `Beginner to Python.`    |
-| NOTE_INDEX    | i/     | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| WEEK          | w/     | Positive integers from 1 - 13 only                                                                               | `1`, `2`, `3`                                   |
-| PRESENT_INDEX | pre/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| ABSENT_INDEX  | abs/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
+| Parameter     | Prefix | Format                                                                                                                                                                                                                                                                                         | Example                                         |
+|---------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| INDEX         | -      | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
+| KEYWORD       | -      | Alphanumeric only                                                                                                                                                                                                                                                                              | `Alex`, `Bernice`                               |
+| NAME          | n/     | Alphanumeric, can contain multiple words                                                                                                                                                                                                                                                       | `Alex Yeoh`, `Bernice Yu`                       |
+| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits                                                                                                                                                                                                                                                            | `99999999`, `88888888`                          |
+| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores                                                                                                                                                                                                                              | `@nus_cs2103` , `@johnDoe`                      |
+| EMAIL         | e/     | Includes letters, numbers, underscores, dots, and dashes, followed by the '@' symbol, then the domain name which includes at least one dot, separating the domain and the top-level domain (e.g., '.com', '.net'). The domain and the top-level domain must both have at least two characters. | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
+| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens                                                                                                                                                                                                                         | `johnDoe`, `alice-yu`                           |
+| CLASS_GROUP   | c/     | Consists of alphanumeric characters, separated by hyphens                                                                                                                                                                                                                                      | `CS2100-T10`, `F14-3-2`                         |
+| NOTE          | note/  | Consists of a alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks)                                                                                                                                                                               | `Proficient in Java!`, `Beginner to Python.`    |
+| NOTE_INDEX    | i/     | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
+| WEEK          | w/     | Positive integers from 1 - 13 only                                                                                                                                                                                                                                                             | `1`, `2`, `3`                                   |
+| PRESENT_INDEX | pre/   | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
+| ABSENT_INDEX  | abs/   | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
 
 --------------------------------------------------------------------------------------------------------------------
 
