@@ -125,7 +125,7 @@ you can quickly the attendace of an entire class by only marking the absentees a
 
 To install Java on a Windows computer, click [here](https://www.java.com/en/download/help/windows_manual_download.html).
 
-To install Java that is compatible with our application on a Mac computer, download and install the Azul build of OpenJDK 11 version found [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx) (scroll to the bottom of the page) -- it supports fat JAR files compiled by all other systems that we have tested. Remember to choose the JDK FXversion (not any other versions).
+To install Java that is compatible with our application on a Mac computer, download and install the Azul build of OpenJDK 11 version found [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx) and ensure to choose the JDK FXversion.
 
 To install Java on a Linux computer, click [here](https://www.java.com/en/download/help/linux_x64_install.html).
 
