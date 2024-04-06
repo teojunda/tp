@@ -67,7 +67,7 @@ Blue labels represent helpful tips to enhance your experience.
 
 </box>
 
-<box type="caution" seamless>
+<box type="warning" seamless>
 
 Yellow labels represent warnings that you should be cautious about.
 
@@ -137,7 +137,7 @@ if your computer is running Linux.
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+   * `ls` : Lists all contacts.
 
    * `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` : Adds a student named `John Doe` to the TA Toolkit.
 
@@ -216,7 +216,7 @@ The following parameters are used for commands:
 * Items with … after them can be used multiple times (1 or more).<br>
   For example, the `ls CLASS_GROUP` command can be used to search 1 `CLASS_GROUP` like `ls T10`, or 2 `CLASS_GROUP`s like `ls T10 T20`.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (such as `help`, `ls`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * For any command that fails to executed, refer to the Result Display, which will provide a helpful explanation to help you correct your command.
