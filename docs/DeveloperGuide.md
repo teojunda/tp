@@ -742,5 +742,3 @@ testers are expected to do more *exploratory* testing.
 ## Planned Enhancements
 
 Team Size: 5
-
-### 
