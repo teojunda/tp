@@ -229,7 +229,7 @@ The following parameters are used for commands:
   ![Result_Display](images/ErrorMessage_example.png)
 
 * If any extra parameters with an invalid prefix are provided, the command will consider that prefix and parameter as part of the previous parameter.<br>
-  e.g. if the command specifies `ac n=John Doe c=F14-3 p=98765432 homework=Lab 4`, the command will interpret `homework=Lab 4` as part of the `PHONE_NUMBER` parameter, as `homework` is not a valid prefix for the `ac` command.
+  e.g. if the command specifies `ac n/John Doe c/T42 p/98765432 homework/Lab 4`, the command will interpret `homework/Lab 4` as part of the `PHONE_NUMBER` parameter, as `homework` is not a valid prefix for the `ac` command.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
@@ -251,7 +251,7 @@ Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB
 * When adding a contact, the contact's EMAIL, PHONE_NUMBER, TELEGRAM, GITHUB must be unique compared to every other person in TA Toolkit.
 
 Examples:
-* `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `F14-3`, phone number `98765432`, email `johnd@example.com`, telegram
+* `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `T42`, phone number `98765432`, email `johnd@example.com`, telegram
 handle `@johndoe` and github `johnDoeGithub` to the list of contacts.
 
 ![Add_Contact](images/ac_example.png)
@@ -304,7 +304,7 @@ Format: `ls [CLASS_GROUP...]`
 
 Examples:
 * `ls` Displays all persons in the TA Toolkit.
-* `ls F14` Displays all person with a CLASS_GROUP beginning with F14, e.g. F14, F14-3, etc.
+* `ls T4` Displays all person with a CLASS_GROUP beginning with T4, e.g. T40, T42, etc.
 
 <box type="info" seamless>
 
@@ -497,7 +497,7 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
 | [**Delete Note**](#deleting-note-from-a-person-dn) | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                      |
 | [**Find**](#locating-persons-by-name-find)         | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                         |
 | [**Help**](#viewing-help-help)                     | `help`                                                                                                                                                                |
-| [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                             |
+| [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls T42`                                                                                                                             |
 | [**Mark Attendance**](#marking-attendance-ma)      | `ma w/WEEK [pre/PRESENT_INDEX] [abs/ABSENT_INDEX]` <br> e.g.,`ma w/1 pre/1,2 abs/3`                                                                                   |
 | [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                            |
 | [**View**](#viewing-a-person-view)                 | `view INDEX`                                                                                                                                                          |

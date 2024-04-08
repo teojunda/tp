@@ -35,7 +35,7 @@ public class AddCommand extends Command {
             + "[" + PREFIX_GITHUB + "GITHUB ID]\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "John Doe "
-            + PREFIX_CLASS_GROUP + "F14-3 "
+            + PREFIX_CLASS_GROUP + "T42 "
             + PREFIX_EMAIL + "johndoe@gmail.com "
             + PREFIX_PHONE + "91234567 "
             + PREFIX_TELEGRAM + "@johndoe "
