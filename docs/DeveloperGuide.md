@@ -787,6 +787,17 @@ Expected Output: TA Toolkit closes.
 
 Team Size: 5
 
+### Better name validation
+
+**Background**: Currently, TA Toolkit only allows contacts' name to contain alphanumeric characters and spaces.
+
+**Issue**: The strict restrictions will prevent some valid names from being accepted.
+For example, "Ravi S/O Ramasamy" is rejected as it contains a '/' character.
+
+**Enhancement**: We plan on changing the parameter prefixes to use the '=' character instead of the '/' character.
+Furthermore, we will loosen the restrictions on names to allow the '/' character.
+This will allow the TA Toolkit to accept legal names containing the '/' character.
+
 ### Better identification of unique students
 
 **Background**: Currently, TA Toolkit does not have a unique identifier to identify unique students.
