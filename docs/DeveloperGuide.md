@@ -846,3 +846,12 @@ Expected Output: TA Toolkit closes.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Appendix: Planned Enhancements
+
+### More comprehensive attendance taking
+
+**Background**: Currently, TA Toolkit only allows TAs to mark their students as present or absent.
+
+**Issue**: This introduces confusion to the TA, when marking attendance for students with other attendance status.
+For example, some students might be absent with valid reasons, like being on medical leave.
+
+**Enhancement**: We plan on introducing more attendance statuses that TAs can mark their students with, like being absent with valid reason.
