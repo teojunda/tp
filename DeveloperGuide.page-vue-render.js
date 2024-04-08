@@ -530,10 +530,10 @@ with(this){return _c('h3',{attrs:{"id":"better-identification-of-unique-students
 with(this){return _c('p',[_c('strong',[_v("Background")]),_v(": Currently, TA Toolkit does not have a unique identifier to identify unique students.\nThere is only weak checking done to ensure students do not have duplicate email, phone number, telegram, github.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Issue")]),_v(": TAs might have difficulty differentiating between students with the same name.")])}
+with(this){return _c('p',[_c('strong',[_v("Issue")]),_v(": TAs might have difficulty differentiating between students with the same name.\nThis is a problem when looking at the attendance overview, when the TA sees a name as absent. If 2 people share that name, the TA does not know which of them is absent.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Enhancement")]),_v(": We plan on adding Student ID as a field for students, which will be the unique identifier for student contacts.")])}
+with(this){return _c('p',[_c('strong',[_v("Enhancement")]),_v(": We plan on adding Student ID as a field for students, which will be the unique identifier for student contacts.\nWhen displaying the attendance overview, the Student ID will accompany the student's name to uniquely identify him.")])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"more-comprehensive-attendance-taking"}},[_v("More comprehensive attendance taking"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#more-comprehensive-attendance-taking","onclick":"event.stopPropagation()"}})])}
@@ -548,6 +548,6 @@ with(this){return _c('p',[_c('strong',[_v("Issue")]),_v(": This introduces confu
 with(this){return _c('p',[_c('strong',[_v("Enhancement")]),_v(": We plan on introducing more attendance statuses that TAs can mark their students with, like being absent with valid reason.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Mon, 8 Apr 2024, 17:29:39 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Mon, 8 Apr 2024, 17:35:23 GMT+8]")])])])}
 }];
   
