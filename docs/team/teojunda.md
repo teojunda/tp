@@ -5,42 +5,40 @@ title: "Axel's Project Portfolio Page"
 
 ### Project: TaToolkit Level 3
 
-TaToolkit - Level 3 is a desktop application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
+TaToolkit is a desktop application used for teaching assistant to manage their students' personal details and other information related to their classroom. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 28 kLoC.
 
 Given below are my contributions to the project.
 
-* **New Feature**: Added the ability to undo/redo previous commands.
-    * What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.
-    * Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.
-    * Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
-    * Credits: *{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}*
+* **Modified Feature**: Changed the `editCommand` to suit the purposes of TA Toolkit better.
+    * What it does: allows the user to modify the fields in a student contact (Class group, Email, Phone number, Telegram, Github).
+    * Justification: This feature improves the product significantly because a user can update student contact information to be correct.
+    * Highlights: This enhancement affects existing commands. It also had to fit into the wider design architecture to ensure it worked with other commands like the `viewCommand`.
+    * Credits: The code was part of an existing feature from the AB3 brownfield project.
 
-* **New Feature**: Added a history command that allows the user to navigate to previous commands using up/down keys.
+* **New Feature**: Added a `deleteNoteCommand` to delete notes from a student contact.
+  * What it does: allows the user to delete notes from a student contact.
+  * Justification: This feature improves the product significantly because a user can update delete irrelevant notes to keep only information that is important.
+  * Highlights: This enhancement affects existing commands like the `addNoteCommand`. It required a good design approach to ensure it worked well with the various other commands without any bugs.
 
-* **Code contributed**: [RepoSense link]()
+* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s2.github.io/tp-dashboard/?search=f14&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2024-02-23&tabOpen=true&tabType=authorship&tabAuthor=teojunda&tabRepo=AY2324S2-CS2103T-F14-3%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false)
 
 * **Project management**:
-    * Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
+    * Integrated CodeCov into project repository
+    * Set up MarkBind project website
 
-* **Enhancements to existing features**:
-    * Updated the GUI color scheme (Pull requests [\#33](), [\#34]())
-    * Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests [\#36](), [\#38]())
+* **Other enhancements**:
+    * Implemented sorted order of contacts in TA Toolkit (Pull request [\#43](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/43))
+    * Ensured side panel display would correct update after every relevant command (Pull request [\#65](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/65/files))
 
 * **Documentation**:
     * User Guide:
-        * Added documentation for the features `delete` and `find` [\#72]()
-        * Did cosmetic tweaks to existing documentation of features `clear`, `exit`: [\#74]()
+        * Added documentation for the feature `MarkCommand` (Pull request [\#118](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/118))
+        * Added introduction, interface walkthrough, parameter guidelines, example images, and glossary (Pull request [\#115](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/115))
     * Developer Guide:
-        * Added implementation details of the `delete` feature.
+        * Added use cases and user stories (Pull requests [\#30](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/30), [\#37](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/37))
+        * Included implementation details of Edit Command (Pull request [\#57](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/57))
 
 * **Community**:
-    * PRs reviewed (with non-trivial review comments): [\#12](), [\#32](), [\#19](), [\#42]()
-    * Contributed to forum discussions (examples: [1](), [2](), [3](), [4]())
-    * Reported bugs and suggestions for other teams in the class (examples: [1](), [2](), [3]())
-    * Some parts of the history feature I added was adopted by several other class mates ([1](), [2]())
+    * 36 PRs reviewed (examples: [\#38](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/38), [\#55](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/55), [\#112](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/112))
+    * Reported bugs and suggestions for other teams in the class (examples: [1](https://github.com/AY2324S2-CS2103T-T16-1/tp/issues/157), [2](https://github.com/teojunda/ped/issues/11), [3](https://github.com/teojunda/ped/issues/4))
 
-* **Tools**:
-    * Integrated a third party library (Natty) to the project ([\#42]())
-    * Integrated a new Github plugin (CircleCI) to the team repo
-
-* _{you can add/remove categories in the list above}_
