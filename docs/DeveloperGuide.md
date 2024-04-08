@@ -804,8 +804,10 @@ This will allow the TA Toolkit to accept legal names containing the '/' characte
 There is only weak checking done to ensure students do not have duplicate email, phone number, telegram, github.
 
 **Issue**: TAs might have difficulty differentiating between students with the same name.
+This is a problem when looking at the attendance overview, when the TA sees a name as absent. If 2 people share that name, the TA does not know which of them is absent.
 
 **Enhancement**: We plan on adding Student ID as a field for students, which will be the unique identifier for student contacts.
+When displaying the attendance overview, the Student ID will accompany the student's name to uniquely identify him.
 
 ### More comprehensive attendance taking
 
