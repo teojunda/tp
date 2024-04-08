@@ -663,23 +663,38 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should
 be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  All functions within the application must provide responses to user queries within a timeframe of 2 seconds.
-5.  The applications does not support concurrent usage by multiple users.
+5.  The application does not support concurrent usage by multiple users.
 6.  The application does not offer support for languages aside from English.
 7.  The application should be able to handle most common user input errors and provide meaningful error messages.
+8.  The application should work without internet connection.
+9.  The application's GUI should effectively organise and display data, facilitating easy comprehension of application details for users.
 
 *{More to be added}*
 
 ### Glossary
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **CLI**: Command Line Interface: A way of interacting with a computer program where the user issues commands to the
-program in the form of successive lines of text (command lines). It emphasises text-based user interaction over graphical user interfaces.
-* **TA**: Teaching Assistant
-* **OOP**: Object-Oriented Programming
+* **Absent**: A attendance status to indicate that a student did not attend a class.
+* **Alphanumeric**: A String consisting of only letters (a-z, A-Z) or numbers or both.
 * **API**: Application Programming Interface
-* **GUI**: Graphical User Interface
+* **Command**: Commands are necessary to use TA Toolkit. A command has to be typed into the Command Box and entered to be executed.
+* **Command terminal**: A command terminal is a text-based interface through which users can interact with a computer program by typing commands.
+* **CLI**: Command Line Interface: A way of interacting with a computer program where the user issues commands to the
+  program in the form of successive lines of text (command lines). It emphasises text-based user interaction over graphical user interfaces.
+* **Email**: A unique identifier for an email account.
+* **Index**: A number representing the position of an item in a list.
+* **Github ID**: A unique identifier for a Github account. E.g. johnDoe
+* **GUI**: Graphical User Interface: A mode of interacting with a computer program that relies on visual elements such as windows, icons, buttons, and menus.
+* **Hard disk**: A component of a computer system responsible for long-term storage of data.
+* **JSON file**: A JSON (JavaScript Object Notation) file is a structured data file format used for storing and transmitting data between the hard disk and TA Toolkit.
+* **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **MSS**: Main Success Scenario: The main flow of events in a use case.
+* **Note**: A String that can be associated to a person to provide additional details about them.
+* **OOP**: Object-Oriented Programming
+* **Phone number**: A sequence of digits that is dialled on a telephone to contact a person.
+* **Present**: A attendance status to indicate that a student attended a class.
 * **TA**: Teaching Assistant
+* **Telegram handle**: A unique identifier for a Telegram account. E.g. @johnDoe
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Appendix: Instructions for manual testing**
@@ -699,38 +714,135 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TAToolkit.jar` command to run the application.<br>
+      Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
-1. Saving window preferences
+### Adding a person
 
-   1. Resize the window to an optimum size. Move the window to a different location. Close the window.
+Prerequisite: There is no person in TA Toolkit with the same email, phone number, telegram, and github as the person to be added.
 
-   1. Re-launch the app by double-clicking the jar file.<br>
-       Expected: The most recent window size and location is retained.
+Test case: `ac n=John Doe c=T42 p=98765432 e=johnd@example.com t=johndoe g=johnDoeGithub`
 
-1. _{ more test cases …​ }_
+Expected Output in the Displayed Person List: The new person is added into the list.
+
+Expected Output in the Result Display: A message to inform user that new person has been added along with the person’s details.
+
+Test case: `ac`
+
+Expected Output in the Result Display: An error message is shown, providing details on the correct format.
 
 ### Deleting a person
 
-1. Deleting a person while all persons are being shown
+Prerequisite: There is at least 1 person in the Displayed Person List.
 
-   1. Prerequisites: List all persons using the `ls` command. Multiple persons in the list.
+Test case: `dc 1`
 
-   1. Test case: `dc 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+Expected Output in the Displayed Person List: First contact is deleted from the list.
 
-   1. Test case: `dc 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+Expected Output in the Result Display: Details of the deleted person is shown in the status message.
 
-   1. Other incorrect delete commands to try: `dc`, `dc x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+Test case: `dc 0`
 
-1. _{ more test cases …​ }_
+Expected: No person is deleted. Error details shown in the Result Display.
 
-### Saving data
+### Update a person
 
-1. Dealing with missing/corrupted data files
+Prerequisite: There is at least 1 person in the Displayed Person List. This updated information must be different from the person to be updated.
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+Test case: `uc 1 n=Ryan Lim Jun Jie`
 
-1. _{ more test cases …​ }_
+Expected Output in the Displayed Person List: The first person in the list has their name changed to “Ryan Lim Jun Jie”, and retains the rest of their details. The persons in the Displayed Person List are reordered.
+
+Expected Output in the Result Display: Details of the updated person is shown in the status message.
+
+### View a person
+
+Prerequisite: There is at least 1 person in the Displayed Person List.
+
+Test case: `view 1`
+
+Expected Output in the Side Panel Display: All details related to the first person in the list are displayed.
+
+Expected Output in the Result Display: Details of the viewed person is shown in the status message.
+
+### Find a person by matching name
+
+Prerequisite: There are only 2 persons named "Alex Yeoh" and "Bernice Yu" respectively in TA Toolkit.
+
+Test case: `find Alex`
+
+Expected Output in the Displayed Person List: The details of "Alex Yeoh" are shown.
+
+Expected Output in the Result Display: Message states “1 persons listed”.
+
+Test case: `find Zachary`
+
+Expected Output in the Displayed Person List: The list is empty.
+
+Expected Output in the Result Display: Message states “0 persons listed”.
+
+### Mark attendance
+
+Prerequisite: There is at least 1 person in the Displayed Person List.
+
+Test case: `ma w=1 abs=1`
+
+Expected Output in the Result Display: A message that informing that the first person in list has been marked as absent.
+
+### List persons in a class/ View attendance for a class
+
+Prerequisite: There is at least 1 person with the class "T42". They should be marked as absent.
+
+Test case: `ls T42`
+
+Expected Output in the Displayed Person List: All persons from the class "T42" are displayed.
+
+Expected Output in the Result Display: Message states the number of persons displayed.
+
+Expected Output in the Side Panel Display: The list of absentees from the class "T42" are displayed by week.
+
+### Adding a note to a person
+
+Prerequisite: There is at least 1 person in the Displayed Person List. The same person is being viewed in the Side Panel Display.
+
+Test case: `an 1 note=very hardworking!`
+
+Expected Output in the Result Display: Message states the details of the first person in the list, as well as the note added.
+
+Expected Output in the Side Panel Display: The new note is displayed under the notes section of the person.
+
+### Deleting a note from a person
+
+Prerequisite: There is 1 person with 1 note in the Displayed Person List. The same person is being viewed in the Side Panel Display.
+
+Test case: `dn 1 i=1`
+
+Expected Output in the Result Display: Message states the details of the first person in the list, as well as the note deleted.
+
+Expected Output in the Side Panel Display: The first note is removed from the notes section of the person.
+
+### Clearing the application data
+
+Test case: `clear`
+
+Expected Output in the Displayed Person List: Nothing is displayed.
+
+Expected Output in the Side Panel Display: Nothing is displayed.
+
+Expected Output in the Result Display: A message stating that app data has been cleared.
+
+### Help
+
+Test case: `help`
+
+Expected Output: A window shows up and provides the link to the User Guide.
+
+### Exit
+
+Test case: `exit`
+
+Expected Output: TA Toolkit closes.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Appendix: Planned Enhancements
