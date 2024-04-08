@@ -67,7 +67,7 @@ Blue labels represent helpful tips to enhance your experience.
 
 </box>
 
-<box type="caution" seamless>
+<box type="warning" seamless>
 
 Yellow labels represent warnings that you should be cautious about.
 
@@ -123,23 +123,29 @@ you can quickly the attendace of an entire class by only marking the absentees a
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
+To install Java on a Windows computer, click [here](https://www.java.com/en/download/help/windows_manual_download.html).
+
+To install Java that is compatible with our application on a Mac computer, download and install the Azul build of OpenJDK 11 version found [here](https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk-fx) and ensure to choose the JDK FXversion.
+
+To install Java on a Linux computer, click [here](https://www.java.com/en/download/help/linux_x64_install.html).
+
 To check the version of Java installed on your computer, click [here](https://www.java.com/en/download/help/version_manual.html) if you are using a Windows or Mac computer, and click [here](https://phoenixnap.com/kb/check-java-version-linux)
 if your computer is running Linux.
 
-1. Download the latest `TAToolkit.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-3/tp/releases).
+2. Download the latest `TAToolkit.jar` from [here](https://github.com/AY2324S2-CS2103T-F14-3/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your TA Toolkit.
+3. Copy the file to the folder you want to use as the _home folder_ for your TA Toolkit.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TAToolkit.jar` command to run the application.<br>
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TAToolkit.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/ActualUi.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+   * `ls` : Lists all contacts.
 
-   * `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` : Adds a student named `John Doe` to the TA Toolkit.
+   * `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` : Adds a student named `John Doe` to the TA Toolkit.
 
    * `dc 3` : Deletes the 3rd contact shown in the current list.
 
@@ -147,7 +153,7 @@ if your computer is running Linux.
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -178,21 +184,21 @@ Some of TA Toolkit's commands require parameters, which have specific formats. B
 
 The following parameters are used for commands:
 
-| Parameter     | Prefix | Format                                                                                                           | Example                                         |
-|---------------|--------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| INDEX         | -      | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| KEYWORD       | -      | Alphanumeric only                                                                                                | `Alex`, `Bernice`                               |
-| NAME          | n/     | Alphanumeric, can contain multiple words                                                                         | `Alex Yeoh`, `Bernice Yu`                       |
-| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits                                                                              | `99999999`, `88888888`                          |
-| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores                                                | `@nus_cs2103` , `@johnDoe`                      |
-| EMAIL         | e/     | Valid email format only                                                                                          | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
-| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens                                           | `johnDoe`, `alice-yu`                           |
-| CLASS_GROUP   | c/     | Consists of alphanumeric characters, separated by hyphens                                                        | `CS2100-T10`, `F14-3-2`                         |
-| NOTE          | note/  | Consists of a alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks) | `Proficient in Java!`, `Beginner to Python.`    |
-| NOTE_INDEX    | i/     | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| WEEK          | w/     | Positive integers from 1 - 13 only                                                                               | `1`, `2`, `3`                                   |
-| PRESENT_INDEX | pre/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| ABSENT_INDEX  | abs/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
+| Parameter     | Prefix | Format                                                                                                                                                                                                                                                                                         | Example                                         |
+|---------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| INDEX         | -      | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
+| KEYWORD       | -      | Alphanumeric only                                                                                                                                                                                                                                                                              | `Alex`, `Bernice`                               |
+| NAME          | n/     | Alphanumeric, can contain multiple words                                                                                                                                                                                                                                                       | `Alex Yeoh`, `Bernice Yu`                       |
+| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits                                                                                                                                                                                                                                                            | `99999999`, `88888888`                          |
+| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores                                                                                                                                                                                                                              | `@nus_cs2100` , `@johnDoe`                      |
+| EMAIL         | e/     | Includes letters, numbers, underscores, dots, and dashes, followed by the '@' symbol, then the domain name which includes at least one dot, separating the domain and the top-level domain (e.g., '.com', '.net'). The domain and the top-level domain must both have at least two characters. | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
+| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens                                                                                                                                                                                                                         | `johnDoe`, `alice-yu`                           |
+| CLASS_GROUP   | c/     | Consists of alphanumeric characters                                                                                                                                                                                                                                                            | `T10`, `T42`                                    |
+| NOTE          | note/  | Consists of a alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks)                                                                                                                                                                               | `Proficient in Java!`, `Beginner to Python.`    |
+| NOTE_INDEX    | i/     | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
+| WEEK          | w/     | Positive integers from 1 - 13 only                                                                                                                                                                                                                                                             | `1`, `2`, `3`                                   |
+| PRESENT_INDEX | pre/   | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
+| ABSENT_INDEX  | abs/   | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -216,11 +222,14 @@ The following parameters are used for commands:
 * Items with … after them can be used multiple times (1 or more).<br>
   For example, the `ls CLASS_GROUP` command can be used to search 1 `CLASS_GROUP` like `ls T10`, or 2 `CLASS_GROUP`s like `ls T10 T20`.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (such as `help`, `ls`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * For any command that fails to executed, refer to the Result Display, which will provide a helpful explanation to help you correct your command.
   ![Result_Display](images/ErrorMessage_example.png)
+
+* If any extra parameters with an invalid prefix are provided, the command will consider that prefix and parameter as part of the previous parameter.<br>
+  e.g. if the command specifies `ac n=John Doe c=F14-3 p=98765432 homework=Lab 4`, the command will interpret `homework=Lab 4` as part of the `PHONE_NUMBER` parameter, as `homework` is not a valid prefix for the `ac` command.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
@@ -242,7 +251,7 @@ Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB
 * When adding a contact, the contact's EMAIL, PHONE_NUMBER, TELEGRAM, GITHUB must be unique compared to every other person in TA Toolkit.
 
 Examples:
-* `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `F14-3`, phone number `98765432`, email `johnd@example.com`, telegram
+* `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `F14-3`, phone number `98765432`, email `johnd@example.com`, telegram
 handle `@johndoe` and github `johnDoeGithub` to the list of contacts.
 
 ![Add_Contact](images/ac_example.png)
@@ -344,6 +353,7 @@ Format: `dn INDEX i/NOTE_INDEX...`
 * `INDEX` refers to the index number shown in the displayed person list.
 * `NOTEINDEX` refers to the index of the note within a person.
 * `INDEX` and `NOTEINDEX` **must be a positive integer** 1, 2, 3, …​
+* If multiple indices are provided, they should be comma-separated.
 
 Examples:
 * `dn 1 i/1` deletes the first note from the 1st person in the TA Toolkit.
@@ -478,19 +488,19 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
 
 ## Command summary
 
-| Action                                             | Format, Examples                                                                                                                                                        |
-|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Add**](#adding-a-person-ac)                     | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub` |
-| [**Add Note**](#adding-note-to-a-person-an)        | `an INDEX note/NOTE` <br> e.g., `an 1 note/Very interested in Assembly`                                                                                                 |
-| [**Clear**](#clearing-all-entries-clear)           | `clear`                                                                                                                                                                 |
-| [**Delete**](#deleting-a-person-dc)                | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                             |
-| [**Delete Note**](#deleting-note-from-a-person-dn) | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                        |
-| [**Find**](#locating-persons-by-name-find)         | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                           |
-| [**Help**](#viewing-help-help)                     | `help`                                                                                                                                                                  |
-| [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                               |
-| [**Mark Attendance**](#marking-attendance-ma)      | `ma w/WEEK [pre/PRESENT_INDEX] [abs/ABSENT_INDEX]` <br> e.g.,`ma w/1 pre/1,2 abs/3`                                                                                     |
-| [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                          |
-| [**View**](#viewing-a-person-view)                 | `view INDEX`                                                                                                                                                            |
+| Action                                             | Format, Examples                                                                                                                                                      |
+|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Add**](#adding-a-person-ac)                     | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T42 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub` |
+| [**Add Note**](#adding-note-to-a-person-an)        | `an INDEX note/NOTE` <br> e.g., `an 1 note/Very interested in Assembly`                                                                                               |
+| [**Clear**](#clearing-all-entries-clear)           | `clear`                                                                                                                                                               |
+| [**Delete**](#deleting-a-person-dc)                | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                           |
+| [**Delete Note**](#deleting-note-from-a-person-dn) | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                      |
+| [**Find**](#locating-persons-by-name-find)         | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                         |
+| [**Help**](#viewing-help-help)                     | `help`                                                                                                                                                                |
+| [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                             |
+| [**Mark Attendance**](#marking-attendance-ma)      | `ma w/WEEK [pre/PRESENT_INDEX] [abs/ABSENT_INDEX]` <br> e.g.,`ma w/1 pre/1,2 abs/3`                                                                                   |
+| [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                            |
+| [**View**](#viewing-a-person-view)                 | `view INDEX`                                                                                                                                                          |
 
 --------------------------------------------------------------------------------------------------------------------
 
