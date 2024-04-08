@@ -229,7 +229,7 @@ The following parameters are used for commands:
   ![Result_Display](images/ErrorMessage_example.png)
 
 * If any extra parameters with an invalid prefix are provided, the command will consider that prefix and parameter as part of the previous parameter.<br>
-  e.g. if the command specifies `ac n=John Doe c=T42 p=98765432 homework=Lab 4`, the command will interpret `homework=Lab 4` as part of the `PHONE_NUMBER` parameter, as `homework` is not a valid prefix for the `ac` command.
+  e.g. if the command specifies `ac n/John Doe c/T42 p/98765432 homework/Lab 4`, the command will interpret `homework/Lab 4` as part of the `PHONE_NUMBER` parameter, as `homework` is not a valid prefix for the `ac` command.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>

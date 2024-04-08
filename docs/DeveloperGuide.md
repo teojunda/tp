@@ -659,7 +659,7 @@ testers are expected to do more *exploratory* testing.
 
 Prerequisite: There is no person in TA Toolkit with the same email, phone number, telegram, and github as the person to be added.
 
-Test case: `ac n=John Doe c=T42 p=98765432 e=johnd@example.com t=johndoe g=johnDoeGithub`
+Test case: `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/johndoe g/johnDoeGithub`
 
 Expected Output in the Displayed Person List: The new person is added into the list.
 
@@ -687,7 +687,7 @@ Expected: No person is deleted. Error details shown in the Result Display.
 
 Prerequisite: There is at least 1 person in the Displayed Person List. This updated information must be different from the person to be updated.
 
-Test case: `uc 1 n=Ryan Lim Jun Jie`
+Test case: `uc 1 n/Ryan Lim Jun Jie`
 
 Expected Output in the Displayed Person List: The first person in the list has their name changed to “Ryan Lim Jun Jie”, and retains the rest of their details. The persons in the Displayed Person List are reordered.
 
@@ -723,7 +723,7 @@ Expected Output in the Result Display: Message states “0 persons listed”.
 
 Prerequisite: There is at least 1 person in the Displayed Person List.
 
-Test case: `ma w=1 abs=1`
+Test case: `ma w/1 abs/1`
 
 Expected Output in the Result Display: A message that informing that the first person in list has been marked as absent.
 
@@ -743,7 +743,7 @@ Expected Output in the Side Panel Display: The list of absentees from the class 
 
 Prerequisite: There is at least 1 person in the Displayed Person List. The same person is being viewed in the Side Panel Display.
 
-Test case: `an 1 note=very hardworking!`
+Test case: `an 1 note/very hardworking!`
 
 Expected Output in the Result Display: Message states the details of the first person in the list, as well as the note added.
 
@@ -753,7 +753,7 @@ Expected Output in the Side Panel Display: The new note is displayed under the n
 
 Prerequisite: There is 1 person with 1 note in the Displayed Person List. The same person is being viewed in the Side Panel Display.
 
-Test case: `dn 1 i=1`
+Test case: `dn 1 i/1`
 
 Expected Output in the Result Display: Message states the details of the first person in the list, as well as the note deleted.
 
@@ -784,6 +784,8 @@ Expected Output: TA Toolkit closes.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Appendix: Planned Enhancements
+
+Team Size: 5
 
 ### Better identification of unique students
 

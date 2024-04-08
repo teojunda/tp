@@ -5,7 +5,7 @@
 
 ### Project: TaToolkit
 
-TaToolkit is a desktop application used for teaching assistant to manage their students' personal details and other information related to their classroom. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 28 kLoC.
+TaToolkit is a desktop application used for teaching assistants to manage their students' personal details and other information related to their classroom. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 28 kLoC.
 
 Given below are my contributions to the project.
 
