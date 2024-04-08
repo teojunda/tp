@@ -682,7 +682,9 @@ program in the form of successive lines of text (command lines). It emphasises t
 * **TA**: Teaching Assistant
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
+# **Appendix**
+
+## Instructions for manual testing
 
 Given below are instructions to test the app manually.
 
@@ -734,3 +736,11 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Planned Enhancements
+
+Team Size: 5
+
+### 

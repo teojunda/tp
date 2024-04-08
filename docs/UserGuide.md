@@ -145,7 +145,7 @@ if your computer is running Linux.
 
    * `ls` : Lists all contacts.
 
-   * `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` : Adds a student named `John Doe` to the TA Toolkit.
+   * `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` : Adds a student named `John Doe` to the TA Toolkit.
 
    * `dc 3` : Deletes the 3rd contact shown in the current list.
 
@@ -190,10 +190,10 @@ The following parameters are used for commands:
 | KEYWORD       | -      | Alphanumeric only                                                                                                                                                                                                                                                                              | `Alex`, `Bernice`                               |
 | NAME          | n/     | Alphanumeric, can contain multiple words                                                                                                                                                                                                                                                       | `Alex Yeoh`, `Bernice Yu`                       |
 | PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits                                                                                                                                                                                                                                                            | `99999999`, `88888888`                          |
-| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores                                                                                                                                                                                                                              | `@nus_cs2103` , `@johnDoe`                      |
+| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores                                                                                                                                                                                                                              | `@nus_cs2100` , `@johnDoe`                      |
 | EMAIL         | e/     | Includes letters, numbers, underscores, dots, and dashes, followed by the '@' symbol, then the domain name which includes at least one dot, separating the domain and the top-level domain (e.g., '.com', '.net'). The domain and the top-level domain must both have at least two characters. | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
 | GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens                                                                                                                                                                                                                         | `johnDoe`, `alice-yu`                           |
-| CLASS_GROUP   | c/     | Consists of alphanumeric characters, separated by hyphens                                                                                                                                                                                                                                      | `CS2100-T10`, `F14-3-2`                         |
+| CLASS_GROUP   | c/     | Consists of alphanumeric characters                                                                                                                                                                                                                                                            | `T10`, `T42`                                    |
 | NOTE          | note/  | Consists of a alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks)                                                                                                                                                                               | `Proficient in Java!`, `Beginner to Python.`    |
 | NOTE_INDEX    | i/     | Positive integers only                                                                                                                                                                                                                                                                         | `1`, `2`, `3`                                   |
 | WEEK          | w/     | Positive integers from 1 - 13 only                                                                                                                                                                                                                                                             | `1`, `2`, `3`                                   |
@@ -251,7 +251,7 @@ Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB
 * When adding a contact, the contact's EMAIL, PHONE_NUMBER, TELEGRAM, GITHUB must be unique compared to every other person in TA Toolkit.
 
 Examples:
-* `ac n/John Doe c/F14-3 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `F14-3`, phone number `98765432`, email `johnd@example.com`, telegram
+* `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `F14-3`, phone number `98765432`, email `johnd@example.com`, telegram
 handle `@johndoe` and github `johnDoeGithub` to the list of contacts.
 
 ![Add_Contact](images/ac_example.png)
@@ -353,6 +353,7 @@ Format: `dn INDEX i/NOTE_INDEX...`
 * `INDEX` refers to the index number shown in the displayed person list.
 * `NOTEINDEX` refers to the index of the note within a person.
 * `INDEX` and `NOTEINDEX` **must be a positive integer** 1, 2, 3, …​
+* If multiple indices are provided, they should be comma-separated.
 
 Examples:
 * `dn 1 i/1` deletes the first note from the 1st person in the TA Toolkit.
@@ -487,19 +488,19 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
 
 ## Command summary
 
-| Action                                             | Format, Examples                                                                                                                                                        |
-|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Add**](#adding-a-person-ac)                     | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T10-2 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub` |
-| [**Add Note**](#adding-note-to-a-person-an)        | `an INDEX note/NOTE` <br> e.g., `an 1 note/Very interested in Assembly`                                                                                                 |
-| [**Clear**](#clearing-all-entries-clear)           | `clear`                                                                                                                                                                 |
-| [**Delete**](#deleting-a-person-dc)                | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                             |
-| [**Delete Note**](#deleting-note-from-a-person-dn) | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                        |
-| [**Find**](#locating-persons-by-name-find)         | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                           |
-| [**Help**](#viewing-help-help)                     | `help`                                                                                                                                                                  |
-| [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                               |
-| [**Mark Attendance**](#marking-attendance-ma)      | `ma w/WEEK [pre/PRESENT_INDEX] [abs/ABSENT_INDEX]` <br> e.g.,`ma w/1 pre/1,2 abs/3`                                                                                     |
-| [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                          |
-| [**View**](#viewing-a-person-view)                 | `view INDEX`                                                                                                                                                            |
+| Action                                             | Format, Examples                                                                                                                                                      |
+|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Add**](#adding-a-person-ac)                     | `ac n/NAME c/CLASS_GROUP e/EMAIL p/PHONE_NUMBER [t/TELEGRAM] [g/GITHUB]` <br> e.g., `ac c/T42 n/James Ho p/22224444 e/jamesho@example.com t/@jamesho g/jameshoGithub` |
+| [**Add Note**](#adding-note-to-a-person-an)        | `an INDEX note/NOTE` <br> e.g., `an 1 note/Very interested in Assembly`                                                                                               |
+| [**Clear**](#clearing-all-entries-clear)           | `clear`                                                                                                                                                               |
+| [**Delete**](#deleting-a-person-dc)                | `dc INDEX`<br> e.g., `dc 3`                                                                                                                                           |
+| [**Delete Note**](#deleting-note-from-a-person-dn) | `dn INDEX i/NOTEINDEX...`<br> e.g., `dn 1 i/1,2`                                                                                                                      |
+| [**Find**](#locating-persons-by-name-find)         | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                         |
+| [**Help**](#viewing-help-help)                     | `help`                                                                                                                                                                |
+| [**List**](#listing-persons-ls)                    | `ls [CLASS_GROUP...]` <br> e.g., `ls F14`                                                                                                                             |
+| [**Mark Attendance**](#marking-attendance-ma)      | `ma w/WEEK [pre/PRESENT_INDEX] [abs/ABSENT_INDEX]` <br> e.g.,`ma w/1 pre/1,2 abs/3`                                                                                   |
+| [**Update**](#updating-a-person-uc)                | `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]` <br> e.g.,`uc 2 n/James Lee e/jameslee@example.com`                            |
+| [**View**](#viewing-a-person-view)                 | `view INDEX`                                                                                                                                                          |
 
 --------------------------------------------------------------------------------------------------------------------
 
