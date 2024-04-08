@@ -536,6 +536,6 @@ with(this){return _c('p',[_c('strong',[_v("Issue")]),_v(": This introduces confu
 with(this){return _c('p',[_c('strong',[_v("Enhancement")]),_v(": We plan on introducing more attendance statuses that TAs can mark their students with, like being absent with valid reason.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Mon, 8 Apr 2024, 15:10:49 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Mon, 8 Apr 2024, 17:01:00 GMT+8]")])])])}
 }];
   
