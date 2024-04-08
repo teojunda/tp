@@ -633,7 +633,9 @@ be able to accomplish most of the tasks faster using commands than using the mou
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
+# **Appendix**
+
+## Instructions for manual testing
 
 Given below are instructions to test the app manually.
 
