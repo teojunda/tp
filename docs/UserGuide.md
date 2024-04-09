@@ -184,21 +184,21 @@ Some of TA Toolkit's commands require parameters, which have specific formats. B
 
 The following parameters are used for commands:
 
-| Parameter     | Prefix | Format                                                                                                           | Example                                         |
-|---------------|--------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| INDEX         | -      | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| KEYWORD       | -      | Alphanumeric only                                                                                                | `Alex`, `Bernice`                               |
-| NAME          | n/     | Alphanumeric, can contain multiple words                                                                         | `Alex Yeoh`, `Bernice Yu`                       |
-| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits and maximum of 15 digits                                                     | `99999999`, `88888888`                          |
-| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores                                                | `@nus_cs2100` , `@johnDoe`                      |
-| EMAIL         | e/     | Includes letters, numbers, underscores, dots, and dashes, followed by the '@' symbol, then a domain name         | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
-| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens                                           | `johnDoe`, `alice-yu`                           |
-| CLASS_GROUP   | c/     | Consists of alphanumeric characters                                                                              | `T10`, `T42`                                    |
-| NOTE          | note/  | Consists of a alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks) | `Proficient in Java!`, `Beginner to Python.`    |
-| NOTE_INDEX    | i/     | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| WEEK          | w/     | Positive integers from 1 - 13 only                                                                               | `1`, `2`, `3`                                   |
-| PRESENT_INDEX | pre/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
-| ABSENT_INDEX  | abs/   | Positive integers only                                                                                           | `1`, `2`, `3`                                   |
+| Parameter     | Prefix | Format                                                                                                                                                                                                                   | Example                                         |
+|---------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| INDEX         | -      | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
+| KEYWORD       | -      | Alphanumeric only                                                                                                                                                                                                        | `Alex`, `Bernice`                               |
+| NAME          | n/     | Alphanumeric, can contain multiple words                                                                                                                                                                                 | `Alex Yeoh`, `Bernice Yu`                       |
+| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits. Users are responsible for ensuring phone number is valid.                                                                                                                           | `99999999`, `88888888`                          |
+| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores. Users are responsible for ensuring Telegram ID is valid.                                                                                              | `@nus_cs2100` , `@johnDoe`                      |
+| EMAIL         | e/     | A local-part (consisting of letters, numbers, underscores, dots, and dashes), followed by the '@' symbol, then the domain name with at least 2 characters. Users are responsible for ensuring the email address is valid.| `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
+| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens. Users are responsible for ensuring Github ID is valid.                                                                                           | `johnDoe`, `alice-yu`                           |
+| CLASS_GROUP   | c/     | Consists of alphanumeric characters                                                                                                                                                                                      | `T10`, `T42`                                    |
+| NOTE          | note/  | Consists of alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks)                                                                                                           | `Proficient in Java!`, `Beginner to Python.`    |
+| NOTE_INDEX    | i/     | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
+| WEEK          | w/     | Positive integers from 1 - 13 only                                                                                                                                                                                       | `1`, `2`, `3`                                   |
+| PRESENT_INDEX | pre/   | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
+| ABSENT_INDEX  | abs/   | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -237,8 +237,6 @@ The following parameters are used for commands:
 ### Viewing help : `help`
 
 This opens a window containg a link to the User Guide.
-
-![help message](images/helpMessage.png)
 
 Format: `help`
 

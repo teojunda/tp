@@ -321,7 +321,7 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* is a CS2103T TA in NUS School of Computing
+* is a CS2100 TA in NUS School of Computing
 * has a need to manage a significant number of contacts over different communication channels
 * prefer desktop apps over other types
 * can type fast
@@ -336,28 +336,25 @@ across different communication channels efficiently. It is optimised for use via
 Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI)
 * It categorises contacts into their tutorial group, allowing for easier management of contacts
 * It allows the user to add, delete, edit, find and view student contacts
-* Users are able to take notes on specific students and keep track of tasks associated to students
-
+* Users are able to take notes on specific students and keep track of students' attendance
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​ | I want to …​                                  | So that I can…​                                          |
-|----------|---------|-----------------------------------------------|----------------------------------------------------------|
-| `* * *`  | TA      | add a student contact                         | keep track of my students when I need to                 |
-| `* * *`  | TA      | delete a student contact                      | remove students from the database if they drop the class |
-| `* * *`  | TA      | view all student contacts                     | see a list of all my students                            |
-| `* *`    | TA      | view a students' detailed information         | see all the information related to a student             |
-| `* *`    | TA      | edit a student contact                        | update a students’s details should they change           |
-| `* *`    | TA      | assign student to project team                | organise students according to their project team        |
-| `* *`    | TA      | take notes on students                        | keep track of their strengths and weaknesses             |
-| `* *`    | TA      | delete notes on students                      | remove notes that are no longer relevant                 |
-| `*`      | TA      | mark student as absent for a specific class   | be aware of who is missing lessons                       |
-| `*`      | TA      | unmark student as absent for a specific class | correct mistakes in attendance marking                   |
-| `* `     | TA      | view all student contacts for a project team  | see a list of students in a project team                 |
-| `* `     | TA      | view summary of all students attendance       | get a quick overview of class attendance                 |
-
-*{More to be added}*
+| Priority | As a …​ | I want to …​                                   | So that I can…​                                          |
+|----------|---------|------------------------------------------------|----------------------------------------------------------|
+| `* * *`  | TA      | add a student contact                          | keep track of my students when I need to                 |
+| `* * *`  | TA      | delete a student contact                       | remove students from the database if they drop the class |
+| `* * *`  | TA      | view all student contacts                      | see a list of all my students                            |
+| `* *`    | TA      | view a students' detailed information          | see all the information related to a student             |
+| `* *`    | TA      | edit a student contact                         | update a students’s details should they change           |
+| `* *`    | TA      | assign student to a class                      | organise students by their class                         |
+| `* *`    | TA      | take notes on students                         | keep track of their strengths and weaknesses             |
+| `* *`    | TA      | delete notes on students                       | remove notes that are no longer relevant                 |
+| `*`      | TA      | mark student as absent for a specific week     | be aware of who is missing lessons                       |
+| `*`      | TA      | mark student as present for a specific week    | correct mistakes in attendance marking                   |
+| `* `     | TA      | view all student contacts for a specific class | see a list of students in a project team                 |
+| `* `     | TA      | view summary of all students attendance        | get a quick overview of class attendance                 |
 
 ### Use cases
 
@@ -380,10 +377,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 1.
 
-* 2a. Student already exists in the list of students.
+* 2a. A field of the new student (Email, Phone number, Telegram, Github) already exists in the list of students.
     * 2a1. TA Toolkit shows an error message.
 
-      Use case ends.
+      Use case resumes at step 1.
 
 ---
 
@@ -392,9 +389,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. User enters command to delete a student
-2. TA Toolkit requests for confirmation
-3. User confirms
-4. TA Toolkit deletes the student’s contact and displays a success message
+2. TA Toolkit deletes the student’s contact and displays a success message
 
    Use case ends.
 
@@ -402,11 +397,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 1a. TA Toolkit does not contain the student specified
     * 1a1. TA Toolkit shows an error message.
-
-      Use case resumes at step 1.
-
-* 3a. The User chooses to cancel the deletion of the student
-    * 3a1. TA Toolkit cancels the deletion
 
       Use case ends.
 
@@ -434,6 +424,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 1.
 
+* 2b. The updated student contact is the same as the original student contact.
+    * 2a1. TA Toolkit shows an error message.
+
+      Use case resumes at step 1.
+
+* 2c. The updated student contact shares a duplicate field (Email, Phone number, Github, Telegram) with another contact.
+    * 2c1. TA Toolkit shows an error message.
+
+      Use case resumes at step 1.
+
 ---
 
 **Use case: UC04 - Viewing students overview**
@@ -448,7 +448,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ---
 
-**Use case: UC05 - View a student detailed**
+**Use case: UC05 - View a student detailed information (contact details, attendance, notes)**
 
 **MSS**
 
@@ -472,42 +472,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ---
 
-**Use case: UC06 - Assign student to project team**
-
-**MSS**
-
-1. User requests to assign student to project team
-2. TA Toolkit adds the project team tag to the student
-3. TA Toolkit displays a success message
-
-   Use case ends.
-
-**Extensions**
-
-* 1a. The group student command format is invalid.
-    * 1a1. TA Toolkit shows an error message.
-
-      Use case resumes at step 1.
-
-* 1b. The requested student is invalid.
-    * 1b1. TA Toolkit shows an error message.
-
-      Use case resumes at step 1.
-
-* 2b. The student is already assigned a project team tag.
-    * 2b1. TA Toolkit shows a message asking whether to replace or keep the existing tag.
-        * 2b1a. User decides to replace the existing tag.
-            * 2b1a1. TA Toolkit removes the current project team tag from the student.
-
-              Use case resumes at step 2.
-
-        * 2b1b. User decides to keep the existing tag.
-
-          Use case ends.
-
----
-
-**Use case: UC07 - Add note on student**
+**Use case: UC06 - Add note on student**
 
 **MSS**
 
@@ -529,13 +494,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 1.
 
+* 1c. The note to be added is invalid.
+    * 1c1. TA Toolkit shows an error message.
+
+      Use case resumes at step 1.
+
 ---
 
-**Use case: UC08 - Delete note on student**
+**Use case: UC07 - Delete notes for a student**
 
 **MSS**
 
-1. User requests to delete a note regarding a student
+1. User requests to delete a set of notes for a student
 2. TA Toolkit removes the note from the student’s list of notes
 3. TA Toolkit displays a success message
 
@@ -553,19 +523,19 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 1.
 
-* 2a. The note requested to be deleted is invalid.
-    * 2a1. TA Toolkit shows an error message.
+* 1c. The set of notes requested to be deleted is invalid.
+    * 1c1. TA Toolkit shows an error message.
 
       Use case resumes at step 1.
 
 ---
 
-**Use case: UC09 - Mark student as absent from a specific class**
+**Use case: UC08 - Mark students as present for a week**
 
 **MSS**
 
-1. Use requests to mark student as absent for a class
-2. TA Toolkit marks the student as absent for that class
+1. Use requests to mark a set of students as present for a week
+2. TA Toolkit marks the set of students as present for that week
 3. TA Toolkit displays a success message
 
    Use case ends.
@@ -577,67 +547,44 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 1.
 
-* 1b. The requested student is invalid.
+* 1b. The requested set of students is invalid.
     * 1b1. TA Toolkit shows an error message.
+
+      Use case resumes at step 1.
+
+* 1c. The requested week to be marked is invalid.
+    * 1c1. TA Toolkit shows an error message.
 
       Use case resumes at step 1.
 
 ---
 
-**Use case: UC10 - Unmark student as absent for a class**
+**Use case: UC09 - Mark students as absent for a week**
+
+Similar to UC08 - Marking students as absent rather than present.
+
+---
+
+**Use case: UC10 - List all students by class**
 
 **MSS**
 
-1. User requests to mark student as absent for a class
-2. TA Toolkit marks the student as absent for that class
+1. User requests to list all students from a specific class
+2. TA Toolkit displays a list of all members from that class
 3. TA Toolkit displays a success message
 
    Use case ends.
 
 **Extensions**
 
-* 1a. The unmark student command format is invalid.
+* 1a. The list student command format is invalid.
     * 1a1. TA Toolkit shows an error message.
-
-      Use case resumes at step 1.
-
-* 1b. The requested student is invalid.
-    * 1b1. TA Toolkit shows an error message.
-
-      Use case resumes at step 1.
-
-* 2a. The requested student is not currently marked as absent for the class.
-    * 2a1. TA Toolkit shows an error message.
 
       Use case resumes at step 1.
 
 ---
 
-**Use case: UC11 - View all students by project team tag**
-
-**MSS**
-
-1. User requests to view all students with a specified project team tag
-2. TA Toolkit displays a list of all members with that project team tag
-3. TA Toolkit displays a success message
-
-   Use case ends.
-
-**Extensions**
-
-* 1a. The view student by tag command format is invalid.
-    * 1a1. TA Toolkit shows an error message.
-
-      Use case resumes at step 1.
-
-* 1b. The requested tag is invalid.
-    * 1b1. TA Toolkit shows an error message.
-
-      Use case resumes at step 1.
-
----
-
-**Use case: UC12 - View summary of students attendance**
+**Use case: UC11 - View summary of students attendance**
 
 **MSS**
 
@@ -647,15 +594,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
-**Extensions**
-
-* 1a. There are no students in storage.
-    * 1a1. TA Toolkit shows an error message.
-
-      Use case ends.
-
-*{More to be added}*
-
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
@@ -663,23 +601,36 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should
 be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  All functions within the application must provide responses to user queries within a timeframe of 2 seconds.
-5.  The applications does not support concurrent usage by multiple users.
+5.  The application does not support concurrent usage by multiple users.
 6.  The application does not offer support for languages aside from English.
 7.  The application should be able to handle most common user input errors and provide meaningful error messages.
-
-*{More to be added}*
+8.  The application should work without internet connection.
+9.  The application's GUI should effectively organise and display data, facilitating easy comprehension of application details for users.
 
 ### Glossary
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **CLI**: Command Line Interface: A way of interacting with a computer program where the user issues commands to the
-program in the form of successive lines of text (command lines). It emphasises text-based user interaction over graphical user interfaces.
-* **TA**: Teaching Assistant
-* **OOP**: Object-Oriented Programming
+* **Absent**: A attendance status to indicate that a student did not attend a class.
+* **Alphanumeric**: A String consisting of only letters (a-z, A-Z) or numbers or both.
 * **API**: Application Programming Interface
-* **GUI**: Graphical User Interface
+* **Command**: Commands are necessary to use TA Toolkit. A command has to be typed into the Command Box and entered to be executed.
+* **Command terminal**: A command terminal is a text-based interface through which users can interact with a computer program by typing commands.
+* **CLI**: Command Line Interface: A way of interacting with a computer program where the user issues commands to the
+  program in the form of successive lines of text (command lines). It emphasises text-based user interaction over graphical user interfaces.
+* **Email**: A unique identifier for an email account.
+* **Index**: A number representing the position of an item in a list.
+* **Github ID**: A unique identifier for a Github account. E.g. johnDoe
+* **GUI**: Graphical User Interface: A mode of interacting with a computer program that relies on visual elements such as windows, icons, buttons, and menus.
+* **Hard disk**: A component of a computer system responsible for long-term storage of data.
+* **JSON file**: A JSON (JavaScript Object Notation) file is a structured data file format used for storing and transmitting data between the hard disk and TA Toolkit.
+* **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **MSS**: Main Success Scenario: The main flow of events in a use case.
+* **Note**: A String that can be associated to a person to provide additional details about them.
+* **OOP**: Object-Oriented Programming
+* **Phone number**: A sequence of digits that is dialled on a telephone to contact a person.
+* **Present**: A attendance status to indicate that a student attended a class.
 * **TA**: Teaching Assistant
+* **Telegram handle**: A unique identifier for a Telegram account. E.g. @johnDoe
+
 --------------------------------------------------------------------------------------------------------------------
 
 # **Appendix**
@@ -701,44 +652,168 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TAToolkit.jar` command to run the application.<br>
+      Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
-1. Saving window preferences
+### Adding a person
 
-   1. Resize the window to an optimum size. Move the window to a different location. Close the window.
+Prerequisite: There is no person in TA Toolkit with the same email, phone number, telegram, and github as the person to be added.
 
-   1. Re-launch the app by double-clicking the jar file.<br>
-       Expected: The most recent window size and location is retained.
+Test case: `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/johndoe g/johnDoeGithub`
 
-1. _{ more test cases …​ }_
+Expected Output in the Displayed Person List: The new person is added into the list.
+
+Expected Output in the Result Display: A message to inform user that new person has been added along with the person’s details.
+
+Test case: `ac`
+
+Expected Output in the Result Display: An error message is shown, providing details on the correct format.
 
 ### Deleting a person
 
-1. Deleting a person while all persons are being shown
+Prerequisite: There is at least 1 person in the Displayed Person List.
 
-   1. Prerequisites: List all persons using the `ls` command. Multiple persons in the list.
+Test case: `dc 1`
 
-   1. Test case: `dc 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+Expected Output in the Displayed Person List: First contact is deleted from the list.
 
-   1. Test case: `dc 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+Expected Output in the Result Display: Details of the deleted person is shown in the status message.
 
-   1. Other incorrect delete commands to try: `dc`, `dc x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+Test case: `dc 0`
 
-1. _{ more test cases …​ }_
+Expected: No person is deleted. Error details shown in the Result Display.
 
-### Saving data
+### Update a person
 
-1. Dealing with missing/corrupted data files
+Prerequisite: There is at least 1 person in the Displayed Person List. This updated information must be different from the person to be updated.
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+Test case: `uc 1 n/Ryan Lim Jun Jie`
 
-1. _{ more test cases …​ }_
+Expected Output in the Displayed Person List: The first person in the list has their name changed to “Ryan Lim Jun Jie”, and retains the rest of their details. The persons in the Displayed Person List are reordered.
+
+Expected Output in the Result Display: Details of the updated person is shown in the status message.
+
+### View a person
+
+Prerequisite: There is at least 1 person in the Displayed Person List.
+
+Test case: `view 1`
+
+Expected Output in the Side Panel Display: All details related to the first person in the list are displayed.
+
+Expected Output in the Result Display: Details of the viewed person is shown in the status message.
+
+### Find a person by matching name
+
+Prerequisite: There are only 2 persons named "Alex Yeoh" and "Bernice Yu" respectively in TA Toolkit.
+
+Test case: `find Alex`
+
+Expected Output in the Displayed Person List: The details of "Alex Yeoh" are shown.
+
+Expected Output in the Result Display: Message states “1 persons listed”.
+
+Test case: `find Zachary`
+
+Expected Output in the Displayed Person List: The list is empty.
+
+Expected Output in the Result Display: Message states “0 persons listed”.
+
+### Mark attendance
+
+Prerequisite: There is at least 1 person in the Displayed Person List.
+
+Test case: `ma w/1 abs/1`
+
+Expected Output in the Result Display: A message that informing that the first person in list has been marked as absent.
+
+### List persons in a class/ View attendance for a class
+
+Prerequisite: There is at least 1 person with the class "T42". They should be marked as absent.
+
+Test case: `ls T42`
+
+Expected Output in the Displayed Person List: All persons from the class "T42" are displayed.
+
+Expected Output in the Result Display: Message states the number of persons displayed.
+
+Expected Output in the Side Panel Display: The list of absentees from the class "T42" are displayed by week.
+
+### Adding a note to a person
+
+Prerequisite: There is at least 1 person in the Displayed Person List. The same person is being viewed in the Side Panel Display.
+
+Test case: `an 1 note/very hardworking!`
+
+Expected Output in the Result Display: Message states the details of the first person in the list, as well as the note added.
+
+Expected Output in the Side Panel Display: The new note is displayed under the notes section of the person.
+
+### Deleting a note from a person
+
+Prerequisite: There is 1 person with 1 note in the Displayed Person List. The same person is being viewed in the Side Panel Display.
+
+Test case: `dn 1 i/1`
+
+Expected Output in the Result Display: Message states the details of the first person in the list, as well as the note deleted.
+
+Expected Output in the Side Panel Display: The first note is removed from the notes section of the person.
+
+### Clearing the application data
+
+Test case: `clear`
+
+Expected Output in the Displayed Person List: Nothing is displayed.
+
+Expected Output in the Side Panel Display: Nothing is displayed.
+
+Expected Output in the Result Display: A message stating that app data has been cleared.
+
+### Help
+
+Test case: `help`
+
+Expected Output: A window shows up and provides the link to the User Guide.
+
+### Exit
+
+Test case: `exit`
+
+Expected Output: TA Toolkit closes.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Planned Enhancements
+## Appendix: Planned Enhancements
 
 Team Size: 5
+
+### Better name validation
+
+**Background**: Currently, TA Toolkit only allows contacts' name to contain alphanumeric characters and spaces.
+
+**Issue**: The strict restrictions will prevent some valid names from being accepted.
+For example, "Ravi S/O Ramasamy" is rejected as it contains a '/' character.
+
+**Enhancement**: We plan on changing the parameter prefixes to use the '=' character instead of the '/' character.
+Furthermore, we will loosen the restrictions on names to allow the '/' character.
+This will allow the TA Toolkit to accept legal names containing the '/' character.
+
+### Better identification of unique students
+
+**Background**: Currently, TA Toolkit does not have a unique identifier to identify unique students.
+There is only weak checking done to ensure students do not have duplicate email, phone number, telegram, github.
+
+**Issue**: TAs might have difficulty differentiating between students with the same name.
+This is a problem when looking at the attendance overview, when the TA sees a name as absent. If 2 people share that name, the TA does not know which of them is absent.
+
+**Enhancement**: We plan on adding Student ID as a field for students, which will be the unique identifier for student contacts.
+When displaying the attendance overview, the Student ID will accompany the student's name to uniquely identify him.
+
+### More comprehensive attendance taking
+
+**Background**: Currently, TA Toolkit only allows TAs to mark their students as present or absent.
+
+**Issue**: This introduces confusion to the TA, when marking attendance for students with other attendance status.
+For example, some students might be absent with valid reasons, like being on medical leave.
+
+**Enhancement**: We plan on introducing more attendance statuses that TAs can mark their students with, like being absent with valid reason.
