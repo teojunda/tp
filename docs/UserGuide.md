@@ -99,7 +99,7 @@ In TA Toolkit, duplicating entries with identical email addresses, phone numbers
 <box type="info" seamless>
 
 **Tip:**
-After adding a student's contact, update their phone number, telegram handle, github ID after finding those out from your students.
+After adding a student's contact, update their phone number, Telegram handle, GitHub ID after finding those out from your students.
 
 </box>
 
@@ -184,22 +184,21 @@ Some of TA Toolkit's commands require parameters, which have specific formats. B
 
 The following parameters are used for commands:
 
-
-| Parameter     | Prefix | Format                                                                                                                                                                                                                    | Example                                         |
-|---------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| INDEX         | -      | Positive integers only                                                                                                                                                                                                    | `1`, `2`, `3`                                   |
-| KEYWORD       | -      | Alphanumeric only                                                                                                                                                                                                         | `Alex`, `Bernice`                               |
-| NAME          | n/     | Alphanumeric, can contain multiple words                                                                                                                                                                                  | `Alex Yeoh`, `Bernice Yu`                       |
-| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits. Users are responsible for ensuring phone number is valid.                                                                                                                            | `99999999`, `88888888`                          |
-| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores. Users are responsible for ensuring Telegram ID is valid.                                                                                               | `@nus_cs2100` , `@johnDoe`                      |
-| EMAIL         | e/     | A local-part (consisting of letters, numbers, underscores, dots, and dashes), followed by the '@' symbol, then the domain name with at least 2 characters. Users are responsible for ensuring the email address is valid. | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
-| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens. Users are responsible for ensuring Github ID is valid.                                                                                            | `johnDoe`, `alice-yu`                           |
-| CLASS_GROUP   | c/     | Consists of alphanumeric characters                                                                                                                                                                                       | `T10`, `T42`                                    |
-| NOTE          | note/  | Consists of alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks)                                                                                                            | `Proficient in Java!`, `Beginner to Python.`    |
-| NOTE_INDEX    | i/     | Positive integers only                                                                                                                                                                                                    | `1`, `2`, `3`                                   |
-| WEEK          | w/     | Positive integers from 1 - 13 only                                                                                                                                                                                        | `1`, `2`, `3`                                   |
-| PRESENT_INDEX | pre/   | Positive integers only                                                                                                                                                                                                    | `1`, `2`, `3`                                   |
-| ABSENT_INDEX  | abs/   | Positive integers only                                                                                                                                                                                                    | `1`, `2`, `3`                                   |
+| Parameter     | Prefix | Format                                                                                                                                                                                                                   | Example                                         |
+|---------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| INDEX         | -      | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
+| KEYWORD       | -      | Alphanumeric only                                                                                                                                                                                                        | `Alex`, `Bernice`                               |
+| NAME          | n/     | Alphanumeric, can contain multiple words                                                                                                                                                                                 | `Alex Yeoh`, `Bernice Yu`                       |
+| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits. Users are responsible for ensuring phone number is valid.                                                                                                                           | `99999999`, `88888888`                          |
+| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores. Users are responsible for ensuring Telegram ID is valid.                                                                                              | `@nus_cs2100` , `@johnDoe`                      |
+| EMAIL         | e/     | A local-part (consisting of letters, numbers, underscores, dots, and dashes), followed by the '@' symbol, then the domain name with at least 2 characters. Users are responsible for ensuring the email address is valid.| `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
+| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens. Users are responsible for ensuring Github ID is valid.                                                                                           | `johnDoe`, `alice-yu`                           |
+| CLASS_GROUP   | c/     | Consists of alphanumeric characters                                                                                                                                                                                      | `T10`, `T42`                                    |
+| NOTE          | note/  | Consists of alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks)                                                                                                           | `Proficient in Java!`, `Beginner to Python.`    |
+| NOTE_INDEX    | i/     | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
+| WEEK          | w/     | Positive integers from 1 - 13 only                                                                                                                                                                                       | `1`, `2`, `3`                                   |
+| PRESENT_INDEX | pre/   | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
+| ABSENT_INDEX  | abs/   | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -214,8 +213,8 @@ The following parameters are used for commands:
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `ac n/NAME`, `NAME` is a parameter which can be used as `ac n/John Doe`.
 
-* Items in square brackets are optional.<br>
-  e.g. `n/NAME [t/TELEGRAM]` can be used as `n/John Doe t/@johndoe` or as `n/John Doe`.
+* Items in square brackets are optional. If an optional prefix is used without a value, it is assumed that you are creating a user without the value or deleting the already existing value.<br>
+  e.g. `n/NAME [t/TELEGRAM]` can be used as `n/John Doe t/@johndoe` or as `n/John Doe`, or also as `n/John Doe t/`.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
@@ -303,7 +302,7 @@ Format: `ls [CLASS_GROUP...]`
 
 Examples:
 * `ls` Displays all persons in the TA Toolkit.
-* `ls F14` Displays all person with a CLASS_GROUP beginning with F14, e.g. F14, F14-3, etc.
+* `ls T4` Displays all person with a CLASS_GROUP beginning with T4, e.g. T40, T42, etc.
 
 <box type="info" seamless>
 

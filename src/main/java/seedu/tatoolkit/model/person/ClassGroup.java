@@ -10,7 +10,7 @@ import static seedu.tatoolkit.commons.util.AppUtil.checkArgument;
 public class ClassGroup {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Class/groups should only contain alphanumeric characters separated by dashes.\n"
+            "Class/groups should only contain alphanumeric characters.\n"
                     + "It cannot contain symbols, whitespaces and it should not be blank";
 
     /*
