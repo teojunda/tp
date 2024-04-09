@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
-import javafx.scene.text.Text;
 import seedu.tatoolkit.model.person.Github;
 import seedu.tatoolkit.model.person.Person;
 import seedu.tatoolkit.model.person.Phone;
