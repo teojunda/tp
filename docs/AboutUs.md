@@ -17,7 +17,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 [[homepage](http://www.gtejas.com)]
 [[github](https://github.com/g-tejas)]
-[[portfolio](team/tejasgarrepally.md)]
+[[portfolio](team/g-tejas)]
 
 * Role:
 
