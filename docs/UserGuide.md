@@ -214,8 +214,8 @@ The following parameters are used for commands:
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `ac n/NAME`, `NAME` is a parameter which can be used as `ac n/John Doe`.
 
-* Items in square brackets are optional. If an optional prefix's value is left blank, it is assumed that you are leaving the value blank or deleting the already existing value.<br>
-  e.g. `n/NAME [t/TELEGRAM]` can be used as `n/John Doe t/@johndoe` or as `n/John Doe`.
+* Items in square brackets are optional. If an optional prefix is used without a value, it is assumed that you are creating a user without the value or deleting the already existing value.<br>
+  e.g. `n/NAME [t/TELEGRAM]` can be used as `n/John Doe t/@johndoe` or as `n/John Doe`, or also as `n/John Doe t/`.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
