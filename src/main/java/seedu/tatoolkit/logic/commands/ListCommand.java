@@ -20,7 +20,7 @@ public class ListCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": List all students or students from a specific "
             + "class group given the class group identifier and displays them as a list with index numbers.\n"
             + "Parameters: [CLASSGROUP_ID] (must be a valid class group identifier)\n"
-            + "Example: " + COMMAND_WORD + " F14-3";
+            + "Example: " + COMMAND_WORD + " T42";
 
     public static final String MESSAGE_LIST_ALL_SUCCESS = "Listed all %1$d students";
 
