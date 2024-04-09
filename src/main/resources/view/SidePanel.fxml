@@ -19,7 +19,7 @@
 
         <!-- Attendance ListView for displaying attendance list -->
         <Label fx:id="attendanceHeader" text="Attendance" styleClass="cell_big_label" visible="false"/>
-        <ListView fx:id="attendanceListView" VBox.vgrow="ALWAYS" visible="false" styleClass="custom-list-view"/>
+        <ListView fx:id="attendanceListView" VBox.vgrow="ALWAYS" visible="false" styleClass="custom-list-view" minHeight="400"/>
 
         <!-- Detail labels -->
         <Label fx:id="nameLabel" visible="false" styleClass="cell_big_label"/>
