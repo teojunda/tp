@@ -113,7 +113,7 @@ You can use the [`ma`](#marking-attendance-ma) command to mark a student as pres
 
 **Tip:**
 Use negative marking to quickly take attendance for a class. Since all students are initially assumed to be present,
-you can quickly the attendance of an entire class by only marking the absentees as absent.
+you can quickly mark the attendance of an entire class by only marking the absentees as absent.
 
 </box>
 
