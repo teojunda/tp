@@ -113,7 +113,7 @@ You can use the [`ma`](#marking-attendance-ma) command to mark a student as pres
 
 **Tip:**
 Use negative marking to quickly take attendance for a class. Since all students are initially assumed to be present,
-you can quickly the attendace of an entire class by only marking the absentees as absent.
+you can quickly mark the attendance of an entire class by only marking the absentees as absent.
 
 </box>
 
@@ -236,7 +236,7 @@ The following parameters are used for commands:
 
 ### Viewing help : `help`
 
-This opens a window containg a link to the User Guide.
+This opens a window containing a link to the User Guide.
 
 Format: `help`
 
@@ -249,8 +249,8 @@ Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB
 * When adding a contact, the contact's EMAIL, PHONE_NUMBER, TELEGRAM, GITHUB must be unique compared to every other person in TA Toolkit.
 
 Examples:
-* `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `T42`, phone number `98765432`, email `johnd@example.com`, telegram
-handle `@johndoe` and github `johnDoeGithub` to the list of contacts.
+* `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `T42`, phone number `98765432`, email `johnd@example.com`, Telegram
+handle `@johndoe` and GitHub `johnDoeGithub` to the list of contacts.
 
 ![Add_Contact](images/ac_example.png)
 
@@ -274,11 +274,11 @@ Examples:
 
 ### Locating persons by name: `find`
 
-This helps you to find specific persons by their names.
+This helps you find specific persons by their names.
 
 Format: `find KEYWORD [KEYWORD...]`
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
+* The search is case-insensitive. e.g. `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`
@@ -430,7 +430,7 @@ TAToolkit data are saved automatically as a JSON file `[JAR file location]/data/
 <box type="warning" seamless>
 
 **Caution:**
-If your changes to the data file makes its format invalid, TAToolkit will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+If your changes to the data file makes its format invalid, TAToolkit will discard all data and start with an empty data file at the next run. Note that after discarding all data, TaToolkit will clear the data file only if the application is exited using the `exit` command. Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the TAToolkit to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
