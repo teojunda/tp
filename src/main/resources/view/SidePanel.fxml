@@ -3,30 +3,32 @@
 <?import javafx.scene.layout.VBox?>
 <?import java.net.URL?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      styleClass="side-panel" alignment="TOP_LEFT" spacing="10">
-    <stylesheets>
-        <URL value="@NordTheme.css" />
-        <URL value="@Extensions.css" />
-    </stylesheets>
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" styleClass="side-panel-scrollpane">
+    <VBox alignment="TOP_LEFT" spacing="10" styleClass="side-panel">
+        <stylesheets>
+            <URL value="@NordTheme.css" />
+            <URL value="@Extensions.css" />
+        </stylesheets>
 
-    <!-- Default message label -->
-    <Label fx:id="defaultMessageLabel"
-           text="Use the view or list command to display more information"
-           wrapText="true" visible="true" styleClass="cell_small_label"/>
+        <!-- Default message label -->
+        <Label fx:id="defaultMessageLabel"
+               text="Use the view or list command to display more information"
+               wrapText="true" visible="true" styleClass="cell_small_label"/>
 
-    <!-- Attendance ListView for displaying attendance list -->
-    <Label fx:id="attendanceHeader" text="Attendance" styleClass="cell_big_label" visible="false"/>
-    <ListView fx:id="attendanceListView" VBox.vgrow="ALWAYS" visible="false" styleClass="custom-list-view" minHeight="400"/>
+        <!-- Attendance ListView for displaying attendance list -->
+        <Label fx:id="attendanceHeader" text="Attendance" styleClass="cell_big_label" visible="false"/>
+        <ListView fx:id="attendanceListView" VBox.vgrow="ALWAYS" visible="false" styleClass="custom-list-view"/>
 
-    <!-- Detail labels -->
-    <Label fx:id="nameLabel" visible="false" styleClass="cell_big_label"/>
-    <Label fx:id="classGroupLabel" visible="false" styleClass="cell_small_label"/>
-    <Label fx:id="emailLabel" visible="false" styleClass="cell_small_label"/>
-    <Label fx:id="phoneLabel" visible="false" styleClass="cell_small_label"/>
-    <Label fx:id="telegramLabel" visible="false" styleClass="cell_small_label"/>
-    <Label fx:id="githubLabel" visible="false" styleClass="cell_small_label"/>
-    <Label fx:id="attendanceLabel" visible="false" styleClass="cell_small_label"/>
-    <Label fx:id="noteLabel" visible="false" styleClass="cell_small_label"/>
-</VBox>
+        <!-- Detail labels -->
+        <Label fx:id="nameLabel" visible="false" styleClass="cell_big_label"/>
+        <Label fx:id="classGroupLabel" visible="false" styleClass="cell_small_label"/>
+        <Label fx:id="emailLabel" visible="false" styleClass="cell_small_label"/>
+        <Label fx:id="phoneLabel" visible="false" styleClass="cell_small_label"/>
+        <Label fx:id="telegramLabel" visible="false" styleClass="cell_small_label"/>
+        <Label fx:id="githubLabel" visible="false" styleClass="cell_small_label"/>
+        <Label fx:id="attendanceLabel" visible="false" styleClass="cell_small_label"/>
+        <Label fx:id="noteLabel" visible="false" styleClass="cell_small_label"/>
+    </VBox>
+</ScrollPane>
