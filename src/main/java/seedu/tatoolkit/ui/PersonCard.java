@@ -43,21 +43,42 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label email;
 
+    private int width = 800;
+
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
      */
     public PersonCard(Person person, int displayedIndex) {
+
         super(FXML);
         this.person = person;
+
         id.setText(displayedIndex + ". ");
+
         name.setText(person.getName().fullName);
+        name.setWrapText(true);
+        name.setPrefWidth(400);
+
         classGroup.setText(person.getClassGroup().classGroup);
+        classGroup.setWrapText(true);
+
         email.setText("E-mail: " + person.getEmail().value);
+        email.setWrapText(true);
+        email.setPrefWidth(width);
+
         phone.setText(
                 "Phone Number: " + person.getPhone().orElse(Phone.EMPTY).value);
+        phone.setWrapText(true);
+        phone.setPrefWidth(width);
+
         telegram.setText(
                 "Telegram ID: " + person.getTelegram().orElse(Telegram.EMPTY).telegramId);
+        telegram.setWrapText(true);
+        telegram.setPrefWidth(width);
+
         github.setText(
                 "GitHub ID: " + person.getGithub().orElse(Github.EMPTY).githubId);
+        github.setWrapText(true);
+        github.setPrefWidth(width);
     }
 }

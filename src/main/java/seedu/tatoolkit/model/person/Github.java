@@ -10,7 +10,7 @@ import static seedu.tatoolkit.commons.util.AppUtil.checkArgument;
 public class Github {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "GitHub ID should only contain alphanumeric characters and symbols, and it should not be blank";
+            "GitHub ID should only contain alphanumeric characters and symbols";
 
     public static final Github EMPTY = new Github("", true);
 

@@ -10,8 +10,7 @@ import static seedu.tatoolkit.commons.util.AppUtil.checkArgument;
 public class Telegram {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Telegram ID should only contain alphanumeric characters and symbols, start with an @ symbol,"
-                    + " and it should not be blank";
+            "Telegram ID should only contain alphanumeric characters and symbols, and start with an @ symbol";
 
     public static final Telegram EMPTY = new Telegram("", true);
 
