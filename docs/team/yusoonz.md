@@ -30,4 +30,4 @@ Given below are my contributions to the project.
     * Added implementation details of the `view` feature [\#60](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/60)
 
 * **Community**:
-  * Contributed to forum discussion (example: [1](https://github.com/nus-cs2103-AY2324S2/forum/issues/153))
+  * Contributed to forum discussion (example: [\#153](https://github.com/nus-cs2103-AY2324S2/forum/issues/153))
