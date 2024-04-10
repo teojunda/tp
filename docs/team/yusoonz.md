@@ -1,6 +1,6 @@
 ---
-  layout: default.md
-  title: "Yu Soon's Project Portfolio Page"
+layout: default.md
+title: "Yu Soon's Project Portfolio Page"
 ---
 
 ### Project: TaToolkit Level 3
