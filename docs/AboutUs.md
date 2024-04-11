@@ -58,7 +58,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/yusoonz.png" width="200px">
 
 [[github](http://github.com/yusoonz)]
-[[portfolio](team/ngyusoon.md)]
+[[portfolio](team/yusoonz.md)]
 
 * Role: Developer
-* Responsibilities: TBC
+* Responsibilities: Features Development 
