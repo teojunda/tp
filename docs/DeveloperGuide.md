@@ -798,6 +798,18 @@ For example, "Ravi S/O Ramasamy" is rejected as it contains a '/' character.
 Furthermore, we will loosen the restrictions on names to allow the '/' character.
 This will allow the TA Toolkit to accept legal names containing the '/' character.
 
+### Better email validation
+
+**Background**: Currently, our system validates email addresses using the format local-part@domain, with specific restrictions for both parts to identify and reject invalid emails.
+
+**Issue**: This validation method does not strictly adhere to the IETF standards for email addresses.
+Consequently, our application may incorrectly deem invalid emails as valid.
+For instance, an email like a@12.34 may pass validation despite having a domain that violates IETF standards.
+Furthermore, while our validation accommodates formats commonly used by major email service providers like Google, Outlook, Hotmail, and Yahoo, the IETF's standards are more inclusive and may recognize additional formats.
+
+**Enhancement**: To address this issue, we aim to enhance our email validation process to align more closely with IETF standards and specific RFCs such as RFC3696, RFC5322, and RFC6854.
+This upgrade be able to accurately identify valid and invalid email addresses.
+
 ### Better identification of unique students
 
 **Background**: Currently, TA Toolkit does not have a unique identifier to identify unique students.
@@ -817,3 +829,14 @@ When displaying the attendance overview, the Student ID will accompany the stude
 For example, some students might be absent with valid reasons, like being on medical leave.
 
 **Enhancement**: We plan on introducing more attendance statuses that TAs can mark their students with, like being absent with valid reason.
+
+### Handling duplicate keys in JSON object
+
+**Background**: Currently, TA Toolkit does not check for duplicate keys in JSON objects used for storage of student contact details.
+
+**Issue**: This could lead to unexpected behaviour if the storage file is corrupted.
+For example, if the JSON object representing the student contact details contains 2 `name` keys, the application should throw an error that the data is corrupted.
+However, the application reads the value of the last duplicate key.
+
+**Enhancement**: We plan on introducing checks to ensure that there are no duplicate keys for any of the JSON objects in the storage file.
+This will cause TA Toolkit to throw an error and reset the data if the storage file is invalid.
