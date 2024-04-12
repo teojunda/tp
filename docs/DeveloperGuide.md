@@ -19,8 +19,8 @@ pageNav: 3
  * Using ChatGPT to conform to better structure within Personal Portfolio Page.
 
 ### Tejas Garrepally's Acknowledgements
- * Using Github Copilot to generate some of the JavaDocs for `Attendance`
- * Using Github Copilot to generate some of the format and structure for `WeekTest`, `ClassGroupTest`
+ * Used Github Copilot to generate some of the JavaDocs for `Attendance`
+ * Used Github Copilot to generate some of the format and structure for `WeekTest`, `ClassGroupTest`
  * Used ChatGPT to replace the color scheme in DarkTheme.css with Nord Theme.
 
 ### Gautham Kailash's Acknowledgements
