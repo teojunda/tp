@@ -51,7 +51,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/teojunda.md)]
 
 * Role: Developer
-* Responsibilities: Dev Ops + Threading
+* Responsibilities: Features Development
 
 ### Ng Yu Soon
 
