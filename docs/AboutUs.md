@@ -61,4 +61,4 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/yusoonz.md)]
 
 * Role: Developer
-* Responsibilities: Features Development 
+* Responsibilities: Features Development

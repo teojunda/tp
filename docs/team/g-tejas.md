@@ -10,11 +10,11 @@ Given below are my contributions to the project.
 
 * **New Feature**: Added the ability to mark the attendance of students in the TaToolkit
   * What it does: Allows the user to mark the attendance of students in the class. Attendance is marked negatively, but students can be marked as present with the `pre/` prefix
-  * Justification: This feature is crucial for the product as it allows TAs to keep track of students' attendance in the class, with a simple command. 
+  * Justification: This feature is crucial for the product as it allows TAs to keep track of students' attendance in the class, with a simple command.
   * Highlights: This feature is the hallmark of the TaToolkit, and allows TAs to get insights into the students' attendance patterns from the side panel, either by individual students or by class groups.
-  
+
 * **Modified Feature**: Added the ability to list specific classes in the TaToolkit with class groups
-  * What it does: Allows the user to list students by one or more class groups, which is handled with prefix matching. 
+  * What it does: Allows the user to list students by one or more class groups, which is handled with prefix matching.
   * Justification: This feature is crucial as it allows TAs to quickly find class groups if they manage multiple classes.
 
 * **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s2.github.io/tp-dashboard/?search=g-tejas&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2024-02-23&tabOpen=true&tabType=authorship&tabAuthor=g-tejas&tabRepo=AY2324S2-CS2103T-F14-3/tp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code~other&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false)

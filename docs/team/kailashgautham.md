@@ -37,7 +37,7 @@ Given below are my contributions to the project.
     * Did cosmetic tweaks to existing documentation of feature `list`: [\#74](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/159)
     * Added changes to the Java installation instructions, yellow label information, and the e-mail address field format instructions: [\#74](https://github.com/AY2324S2-CS2103T-F14-3/tp/pull/159)
   * Developer Guide:
-    * Modified the links that led to the previous repository, and modified the command keywords to reflect any changes that were made in our project. 
+    * Modified the links that led to the previous repository, and modified the command keywords to reflect any changes that were made in our project.
 
 * **Community**:
   * Reviewed 46 PRs from my team members.
