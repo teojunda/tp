@@ -323,9 +323,9 @@ Format: `view INDEX`
 * `INDEX` **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `view 1` views the 2nd person of the displayed person list on the side panel display.
+* `view 1` views the 1st person of the displayed person list on the side panel display.
 
-  ![result for 'view 2'](images/view_example.png)
+  ![result for 'view 1'](images/view_example.png)
 
 ### Adding note to a person : `an`
 
