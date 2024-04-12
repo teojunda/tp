@@ -851,3 +851,25 @@ However, the application reads the value of the last duplicate key.
 
 **Enhancement**: We plan on introducing checks to ensure that there are no duplicate keys for any of the JSON objects in the storage file.
 This will cause TA Toolkit to throw an error and reset the data if the storage file is invalid.
+
+### Errors Improvement
+
+**Background**: Currently, some of TA Toolkit's error messages are not specific enough for the user to understand what went wrong.
+A very large index, one that doesn't fit in an integer, might be mistakenly input by the user.
+A few examples include:
+1. When updating a contact with a very large index, the error message is "Invalid command format".
+2. When marking attendance with a very large number in the index field, the error message is "Index is not a non-zero unsigned integer".
+
+**Issue**: The error message provided is not consistent and not specific enough for the user to understand what went wrong.
+
+**Enhancement**: We plan on improving the error messages to provide more specific information to the user. For example,
+if a user tries to use a command with a very large index that doesn't fit in an integer, the error message will be "The person index provided is invalid.".
+
+### UI Improvements
+
+**Background**: Currently, the background of TA Toolkit behind the Person cards are black in colour and does not match the Nord theme.
+
+**Issue**: This could introduce some confusion to the user as the background colour does not match the theme of the application. 
+This could also lead to a poor user experience as the user might think that a bug has occurred.
+
+**Enhancement**: We plan on changing the background colour of the application to match the Nord theme, which will provide a more consistent user experience.
