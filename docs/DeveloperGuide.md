@@ -862,9 +862,9 @@ if a user tries to use a command with a very large index that doesn't fit in an 
 
 ### UI Improvements
 
-**Background**: Currently, the background of TA Toolkit behind the Person cards are black in color and does not match the Nord theme.
+**Background**: Currently, the background of TA Toolkit behind the Person cards are black in colour and does not match the Nord theme.
 
-**Issue**: This could introduce some confusion to the user as the background color does not match the theme of the application,
+**Issue**: This could introduce some confusion to the user as the background colour does not match the theme of the application,
 which could lead to a poor user experience and think that a bug might have occurred.
 
-**Enhancement**: We plan on changing the background color of the application to match the Nord theme, which will provide a more consistent user experience.
+**Enhancement**: We plan on changing the background colour of the application to match the Nord theme, which will provide a more consistent user experience.
