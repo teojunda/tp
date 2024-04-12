@@ -1,7 +1,7 @@
 ---
-  layout: default.md
-  title: "Developer Guide"
-  pageNav: 3
+layout: default.md
+title: "Developer Guide"
+pageNav: 3
 ---
 
 # TA Toolkit Developer Guide
@@ -13,7 +13,10 @@
 
 ## **Acknowledgements**
 
-_{ list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well }_
+### Ng Yu Soon's Acknowledgements
+ * Using ChatGPT to generate documentation for ViewCommand, ViewCommandParser, AddNoteCommand, AddNoteCommandParser, Note and Notes classes.
+ * Using ChatGPT to generate the format and structure in ViewCommandTest, ViewCommandParserTest, AddNoteCommandTest, AddNoteCommandParserTest, NoteTest and NotesTest classes.
+ * Using ChatGPT to conform to better structure within Personal Portfolio Page.
 
 --------------------------------------------------------------------------------------------------------------------
 
