@@ -13,10 +13,10 @@ pageNav: 3
 
 ## **Acknowledgements**
 
-### Ng Yu Soon Acknowledgements
+### Ng Yu Soon's Acknowledgements
  * Using ChatGPT to generate documentation for ViewCommand, ViewCommandParser, AddNote, AddNote, Note and Notes classes.
- * Using ChatGPT to generate test cases format/structure in ViewCommandTest, ViewCommandParserTest, AddNoteCommandTest and AddNoteCommandParserTest classes.
- * Using ChatGPT to structure English and contents within Personal Portfolio Page.
+ * Using ChatGPT to generate the format/structure in ViewCommandTest, ViewCommandParserTest, AddNoteCommandTest and AddNoteCommandParserTest classes.
+ * Using ChatGPT to conform to better structure within Personal Portfolio Page.
 
 --------------------------------------------------------------------------------------------------------------------
 
