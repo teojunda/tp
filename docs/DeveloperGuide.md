@@ -18,6 +18,11 @@ pageNav: 3
  * Using ChatGPT to generate the format and structure in ViewCommandTest, ViewCommandParserTest, AddNoteCommandTest, AddNoteCommandParserTest, NoteTest and NotesTest classes.
  * Using ChatGPT to conform to better structure within Personal Portfolio Page.
 
+### Tejas Garrepally's Acknowledgements
+ * Used Github Copilot to generate some of the JavaDocs for `Attendance`
+ * Used Github Copilot to generate some of the format and structure for `WeekTest`, `ClassGroupTest`
+ * Used ChatGPT to replace the color scheme in DarkTheme.css with Nord Theme.
+
 ### Gautham Kailash's Acknowledgements
 * Using ChatGPT to generate Javadocs for AddCommand, AddCommandParser, MarkCommand, and MarkCommandParser classes.
 
