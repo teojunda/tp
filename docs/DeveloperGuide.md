@@ -23,6 +23,9 @@ pageNav: 3
  * Using Github Copilot to generate some of the format and structure for `WeekTest`, `ClassGroupTest`
  * Used ChatGPT to replace the color scheme in DarkTheme.css with Nord Theme.
 
+### Gautham Kailash's Acknowledgements
+* Using ChatGPT to generate Javadocs for AddCommand, AddCommandParser, MarkCommand, and MarkCommandParser classes.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**

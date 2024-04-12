@@ -23,6 +23,7 @@ public class SidePanel extends UiPart<Region> {
     private static final String FXML = "SidePanel.fxml";
     private final Logger logger = LogsCenter.getLogger(SidePanel.class);
     private Model model;
+    private int width = 800;
 
     @FXML
     private Label defaultMessageLabel;
@@ -61,6 +62,30 @@ public class SidePanel extends UiPart<Region> {
     }
 
     private void initializeAttendanceListView() {
+        nameLabel.setWrapText(true);
+        nameLabel.setPrefWidth(width);
+
+        classGroupLabel.setWrapText(true);
+        classGroupLabel.setPrefWidth(width);
+
+        emailLabel.setWrapText(true);
+        emailLabel.setPrefWidth(width);
+
+        phoneLabel.setWrapText(true);
+        phoneLabel.setPrefWidth(width);
+
+        telegramLabel.setWrapText(true);
+        telegramLabel.setPrefWidth(width);
+
+        githubLabel.setWrapText(true);
+        githubLabel.setPrefWidth(width);
+
+        attendanceLabel.setWrapText(true);
+        attendanceLabel.setPrefWidth(width);
+
+        noteLabel.setWrapText(true);
+        noteLabel.setPrefWidth(width);
+
         ObservableList<String> attendanceList = model.getObservableAttendanceList();
 
         attendanceList.addListener((ListChangeListener.Change<? extends String> change) -> {
