@@ -20,10 +20,10 @@ Given below are my contributions to the project.
     * What it does: allows the user to modify the fields in a student contact (Class group, Email, Phone number, Telegram, Github).
     * Justification: This feature improves the product significantly because a user can update student contact information to be correct.
     * Highlights and challenges:
-      * Integration Challenge: Integrating the modified editCommand into the existing architecture presented a significant challenge, particularly ensuring compatibility with other related commands, such as the viewCommand.
-      * Solution: To address this, I meticulously analyzed the existing codebase to identify dependencies and potential conflicts. By creating a series of unit tests, I was able to ensure that the updated editCommand functioned seamlessly within the larger ecosystem without disrupting existing functionalities.
-      * Design Challenge: Adapting the command to fit into the AB3 project's established design architecture without excessive modifications required careful planning and execution.
-      * Solution: I leveraged design patterns that were already familiar within the framework, such as Command and Observer patterns, ensuring that the enhancements were both effective and minimally invasive. This approach allowed for a smoother integration and improved maintainability.
+        * Integration Challenge: Integrating the modified editCommand into the existing architecture presented a significant challenge, particularly ensuring compatibility with other related commands, such as the viewCommand.
+        * Solution: To address this, I meticulously analyzed the existing codebase to identify dependencies and potential conflicts. By creating a series of unit tests, I was able to ensure that the updated editCommand functioned seamlessly within the larger ecosystem without disrupting existing functionalities.
+        * Design Challenge: Adapting the command to fit into the AB3 project's established design architecture without excessive modifications required careful planning and execution.
+        * Solution: I leveraged design patterns that were already familiar within the framework, such as Command and Observer patterns, ensuring that the enhancements were both effective and minimally invasive. This approach allowed for a smoother integration and improved maintainability.
     * Credits: The code was part of an existing feature from the AB3 brownfield project.
 
 
@@ -31,10 +31,10 @@ Given below are my contributions to the project.
   * What it does: allows the user to delete notes from a student contact.
   * Justification: This feature improves the product significantly because a user can update delete irrelevant notes to keep only information that is important.
   * Highlights and challenges:
-    * Integration Challenge: Implementing the deleteNoteCommand required careful consideration to ensure it seamlessly integrates with existing commands like the addNoteCommand.
-    * Solution: To achieve a smooth integration and prevent conflicts, I conducted a thorough review of the interaction between note-related commands. I then implemented a robust testing protocol that simulated various usage scenarios to detect and fix any issues early in the development process.
-    * Design Challenge: The feature had to be designed in a way that it complemented the existing command structure and did not introduce bugs or usability issues.
-    * Solution: I adopted a modular design approach, allowing the deleteNoteCommand to function independently yet cohesively within the system’s broader framework. This was achieved by encapsulating the command logic and ensuring it adhered to the principles of high cohesion and low coupling, thus enhancing the maintainability and scalability of the codebase.
+      * Integration Challenge: Implementing the deleteNoteCommand required careful consideration to ensure it seamlessly integrates with existing commands like the addNoteCommand.
+      * Solution: To achieve a smooth integration and prevent conflicts, I conducted a thorough review of the interaction between note-related commands. I then implemented a robust testing protocol that simulated various usage scenarios to detect and fix any issues early in the development process.
+      * Design Challenge: The feature had to be designed in a way that it complemented the existing command structure and did not introduce bugs or usability issues.
+      * Solution: I adopted a modular design approach, allowing the deleteNoteCommand to function independently yet cohesively within the system’s broader framework. This was achieved by encapsulating the command logic and ensuring it adhered to the principles of high cohesion and low coupling, thus enhancing the maintainability and scalability of the codebase.
 
 
 * **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s2.github.io/tp-dashboard/?search=f14&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2024-02-23&tabOpen=true&tabType=authorship&tabAuthor=teojunda&tabRepo=AY2324S2-CS2103T-F14-3%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false)
