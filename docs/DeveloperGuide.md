@@ -18,6 +18,9 @@ pageNav: 3
  * Using ChatGPT to generate the format and structure in ViewCommandTest, ViewCommandParserTest, AddNoteCommandTest, AddNoteCommandParserTest, NoteTest and NotesTest classes.
  * Using ChatGPT to conform to better structure within Personal Portfolio Page.
 
+### Gautham Kailash's Acknowledgements
+* Using ChatGPT to generate Javadocs for AddCommand, AddCommandParser, MarkCommand, and MarkCommandParser classes.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
