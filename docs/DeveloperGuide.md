@@ -851,8 +851,8 @@ This will cause TA Toolkit to throw an error and reset the data if the storage f
 
 **Background**: Currently, some of TA Toolkit's error messages are not specific enough for the user to understand what went wrong.
 A very large index, one that doesn't fit in an integer, might be mistakenly input by the user.
-A few examples include: 
-1. When updating a contact with a very large index, the error message is "Invalid command format". 
+A few examples include:
+1. When updating a contact with a very large index, the error message is "Invalid command format".
 2. When marking attendance with a very large number in the index field, the error message is "Index is not a non-zero unsigned integer".
 
 **Issue**: The error message provided is not consistent and not specific enough for the user to understand what went wrong.
