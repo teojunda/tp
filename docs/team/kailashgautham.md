@@ -1,6 +1,6 @@
 ---
   layout: default.md
-    title: "Kailash Gautham's Project Portfolio Page"
+  title: "Kailash Gautham's Project Portfolio Page"
 ---
 
 ### Project: TaToolkit
