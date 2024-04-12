@@ -9,7 +9,7 @@ TaToolkit is a desktop application used for teaching assistants to manage their 
 
 * **Technical Skills**
     * Object-Oriented Programming
-    * Software Design Patterns (Observer)
+    * Software Design Patterns
     * Continuous Integration/ Continuous Delivery
     * Git Version Control
 
