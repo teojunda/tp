@@ -27,7 +27,7 @@ pageNav: 3
 * Used GitHub Copilot to generate Javadocs for `AddCommand`, `AddCommandParser`, `MarkCommand`, and `MarkCommandParser` classes.
 
 ### Ivan Ang's Acknowledgements
-* Used ChatGPT to assist in writing my Personal Project Portfolio in `docs/team/hiivan.md`.
+* Used ChatGPT to assist in writing my Project Portfolio Page in `docs/team/hiivan.md`.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
