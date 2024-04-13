@@ -800,14 +800,17 @@ Team Size: 5
 
 ### Better name validation
 
-**Background**: Currently, TA Toolkit only allows contacts' name to contain alphanumeric characters and spaces.
+**Background**: Currently, TA Toolkit only allows contacts' name to contain alphanumeric characters and spaces. Furthermore,
+names "John Doe" and "John  Doe" are considered different names due to the extra whitespace. 
 
 **Issue**: The strict restrictions will prevent some valid names from being accepted.
 For example, "Ravi S/O Ramasamy" is rejected as it contains a '/' character.
+As for the extra whitespace between words in a name, it might confuse the user when searching for a contact.
 
 **Enhancement**: We plan on changing the parameter prefixes to use the '=' character instead of the '/' character.
 Furthermore, we will loosen the restrictions on names to allow the '/' character.
 This will allow the TA Toolkit to accept legal names containing the '/' character.
+We will also trim the extra whitespace between words in a name to prevent confusion when searching for a contact.
 
 ### Better email validation
 
