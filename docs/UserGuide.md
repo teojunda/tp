@@ -323,7 +323,7 @@ Format: `view INDEX`
 * `INDEX` **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `view 1` views the 1st person of the displayed person list on the side panel display.
+* `view 1` views the first person of the displayed person list on the side panel display.
 
   ![result for 'view 1'](images/view_example.png)
 
@@ -335,10 +335,10 @@ Format: `an INDEX note/NOTE`
 
 * `INDEX` refers to the index number shown in the displayed person list.
 * `INDEX` **must be a positive integer** 1, 2, 3, …​
-* `NOTE` **must contain only alphanumeric characters and punctuation** hardworking, sleepy, …​
+* `NOTE` **must contain only alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks) ** hardworking, sleepy, …​
 
 Examples:
-* `an 1 note/very hardworking student!` adds a note of `very hardworking student!` to the 1st person in the TA Toolkit.
+* `an 1 note/very hardworking student!` adds a note of `very hardworking student!` to the first person in the TA Toolkit.
 
   ![result for 'an 1 note/very hardworking student!'](images/an_example.png)
 
@@ -354,7 +354,7 @@ Format: `dn INDEX i/NOTE_INDEX...`
 * If multiple indices are provided, they should be comma-separated.
 
 Examples:
-* `dn 1 i/1` deletes the first note from the 1st person in the TA Toolkit.
+* `dn 1 i/2` deletes the second note from the first person in the TA Toolkit.
 
 ### Marking attendance : `ma`
 
@@ -370,7 +370,7 @@ Format: `ma w/WEEK [pre/PRESENT_INDEX...] [abs/ABSENT_INDEX...]`
 * At least one optional parameter must be present in the command.
 
 Examples:
-* `ma w/1 abs/1,2` marks the 1st and 2nd persons in the displayed persons list as absent.
+* `ma w/1 abs/1,2` marks the first and second persons in the displayed persons list as absent.
   ![result for 'ma w/1 abs/1,2'](images/ma_example.png)
 
 <box type="info" seamless>
@@ -444,7 +444,7 @@ _Details coming soon ..._
 
 **Q**: How do I see the attendance or notes of a specific student?<br>
 **A**: You have to use the [`view`](#viewing-a-person-view) command to view the detailed information containing the notes and attendance of the person.
-For example, if you want to view the attendance of the 1st person in the displayed person list, use the `view 1` command to view their detailed information.
+For example, if you want to view the attendance of the first person in the displayed person list, use the `view 1` command to view their detailed information.
 
 **Q**: How do I see the overall attendance for a specific class?<br>
 **A**: You have to use the [`ls`](#listing-persons-ls) command to list all the persons for a specific class.
