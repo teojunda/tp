@@ -6,14 +6,14 @@
 
 # TA Toolkit User Guide
 
-TA Toolkit is a desktop application designed to help CS2100 Teaching Assistants (TAs) from the School of Computing in
-efficiently manage the contacts of their students. This User Guide assumes that you have are familiar with Command Line Interface (CLI)
-applications and is a fast typist, allowing you to get your student management tasks done faster than traditional Graphical User Interface (GUI) apps.
+TA Toolkit is a desktop application designed to help CS2100 Teaching Assistants (TAs) from the School of Computing (SoC) at the National University of Singapore (NUS)
+efficiently manage the contacts of their students. This User Guide assumes that you are familiar with the Command Line Interface (CLI)
+applications and are a fast typist, allowing you to get your student management tasks done faster than traditional Graphical User Interface (GUI) apps.
 
 Juggling teaching and administrative tasks, time is a precious resource for CS2100 TAs and effective contact management is crucial.
 TA Toolkit is meticulously designed to cater to your administrative requirements, guaranteeing seamless handling of
 your contact-related duties. It offers a rapid and user-friendly solution via a Command Line Interface (CLI), specifically
-tailored to enhance the efficiency and effectiveness of your contact management endeavors.
+tailored to enhance the efficiency and effectiveness of your contact management endeavours.
 
 Below are some ways to integrate TA Toolkit into your workflow:
 
@@ -44,7 +44,7 @@ This user guide offers you detailed documentation of TA Toolkit's capabilities.
 If this is your first encounter with TA Toolkit, ensure that the application has been downloaded.
 Please proceed to [Quick Start](#quick-start) for instructions on installing the application.
 
-If you would like to have a brief introduction of the application's interface,
+If you would like to have a brief introduction to the application's interface,
 head over to our [Interface Walkthrough](#interface-walkthrough) to better learn about TA Toolkit.
 
 If you are already familiar with TA Toolkit, you can refer to [Command Summary](#command-summary) for a
@@ -53,7 +53,7 @@ summary of all the commands in TA Toolkit.
 If you encounter any issues with the commands or find yourself uncertain about anything,
 feel free to explore the [Glossary](#Glossary) for explanations on technical terms,
 consult the [FAQ](#faq) for answers to common questions,
-or explore [Common Mistakes](#common-mistakes) for typical errors that users may encounter while utilizing the application.
+or explore [Common Mistakes](#common-mistakes) for typical errors that users may encounter while utilising the application.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ A person has the following attributes:
 - Email address (Compulsory)
 - Phone number (Optional)
 - Telegram handle (Optional)
-- Github ID (Optional)
+- GitHub ID (Optional)
 - Attendance (Tracked by the application)
 - Notes (Tracked by the application)
 
@@ -99,13 +99,13 @@ In TA Toolkit, duplicating entries with identical email addresses, phone numbers
 <box type="info" seamless>
 
 **Tip:**
-After adding a student's contact, update their phone number, Telegram handle, GitHub ID after finding those out from your students.
+After adding a student's contact, update their phone number, Telegram handle, and GitHub ID as and when you receive the necessary information.
 
 </box>
 
 ### Attendance
 
-Each student has an attendance for each week tied to him. Since NUS semesters contain 13 weeks, TA Toolkit only supports taking attendance for 13 weeks.
+Each student has an attendance for each week tied to them. Since NUS semesters contain 13 weeks, TA Toolkit only supports taking attendance for 13 weeks.
 When a student contact is added to TA Toolkit, he is assumed to be present for all 13 weeks.
 You can use the [`ma`](#marking-attendance-ma) command to mark a student as present or absent for a specific week.
 
@@ -121,7 +121,7 @@ you can quickly mark the attendance of an entire class by only marking the absen
 
 ## Quick start
 
-1. Ensure you have Java `11` or above installed in your Computer.
+1. Ensure you have Java `11` or above installed on your computer.
 
 To install Java on a Windows computer, click [here](https://www.java.com/en/download/help/windows_manual_download.html).
 
@@ -137,7 +137,7 @@ if your computer is running Linux.
 3. Copy the file to the folder you want to use as the _home folder_ for your TA Toolkit.
 
 4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar TAToolkit.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   A GUI similar to the one below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/ActualUi.png)
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -161,7 +161,7 @@ if your computer is running Linux.
 
 This is the expected interface of the GUI when you launch TA Toolkit. Please note that this application has been populated with sample data.
 
-The key windows are labeled as follows:
+The key windows are labelled as follows:
 
 1. File button: Opens an option to exit the application.
 2. Help button: Opens a menu with a link to the User Guide.
@@ -184,21 +184,21 @@ Some of TA Toolkit's commands require parameters, which have specific formats. B
 
 The following parameters are used for commands:
 
-| Parameter     | Prefix | Format                                                                                                                                                                                                                   | Example                                         |
-|---------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| INDEX         | -      | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
-| KEYWORD       | -      | Alphanumeric only                                                                                                                                                                                                        | `Alex`, `Bernice`                               |
-| NAME          | n/     | Alphanumeric, can contain multiple words                                                                                                                                                                                 | `Alex Yeoh`, `Bernice Yu`                       |
-| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits. Users are responsible for ensuring phone number is valid.                                                                                                                           | `99999999`, `88888888`                          |
-| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores. Users are responsible for ensuring Telegram ID is valid.                                                                                              | `@nus_cs2100` , `@johnDoe`                      |
-| EMAIL         | e/     | A local-part (consisting of letters, numbers, underscores, dots, and dashes), followed by the '@' symbol, then the domain name with at least 2 characters. Users are responsible for ensuring the email address is valid.| `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
-| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens. Users are responsible for ensuring Github ID is valid.                                                                                           | `johnDoe`, `alice-yu`                           |
-| CLASS_GROUP   | c/     | Consists of alphanumeric characters                                                                                                                                                                                      | `T10`, `T42`                                    |
-| NOTE          | note/  | Consists of alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks)                                                                                                           | `Proficient in Java!`, `Beginner to Python.`    |
-| NOTE_INDEX    | i/     | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
-| WEEK          | w/     | Positive integers from 1 - 13 only                                                                                                                                                                                       | `1`, `2`, `3`                                   |
-| PRESENT_INDEX | pre/   | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
-| ABSENT_INDEX  | abs/   | Positive integers only                                                                                                                                                                                                   | `1`, `2`, `3`                                   |
+| Parameter     | Prefix | Format                                                                                                                                                                                                                    | Example                                         |
+|---------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| INDEX         | -      | Positive integers only                                                                                                                                                                                                    | `1`, `2`, `3`                                   |
+| KEYWORD       | -      | Alphanumeric only                                                                                                                                                                                                         | `Alex`, `Bernice`                               |
+| NAME          | n/     | Alphanumeric, can contain multiple words                                                                                                                                                                                  | `Alex Yeoh`, `Bernice Yu`                       |
+| PHONE_NUMBER  | p/     | Numeric, minimum length of 3 digits. Users are responsible for ensuring the phone number is valid.                                                                                                                        | `99999999`, `88888888`                          |
+| TELEGRAM      | t/     | Starts with @, followed by alphanumeric characters or underscores. Users are responsible for ensuring their Telegram ID is valid.                                                                                         | `@nus_cs2100` , `@johnDoe`                      |
+| EMAIL         | e/     | A local-part (consisting of letters, numbers, underscores, dots, and dashes), followed by the '@' symbol, then the domain name with at least 2 characters. Users are responsible for ensuring the email address is valid. | `damithch@comp.nus.edu.sg`, `dcsdcr@nus.edu.sg` |
+| GITHUB        | g/     | Consists of alphanumeric characters, underscores, periods, and hyphens. Users are responsible for ensuring GitHub ID is valid.                                                                                            | `johnDoe`, `alice-yu`                           |
+| CLASS_GROUP   | c/     | Consists of alphanumeric characters                                                                                                                                                                                       | `T10`, `T42`                                    |
+| NOTE          | note/  | Consists of alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks)                                                                                                            | `Proficient in Java!`, `Beginner to Python.`    |
+| NOTE_INDEX    | i/     | Positive integers only                                                                                                                                                                                                    | `1`, `2`, `3`                                   |
+| WEEK          | w/     | Positive integers from 1 - 13 only                                                                                                                                                                                        | `1`, `2`, `3`                                   |
+| PRESENT_INDEX | pre/   | Positive integers only                                                                                                                                                                                                    | `1`, `2`, `3`                                   |
+| ABSENT_INDEX  | abs/   | Positive integers only                                                                                                                                                                                                    | `1`, `2`, `3`                                   |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -225,7 +225,7 @@ The following parameters are used for commands:
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `ls`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
-* For any command that fails to executed, refer to the Result Display, which will provide a helpful explanation to help you correct your command.
+* For any command that fails to execute, refer to the Result Display, which will provide a helpful explanation to help you correct your command.
   ![Result_Display](images/ErrorMessage_example.png)
 
 * If any extra parameters with an invalid prefix are provided, the command will consider that prefix and parameter as part of the previous parameter.<br>
@@ -246,7 +246,7 @@ This helps you to add a person to TA Toolkit.
 
 Format: `ac n/NAME c/CLASS_GROUP e/EMAIL [p/PHONE_NUMBER] [t/TELEGRAM] [g/GITHUB]`
 
-* When adding a contact, the contact's EMAIL, PHONE_NUMBER, TELEGRAM, GITHUB must be unique compared to every other person in TA Toolkit.
+* When adding a contact, the contact's EMAIL, PHONE_NUMBER, TELEGRAM, and GITHUB must be unique compared to every other person in TA Toolkit.
 
 Examples:
 * `ac n/John Doe c/T42 p/98765432 e/johnd@example.com t/@johndoe g/johnDoeGithub` This adds a new member named `John Doe` with class_group `T42`, phone number `98765432`, email `johnd@example.com`, Telegram
@@ -264,7 +264,7 @@ Format: `uc INDEX [n/NAME] [c/CLASS_GROUP] [e/EMAIL] [p/PHONE_NUMBER] [t/TELEGRA
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * The updated person must have a different field compared to the original person.
-* When updating any field, `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, `GITHUB` must be unique compared to every other person.
+* When updating any field, `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, and `GITHUB` must be unique compared to every other person.
 
 Examples:
 *  `uc 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears the Telegram field.
@@ -291,7 +291,7 @@ Examples:
 
 ### Listing persons : `ls`
 
-This shows you a list of all persons in TA Toolkit based for a CLASS_GROUP in the Contact List Display.
+This shows you a list of all persons in TA Toolkit based on a CLASS_GROUP in the Contact List Display.
 Also, the attendance overview of all persons in the displayed person list will be displayed in the side panel display.
 
 Format: `ls [CLASS_GROUP...]`
@@ -306,43 +306,43 @@ Examples:
 
 <box type="info" seamless>
 
-**Tip:** If you try to list the students for a specific class does, but nothing is displayed, check that the CLASS_GROUP
+**Tip:** If you try to list the students for a specific class, but nothing is displayed, check that the CLASS_GROUP
 parameter has the correct letter casing.
 
 </box>
 
 ### Viewing a person : `view`
 
-This helps you to view the detailed information of specified person on the side panel display.
+This helps you to view the detailed information of a specified person on the side panel display.
 
 Format: `view INDEX`
 
 * View the person at the specified `INDEX`.
-* Person's details will be displayed on side panel display.
+* The person's details will be displayed on the side panel display.
 * `INDEX` refers to the index number shown in the displayed person list.
 * `INDEX` **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `view 1` views the 1st person of the displayed person list on the side panel display.
+* `view 1` views the first person of the displayed person list on the side panel display.
 
   ![result for 'view 1'](images/view_example.png)
 
-### Adding note to a person : `an`
+### Adding a note to a person : `an`
 
-This helps you to add note to a specified person in TA Toolkit.
+This helps you to add notes to a specified person in TA Toolkit.
 
 Format: `an INDEX note/NOTE`
 
 * `INDEX` refers to the index number shown in the displayed person list.
 * `INDEX` **must be a positive integer** 1, 2, 3, …​
-* `NOTE` **must contain only alphanumeric characters and punctuation** hardworking, sleepy, …​
+* `NOTE` **must contain only alphanumeric characters and basic punctuation (periods, commas, exclamation marks, question marks) ** hardworking, sleepy, …​
 
 Examples:
-* `an 1 note/very hardworking student!` adds a note of `very hardworking student!` to the 1st person in the TA Toolkit.
+* `an 1 note/very hardworking student!` adds a note of `very hardworking student!` to the first person in the TA Toolkit.
 
   ![result for 'an 1 note/very hardworking student!'](images/an_example.png)
 
-### Deleting note from a person : `dn`
+### Deleting a note from a person : `dn`
 
 Delete a note from a specified index of a specified person from the TA Toolkit.
 
@@ -354,7 +354,7 @@ Format: `dn INDEX i/NOTE_INDEX...`
 * If multiple indices are provided, they should be comma-separated.
 
 Examples:
-* `dn 1 i/1` deletes the first note from the 1st person in the TA Toolkit.
+* `dn 1 i/2` deletes the second note from the first person in the TA Toolkit.
 
 ### Marking attendance : `ma`
 
@@ -370,12 +370,12 @@ Format: `ma w/WEEK [pre/PRESENT_INDEX...] [abs/ABSENT_INDEX...]`
 * At least one optional parameter must be present in the command.
 
 Examples:
-* `ma w/1 abs/1,2` marks the 1st and 2nd persons in the displayed persons list as absent.
+* `ma w/1 abs/1,2` marks the first and second persons in the displayed persons list as absent.
   ![result for 'ma w/1 abs/1,2'](images/ma_example.png)
 
 <box type="info" seamless>
 
-**Tip:** To quickly mark attendance of the class for the week, use [ls](#listing-persons-ls) command to list all students in the class.
+**Tip:** To quickly mark attendance of the class for the week, use the [ls](#listing-persons-ls) command to list all students in the class.
 Then, mark the absentees for the week as absent. Since all students are initially assumed to be present, only the absentees will be marked as absent.
 
 </box>
@@ -396,7 +396,7 @@ Examples:
 <box type="warning" seamless>
 
 **Caution:** There is no prompt to confirm this action. This command is not reversible. Deleted contacts will have to be
-re-added into the list of applicants via the [`ac`](#adding-a-person-ac) command.
+re-added to the list of students via the [`ac`](#adding-a-person-ac) command.
 
 </box>
 
@@ -430,8 +430,8 @@ TAToolkit data are saved automatically as a JSON file `[JAR file location]/data/
 <box type="warning" seamless>
 
 **Caution:**
-If your changes to the data file makes its format invalid, TAToolkit will discard all data and start with an empty data file at the next run. Note that after discarding all data, TaToolkit will clear the data file only if the application is exited using the `exit` command. Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the TAToolkit to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+If your changes to the data file make its format invalid, TAToolkit will discard all data and start with an empty data file at the next run. Note that after discarding all data, TaToolkit will clear the data file only if the application is exited using the `exit` command. Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the TAToolkit to behave in unexpected ways (e.g. if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
 ### Archiving data files `[coming in v2.0]`
@@ -443,8 +443,8 @@ _Details coming soon ..._
 ## FAQ
 
 **Q**: How do I see the attendance or notes of a specific student?<br>
-**A**: You have to use the [`view`](#viewing-a-person-view) command to view the detailed information containing the notes and attendance of person.
-For example, if you want to view the attendance of the 1st person in the displayed person list, use the `view 1` command to view his/her detailed information.
+**A**: You have to use the [`view`](#viewing-a-person-view) command to view the detailed information containing the notes and attendance of the person.
+For example, if you want to view the attendance of the first person in the displayed person list, use the `view 1` command to view their detailed information.
 
 **Q**: How do I see the overall attendance for a specific class?<br>
 **A**: You have to use the [`ls`](#listing-persons-ls) command to list all the persons for a specific class.
@@ -456,7 +456,7 @@ and later switch to using only the primary screen, the GUI will open off-screen.
 The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
+**A**: Install the app on the other computer and overwrite the empty data file it creates with the file that contains
 the data of your previous TAToolkit home folder.
 
 <box type="info" seamless>
@@ -473,10 +473,10 @@ that the tatoolkit.json file used is **correct and accurate.**
 
 1. **When [adding contacts](#adding-a-person-ac) or [updating contacts](#updating-a-person-uc)**,
 if the command causes 2 persons in the TA Toolkit to have the same `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, or `GITHUB`,
-the command will fail. This is because every contact should have unique `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, and `GITHUB`.
+the command will fail. This is because every contact should have a unique `EMAIL`, `PHONE_NUMBER`, `TELEGRAM`, and `GITHUB`.
 
 2. **When [updating contacts](#updating-a-person-uc), [deleting contacts](#deleting-a-person-dc)**,
-i.e. any commands that utilises the `INDEX` parameter, the command is interacting with the wrong contact.
+i.e. any commands that utilise the `INDEX` parameter, the command is interacting with the wrong contact.
 The `INDEX` must match the current index of the person on the displayed person list. Should you find yourself updating/ deleting the wrong person,
 ensure you adhere to the index presently shown, rather than an index from a past view.
 
@@ -504,7 +504,7 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
 
 ## Glossary
 
-* **Absent**: A attendance status to indicate that a student did not attend a class.
+* **Absent**: An attendance status to indicate that a student did not attend a class.
 * **Alphanumeric**: A String consisting of only letters (a-z, A-Z) or numbers or both.
 * **Command**: Commands are necessary to use TA Toolkit. A command has to be typed into the Command Box and entered to be executed.
 * **Command terminal**: A command terminal is a text-based interface through which users can interact with a computer program by typing commands.
@@ -512,12 +512,12 @@ To reset the displayed person list, you can refer to the [`ls`](#listing-persons
   program in the form of successive lines of text (command lines). It emphasises text-based user interaction over graphical user interfaces.
 * **Email**: A unique identifier for an email account.
 * **Index**: A number representing the position of an item in a list.
-* **Github ID**: A unique identifier for a Github account. E.g. johnDoe
+* **GitHub ID**: A unique identifier for a GitHub account. E.g. johnDoe
 * **GUI**: Graphical User Interface: A mode of interacting with a computer program that relies on visual elements such as windows, icons, buttons, and menus.
 * **Hard disk**: A component of a computer system responsible for long-term storage of data.
 * **JSON file**: A JSON (JavaScript Object Notation) file is a structured data file format used for storing and transmitting data between the hard disk and TA Toolkit.
-* **Note**: A String that can be associated to a person to provide additional details about them.
+* **Note**: A String that can be associated with a person to provide additional details about them.
 * **Phone number**: A sequence of digits that is dialled on a telephone to contact a person.
-* **Present**: A attendance status to indicate that a student attended a class.
+* **Present**: An attendance status to indicate that a student attended a class.
 * **TA**: Teaching Assistant
 * **Telegram handle**: A unique identifier for a Telegram account. E.g. @johnDoe
