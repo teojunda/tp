@@ -38,7 +38,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 [[homepage](https://www.ivan-ang.com)]
 [[github](https://github.com/hiivan)]
-[[portfolio](team/hiivan)]
+[[portfolio](team/hiivan.md)]
 
 * Role: TBC
 * Responsibilities: TBC
