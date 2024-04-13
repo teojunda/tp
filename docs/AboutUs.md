@@ -37,7 +37,7 @@ We are a team based in the [School of Computing, National University of Singapor
 
 [[homepage](https://www.ivan-ang.com)]
 [[github](https://github.com/hiivan)]
-[[portfolio](team/ivan.md)]
+[[portfolio](team/hiivan.md)]
 
 * Role: Developer
 * Responsibilities: Features Development and UI
