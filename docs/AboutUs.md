@@ -7,8 +7,6 @@
 
 We are a team based in the [School of Computing, National University of Singapore](http://www.comp.nus.edu.sg).
 
-You can reach us at the email `seer[at]comp.nus.edu.sg`
-
 ## Project team
 
 ### Tejas Garrepally
@@ -19,7 +17,8 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[github](https://github.com/g-tejas)]
 [[portfolio](team/g-tejas.md)]
 
-* Role:
+* Role: Developer
+* Responsibilities: Features Development
 
 ### Gautham Kailash
 
@@ -29,8 +28,8 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[github](http://github.com/kailashgautham)]
 [[portfolio](team/kailashgautham.md)]
 
-* Role: TBC
-* Responsibilities: TBC
+* Role: Developer
+* Responsibilities: Features Development
 
 ### Ivan Ang
 
@@ -40,8 +39,8 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[github](https://github.com/hiivan)]
 [[portfolio](team/ivan.md)]
 
-* Role: TBC
-* Responsibilities: TBC
+* Role: Developer
+* Responsibilities: Features Development and UI
 
 ### Axel Teo
 
