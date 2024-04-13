@@ -14,17 +14,17 @@ pageNav: 3
 ## **Acknowledgements**
 
 ### Ng Yu Soon's Acknowledgements
- * Using ChatGPT to generate documentation for ViewCommand, ViewCommandParser, AddNoteCommand, AddNoteCommandParser, Note and Notes classes.
- * Using ChatGPT to generate the format and structure in ViewCommandTest, ViewCommandParserTest, AddNoteCommandTest, AddNoteCommandParserTest, NoteTest and NotesTest classes.
- * Using ChatGPT to conform to better structure within Personal Portfolio Page.
+ * Used ChatGPT to generate documentation for `ViewCommand`, `ViewCommandParser`, `AddNoteCommand`, `AddNoteCommandParser`, `Note` and `Notes` classes.
+ * Used ChatGPT to generate the format and structure in `ViewCommandTest`, `ViewCommandParserTest`, `AddNoteCommandTest`, `AddNoteCommandParserTest`, `NoteTest` and `NotesTest` classes.
+ * Used ChatGPT to conform to better structure within Personal Portfolio Page.
 
 ### Tejas Garrepally's Acknowledgements
- * Used Github Copilot to generate some of the JavaDocs for `Attendance`
- * Used Github Copilot to generate some of the format and structure for `WeekTest`, `ClassGroupTest`
- * Used ChatGPT to replace the color scheme in DarkTheme.css with Nord Theme.
+ * Used GitHub Copilot to generate some of the JavaDocs for `Attendance`
+ * Used GitHub Copilot to generate some of the format and structure for `WeekTest`, `ClassGroupTest`
+ * Used ChatGPT to replace the color scheme in `DarkTheme.css` with Nord Theme.
 
 ### Gautham Kailash's Acknowledgements
-* Using ChatGPT to generate Javadocs for AddCommand, AddCommandParser, MarkCommand, and MarkCommandParser classes.
+* Used GitHub Copilot to generate Javadocs for `AddCommand`, `AddCommandParser`, `MarkCommand`, and `MarkCommandParser` classes.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -82,9 +82,9 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/ay2
 
 <puml src="diagrams/UiClassDiagram.puml" alt="Structure of the UI Component"/>
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter`, 'SidePanel' etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter`, `SidePanel` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/java/seedu/tatoolkit/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFX UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/java/seedu/tatoolkit/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/ay2324s2-cs2103t-f14-3/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
