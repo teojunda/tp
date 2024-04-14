@@ -630,6 +630,7 @@ be able to accomplish most of the tasks faster using commands than using the mou
 * **Github ID**: A unique identifier for a Github account. E.g. johnDoe
 * **GUI**: Graphical User Interface: A mode of interacting with a computer program that relies on visual elements such as windows, icons, buttons, and menus.
 * **Hard disk**: A component of a computer system responsible for long-term storage of data.
+* **IETF**: Internet Engineering Task Force
 * **JSON file**: A JSON (JavaScript Object Notation) file is a structured data file format used for storing and transmitting data between the hard disk and TA Toolkit.
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **MSS**: Main Success Scenario: The main flow of events in a use case.
@@ -816,11 +817,9 @@ We will also trim the extra whitespace between words in a name to prevent confus
 
 **Issue**: This validation method does not strictly adhere to the IETF standards for email addresses.
 Consequently, our application may incorrectly deem invalid emails as valid.
-For instance, an email like a@12.34 may pass validation despite having a domain that violates IETF standards.
-Furthermore, while our validation accommodates formats commonly used by major email service providers like Google, Outlook, Hotmail, and Yahoo, the IETF's standards are more inclusive and may recognize additional formats.
+For instance, an email like abc@12.34 may pass validation despite having a domain that violates IETF standards.
 
-**Enhancement**: To address this issue, we aim to enhance our email validation process to align more closely with IETF standards and specific RFCs such as RFC3696, RFC5322, and RFC6854.
-This upgrade be able to accurately identify valid and invalid email addresses.
+**Enhancement**: To address this issue, we aim to enhance our email validation process to align more closely with IETF standards, as specified in [RFC5322](https://datatracker.ietf.org/doc/html/rfc6854).
 
 ### Better identification of unique students
 
