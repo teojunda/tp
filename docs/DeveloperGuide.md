@@ -26,6 +26,8 @@ pageNav: 3
 ### Gautham Kailash's Acknowledgements
 * Used GitHub Copilot to generate Javadocs for `AddCommand`, `AddCommandParser`, `MarkCommand`, and `MarkCommandParser` classes.
 
+### Ivan Ang's Acknowledgements
+* Used ChatGPT to assist in writing my Project Portfolio Page in `docs/team/hiivan.md`.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
