@@ -28,6 +28,9 @@ pageNav: 3
 
 ### Ivan Ang's Acknowledgements
 * Used ChatGPT to assist in writing my Project Portfolio Page in `docs/team/hiivan.md`.
+
+### Axel Teo's Acknowledgements
+* Used ChatGPT to assist in writing my Project Portfolio Page in `doc/team/teojunda.md`.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
@@ -101,7 +104,7 @@ The `UI` component,
 
 Here's a (partial) class diagram of the `Logic` component:
 
-<puml src="diagrams/LogicClassDiagram.puml" width="550"/>
+<puml src="diagrams/LogicClassDiagram.puml" width="300" />
 
 The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("dc 1")` API call as an example.
 
@@ -308,13 +311,6 @@ The following activity diagram summarizes what happens when a user executes a ne
   itself.
   * Pros: Will use less memory (e.g. for `dc`, just save the person being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
-
-_{more aspects and alternatives to be added}_
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
-
 
 --------------------------------------------------------------------------------------------------------------------
 
